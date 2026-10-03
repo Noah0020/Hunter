@@ -1,17 +1,12 @@
 --[[
-    HunterBlock v8 (Crimson UI)
-    - Scoped sound hook (killers only, no global)
-    - Auto Block (95 M1 sounds)
-    - SSHT (velocity shake)
+    HunterBlock v8
+    - Auto Block (95 M1 sounds, scoped hook)
+    - SSHT (velocity shake, Legit/Blatant)
     - Box visuals
-    - Auto Parry
-    - Killer dropdown + refresh
-    - Crimson tabbed UI (Block / SSHT / Info)
+    - Auto Parry with aim-before-punch + prediction
+    - Manual killer dropdown, refresh button
 ]]
 
--- ============================================================
--- WAIT FOR GAME AND MATCH
--- ============================================================
 if not game:IsLoaded() then
     repeat task.wait(0.5) until game:IsLoaded()
 end
@@ -42,6 +37,8 @@ local S = {
     ShowFacingBox = false,
     ParryAim = true,
     ParryPunch = true,
+    ParryAimDelay = 0.08,
+    ParryPredict = 0.12,
     ManualKiller = "Auto",
 }
 
@@ -194,7 +191,7 @@ local function faceTarget(hrp)
 end
 
 -- ============================================================
--- BLOCK COOLDOWN
+-- BLOCK COOLDOWN CHECK
 -- ============================================================
 local cachedCooldown = nil
 local lastCooldownRefresh = 0
@@ -350,7 +347,7 @@ local function tryBlock(killer, hrp)
 end
 
 -- ============================================================
--- SOUND HOOK (SCOPED — killers only)
+-- SOUND HOOK (scoped to killers)
 -- ============================================================
 local hookedSounds = setmetatable({}, { __mode = "k" })
 local trackedKillers = {}
@@ -455,23 +452,42 @@ end
 waitAndScan()
 
 -- ============================================================
--- AUTO PARRY
+-- AUTO PARRY (aim before punch with prediction)
 -- ============================================================
 local parryConn = nil
 local lastParry = 0
+
+local function faceTargetPredicted(hrp)
+    if not hrp then return end
+    local our = getRoot(LocalPlayer.Character)
+    if not our then return end
+    local vel = hrp.AssemblyLinearVelocity or Vector3.new()
+    local predictedPos = hrp.Position + vel * S.ParryPredict
+    local flat = Vector3.new(predictedPos.X, our.Position.Y, predictedPos.Z)
+    if (flat - our.Position).Magnitude > 0.1 then
+        our.CFrame = CFrame.lookAt(our.Position, flat)
+    end
+end
 
 local function onParry()
     if os.clock() - lastParry < 0.2 then return end
     lastParry = os.clock()
 
-    if S.ParryAim then
-        local nearest = getNearestKiller(S.BlockRange * 1.5)
-        if nearest then faceTarget(getKillerHRP(nearest)) end
+    local nearest = getNearestKiller(S.BlockRange * 1.5)
+    local targetHRP = nearest and getKillerHRP(nearest) or nil
+
+    if S.ParryAim and targetHRP then
+        faceTargetPredicted(targetHRP)
     end
 
     if S.ParryPunch then
-        task.wait(0.02)
-        firePunch()
+        task.spawn(function()
+            task.wait(S.ParryAimDelay)
+            if S.ParryAim and targetHRP and targetHRP.Parent then
+                faceTargetPredicted(targetHRP)
+            end
+            firePunch()
+        end)
     end
 
     stopSSHT()
@@ -523,314 +539,229 @@ local function detectKillerNames()
 end
 
 -- ============================================================
--- CRIMSON UI
+-- GUI
 -- ============================================================
-local ACCENT     = Color3.fromRGB(220, 30, 60)
-local ACCENT_DIM = Color3.fromRGB(120, 20, 35)
-local BG_DARK    = Color3.fromRGB(16, 14, 16)
-local BG_MID     = Color3.fromRGB(24, 20, 22)
-local BG_ROW     = Color3.fromRGB(34, 28, 30)
-local TEXT_MAIN  = Color3.fromRGB(240, 235, 238)
-local TEXT_DIM   = Color3.fromRGB(150, 140, 145)
-local STROKE     = Color3.fromRGB(48, 38, 42)
-
-if _G._HunterBlockGui and _G._HunterBlockGui.Parent then
-    pcall(function() _G._HunterBlockGui:Destroy() end)
-end
-
 local gui = Instance.new("ScreenGui")
 gui.Name = "HunterBlockPanel"
 gui.ResetOnSpawn = false
 gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 gui.IgnoreGuiInset = true
-pcall(function() gui.Parent = (gethui and gethui()) or CoreGui end)
-if not gui.Parent then gui.Parent = PlayerGui end
+local okp = pcall(function() gui.Parent = (gethui and gethui()) or CoreGui end)
+if not okp or not gui.Parent then gui.Parent = PlayerGui end
+if _G._HunterBlockGui and _G._HunterBlockGui.Parent then
+    pcall(function() _G._HunterBlockGui:Destroy() end)
+end
 _G._HunterBlockGui = gui
 
--- Floating button
 local toggleBtn = Instance.new("TextButton")
-toggleBtn.Size = UDim2.fromOffset(46, 46)
-toggleBtn.Position = UDim2.new(1, -100, 0.5, -23)
-toggleBtn.BackgroundColor3 = BG_MID
+toggleBtn.Size = UDim2.fromOffset(60, 60)
+toggleBtn.Position = UDim2.new(1, -80, 1, -80)
+toggleBtn.AnchorPoint = Vector2.new(0.5, 0.5)
+toggleBtn.BackgroundColor3 = Color3.fromRGB(255, 120, 40)
 toggleBtn.Text = "HB"
-toggleBtn.TextColor3 = ACCENT
+toggleBtn.TextColor3 = Color3.new(1, 1, 1)
 toggleBtn.Font = Enum.Font.GothamBold
-toggleBtn.TextSize = 14
-toggleBtn.AutoButtonColor = false
+toggleBtn.TextSize = 20
 toggleBtn.Active = true
 toggleBtn.Draggable = true
 toggleBtn.Parent = gui
-Instance.new("UICorner", toggleBtn).CornerRadius = UDim.new(1, 0)
-local tbs = Instance.new("UIStroke", toggleBtn)
-tbs.Color = ACCENT; tbs.Thickness = 1.5
+local tbc = Instance.new("UICorner"); tbc.CornerRadius = UDim.new(1, 0); tbc.Parent = toggleBtn
+local tbs = Instance.new("UIStroke"); tbs.Color = Color3.fromRGB(255, 160, 80); tbs.Thickness = 2; tbs.Parent = toggleBtn
 
--- Window
-local window = Instance.new("Frame")
-window.Size = UDim2.fromOffset(500, 400)
-window.Position = UDim2.fromScale(0.5, 0.5)
-window.AnchorPoint = Vector2.new(0.5, 0.5)
-window.BackgroundColor3 = BG_DARK
-window.BorderSizePixel = 0
-window.Visible = false
-window.ClipsDescendants = true
-window.Parent = gui
-Instance.new("UICorner", window).CornerRadius = UDim.new(0, 12)
-local ws = Instance.new("UIStroke", window)
-ws.Color = STROKE; ws.Thickness = 1
+local panel = Instance.new("Frame")
+panel.Size = UDim2.fromOffset(500, 560)
+panel.Position = UDim2.fromScale(0.5, 0.5)
+panel.AnchorPoint = Vector2.new(0.5, 0.5)
+panel.BackgroundColor3 = Color3.fromRGB(20, 20, 26)
+panel.BorderSizePixel = 0
+panel.Visible = false
+panel.Active = true
+panel.Parent = gui
+local pc = Instance.new("UICorner"); pc.CornerRadius = UDim.new(0, 14); pc.Parent = panel
+local ps = Instance.new("UIStroke"); ps.Color = Color3.fromRGB(255, 120, 40); ps.Thickness = 2; ps.Parent = panel
 
--- Header
-local header = Instance.new("Frame")
-header.Size = UDim2.new(1, 0, 0, 40)
-header.BackgroundColor3 = BG_MID
-header.BorderSizePixel = 0
-header.Parent = window
-Instance.new("UICorner", header).CornerRadius = UDim.new(0, 12)
-local headerFix = Instance.new("Frame")
-headerFix.Size = UDim2.new(1, 0, 0, 12)
-headerFix.Position = UDim2.new(0, 0, 1, -12)
-headerFix.BackgroundColor3 = BG_MID
-headerFix.BorderSizePixel = 0
-headerFix.Parent = header
+local titleBar = Instance.new("Frame")
+titleBar.Size = UDim2.new(1, 0, 0, 44)
+titleBar.BackgroundColor3 = Color3.fromRGB(50, 35, 25)
+titleBar.BorderSizePixel = 0
+titleBar.Active = false
+titleBar.Parent = panel
+local atbc = Instance.new("UICorner"); atbc.CornerRadius = UDim.new(0, 14); atbc.Parent = titleBar
+local tbFix = Instance.new("Frame")
+tbFix.Size = UDim2.new(1, 0, 0, 14)
+tbFix.Position = UDim2.new(0, 0, 1, -14)
+tbFix.BackgroundColor3 = Color3.fromRGB(50, 35, 25)
+tbFix.BorderSizePixel = 0
+tbFix.Active = false
+tbFix.Parent = titleBar
 
-local dot = Instance.new("Frame")
-dot.Size = UDim2.fromOffset(10, 10)
-dot.Position = UDim2.new(0, 14, 0.5, -5)
-dot.BackgroundColor3 = ACCENT
-dot.BorderSizePixel = 0
-dot.Parent = header
-Instance.new("UICorner", dot).CornerRadius = UDim.new(1, 0)
+local titleText = Instance.new("TextLabel")
+titleText.Size = UDim2.new(1, -120, 1, 0)
+titleText.Position = UDim2.fromOffset(12, 0)
+titleText.BackgroundTransparency = 1
+titleText.Text = "HunterBlock"
+titleText.TextColor3 = Color3.fromRGB(255, 160, 80)
+titleText.Font = Enum.Font.GothamBold
+titleText.TextSize = 16
+titleText.TextXAlignment = Enum.TextXAlignment.Left
+titleText.Active = false
+titleText.Parent = titleBar
 
-local titleLbl = Instance.new("TextLabel")
-titleLbl.Size = UDim2.new(0, 200, 1, 0)
-titleLbl.Position = UDim2.fromOffset(34, 0)
-titleLbl.BackgroundTransparency = 1
-titleLbl.Text = "HunterBlock"
-titleLbl.TextColor3 = TEXT_MAIN
-titleLbl.Font = Enum.Font.GothamBold
-titleLbl.TextSize = 14
-titleLbl.TextXAlignment = Enum.TextXAlignment.Left
-titleLbl.Parent = header
-
-local verLbl = Instance.new("TextLabel")
-verLbl.Size = UDim2.new(0, 60, 1, 0)
-verLbl.Position = UDim2.new(0, 130, 0, 0)
-verLbl.BackgroundTransparency = 1
-verLbl.Text = "v8"
-verLbl.TextColor3 = TEXT_DIM
-verLbl.Font = Enum.Font.GothamMedium
-verLbl.TextSize = 11
-verLbl.TextXAlignment = Enum.TextXAlignment.Left
-verLbl.Parent = header
+local lockBtn = Instance.new("TextButton")
+lockBtn.Size = UDim2.fromOffset(30, 30)
+lockBtn.Position = UDim2.new(1, -72, 0, 7)
+lockBtn.BackgroundColor3 = Color3.fromRGB(80, 80, 100)
+lockBtn.Text = "🔓"
+lockBtn.TextColor3 = Color3.new(1, 1, 1)
+lockBtn.Font = Enum.Font.GothamBold
+lockBtn.TextSize = 16
+lockBtn.Parent = titleBar
+local lbc = Instance.new("UICorner"); lbc.CornerRadius = UDim.new(1, 0); lbc.Parent = lockBtn
 
 local closeBtn = Instance.new("TextButton")
-closeBtn.Size = UDim2.fromOffset(24, 24)
-closeBtn.Position = UDim2.new(1, -34, 0.5, -12)
-closeBtn.BackgroundColor3 = BG_DARK
+closeBtn.Size = UDim2.fromOffset(30, 30)
+closeBtn.Position = UDim2.new(1, -36, 0, 7)
+closeBtn.BackgroundColor3 = Color3.fromRGB(200, 40, 40)
 closeBtn.Text = "×"
-closeBtn.TextColor3 = ACCENT
+closeBtn.TextColor3 = Color3.new(1, 1, 1)
 closeBtn.Font = Enum.Font.GothamBold
-closeBtn.TextSize = 16
-closeBtn.AutoButtonColor = false
-closeBtn.Parent = header
-Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0, 6)
-closeBtn.MouseEnter:Connect(function() closeBtn.BackgroundColor3 = ACCENT end)
-closeBtn.MouseLeave:Connect(function() closeBtn.BackgroundColor3 = BG_DARK end)
+closeBtn.TextSize = 20
+closeBtn.Parent = titleBar
+local cbc = Instance.new("UICorner"); cbc.CornerRadius = UDim.new(1, 0); cbc.Parent = closeBtn
 
--- Sidebar
-local sidebar = Instance.new("Frame")
-sidebar.Size = UDim2.new(0, 110, 1, -40)
-sidebar.Position = UDim2.new(0, 0, 0, 40)
-sidebar.BackgroundColor3 = BG_MID
-sidebar.BorderSizePixel = 0
-sidebar.Parent = window
-
-local sideFix = Instance.new("Frame")
-sideFix.Size = UDim2.new(0, 12, 1, -40)
-sideFix.Position = UDim2.new(1, -12, 0, 0)
-sideFix.BackgroundColor3 = BG_MID
-sideFix.BorderSizePixel = 0
-sideFix.Parent = sidebar
-
-local tabList = Instance.new("Frame")
-tabList.Size = UDim2.new(1, 0, 1, -20)
-tabList.Position = UDim2.new(0, 0, 0, 10)
-tabList.BackgroundTransparency = 1
-tabList.Parent = sidebar
-
-local tabLayout = Instance.new("UIListLayout", tabList)
-tabLayout.Padding = UDim.new(0, 6)
-tabLayout.SortOrder = Enum.SortOrder.LayoutOrder
-tabLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-
--- Content
 local content = Instance.new("Frame")
-content.Size = UDim2.new(1, -110, 1, -40)
-content.Position = UDim2.new(0, 110, 0, 40)
+content.Size = UDim2.new(1, -24, 1, -68)
+content.Position = UDim2.fromOffset(12, 56)
 content.BackgroundTransparency = 1
-content.Parent = window
+content.Active = false
+content.Parent = panel
 
-local pages = {}
-local tabButtons = {}
+local scroll = Instance.new("ScrollingFrame")
+scroll.Size = UDim2.new(1, 0, 1, 0)
+scroll.BackgroundTransparency = 1
+scroll.BorderSizePixel = 0
+scroll.ScrollBarThickness = 4
+scroll.ScrollBarImageColor3 = Color3.fromRGB(255, 120, 40)
+scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+scroll.Active = true
+scroll.Parent = content
 
-local function makePage(name)
-    local page = Instance.new("ScrollingFrame")
-    page.Size = UDim2.new(1, -20, 1, -20)
-    page.Position = UDim2.new(0, 10, 0, 10)
-    page.BackgroundTransparency = 1
-    page.BorderSizePixel = 0
-    page.ScrollBarThickness = 3
-    page.ScrollBarImageColor3 = ACCENT
-    page.CanvasSize = UDim2.new(0, 0, 0, 0)
-    page.AutomaticCanvasSize = Enum.AutomaticSize.Y
-    page.Visible = false
-    page.Parent = content
+local list = Instance.new("UIListLayout")
+list.Padding = UDim.new(0, 8)
+list.SortOrder = Enum.SortOrder.LayoutOrder
+list.Parent = scroll
 
-    local lay = Instance.new("UIListLayout", page)
-    lay.Padding = UDim.new(0, 6)
-    lay.SortOrder = Enum.SortOrder.LayoutOrder
-
-    pages[name] = page
-    return page
-end
-
-local function makeTab(name)
-    local b = Instance.new("TextButton")
-    b.Size = UDim2.new(1, -20, 0, 32)
-    b.BackgroundColor3 = BG_DARK
-    b.Text = name
-    b.TextColor3 = TEXT_DIM
-    b.Font = Enum.Font.GothamMedium
-    b.TextSize = 12
-    b.AutoButtonColor = false
-    b.Parent = tabList
-    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 6)
-
-    tabButtons[name] = b
-
-    b.MouseButton1Click:Connect(function()
-        for _, p in pairs(pages) do p.Visible = false end
-        for _, tb in pairs(tabButtons) do
-            tb.TextColor3 = TEXT_DIM
-            tb.BackgroundColor3 = BG_DARK
-        end
-        if pages[name] then pages[name].Visible = true end
-        b.TextColor3 = ACCENT
-        b.BackgroundColor3 = BG_ROW
-    end)
-    return b
-end
-
-local function sectionLabel(page, text)
+local function makeLabel(text, color)
     local l = Instance.new("TextLabel")
-    l.Size = UDim2.new(1, 0, 0, 20)
+    l.Size = UDim2.new(1, -8, 0, 22)
     l.BackgroundTransparency = 1
-    l.Text = string.upper(text)
-    l.TextColor3 = TEXT_DIM
-    l.Font = Enum.Font.GothamBold
-    l.TextSize = 10
+    l.Text = text
+    l.TextColor3 = color or Color3.fromRGB(200, 200, 220)
+    l.Font = Enum.Font.GothamMedium
+    l.TextSize = 12
     l.TextXAlignment = Enum.TextXAlignment.Left
-    l.Parent = page
+    l.Parent = scroll
     return l
 end
 
-local function toggleRow(page, name, initial, callback)
+local function makeHeader(text)
+    local l = Instance.new("TextLabel")
+    l.Size = UDim2.new(1, -8, 0, 26)
+    l.BackgroundTransparency = 1
+    l.Text = "— " .. text .. " —"
+    l.TextColor3 = Color3.fromRGB(255, 160, 80)
+    l.Font = Enum.Font.GothamBold
+    l.TextSize = 12
+    l.TextXAlignment = Enum.TextXAlignment.Left
+    l.Parent = scroll
+end
+
+local function makeToggle(name, initial, callback)
     local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, 0, 0, 38)
-    row.BackgroundColor3 = BG_ROW
+    row.Size = UDim2.new(1, -8, 0, 48)
+    row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
     row.BorderSizePixel = 0
-    row.Parent = page
-    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+    row.Parent = scroll
+    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
+    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
 
     local l = Instance.new("TextLabel")
-    l.Size = UDim2.new(1, -70, 1, 0)
-    l.Position = UDim2.fromOffset(12, 0)
+    l.Size = UDim2.new(1, -80, 1, 0)
+    l.Position = UDim2.fromOffset(14, 0)
     l.BackgroundTransparency = 1
     l.Text = name
-    l.TextColor3 = TEXT_MAIN
+    l.TextColor3 = Color3.fromRGB(230, 230, 240)
     l.Font = Enum.Font.GothamMedium
-    l.TextSize = 12
+    l.TextSize = 14
     l.TextXAlignment = Enum.TextXAlignment.Left
     l.Parent = row
 
-    local state = initial
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.fromOffset(50, 26)
+    btn.Position = UDim2.new(1, -64, 0.5, -13)
+    btn.BackgroundColor3 = initial and Color3.fromRGB(255, 120, 40) or Color3.fromRGB(70, 70, 90)
+    btn.Text = initial and "ON" or "OFF"
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 12
+    btn.Parent = row
+    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = btn
 
-    local switch = Instance.new("TextButton")
-    switch.Size = UDim2.fromOffset(38, 20)
-    switch.Position = UDim2.new(1, -50, 0.5, -10)
-    switch.BackgroundColor3 = state and ACCENT or Color3.fromRGB(55, 45, 48)
-    switch.Text = ""
-    switch.AutoButtonColor = false
-    switch.Parent = row
-    Instance.new("UICorner", switch).CornerRadius = UDim.new(1, 0)
-
-    local knob = Instance.new("Frame")
-    knob.Size = UDim2.fromOffset(14, 14)
-    knob.Position = state and UDim2.new(1, -17, 0.5, -7) or UDim2.new(0, 3, 0.5, -7)
-    knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    knob.BorderSizePixel = 0
-    knob.Parent = switch
-    Instance.new("UICorner", knob).CornerRadius = UDim.new(1, 0)
-
-    local api = {}
-    api.set = function(v)
-        state = v
-        switch.BackgroundColor3 = v and ACCENT or Color3.fromRGB(55, 45, 48)
-        knob.Position = v and UDim2.new(1, -17, 0.5, -7) or UDim2.new(0, 3, 0.5, -7)
-    end
-
-    switch.MouseButton1Click:Connect(function()
-        state = not state
-        api.set(state)
+    btn.MouseButton1Click:Connect(function()
+        local state = btn.Text ~= "ON"
+        btn.Text = state and "ON" or "OFF"
+        btn.BackgroundColor3 = state and Color3.fromRGB(255, 120, 40) or Color3.fromRGB(70, 70, 90)
         if callback then callback(state) end
     end)
-
-    return api
+    return btn
 end
 
-local function sliderRow(page, name, minV, maxV, initial, callback)
+local function makeSlider(name, minV, maxV, initial, callback)
     local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, 0, 0, 46)
-    row.BackgroundColor3 = BG_ROW
+    row.Size = UDim2.new(1, -8, 0, 58)
+    row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
     row.BorderSizePixel = 0
-    row.Parent = page
-    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+    row.Parent = scroll
+    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
+    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
 
     local l = Instance.new("TextLabel")
-    l.Size = UDim2.new(1, -70, 0, 18)
-    l.Position = UDim2.fromOffset(12, 4)
+    l.Size = UDim2.new(1, -80, 0, 20)
+    l.Position = UDim2.fromOffset(14, 6)
     l.BackgroundTransparency = 1
     l.Text = name
-    l.TextColor3 = TEXT_MAIN
+    l.TextColor3 = Color3.fromRGB(230, 230, 240)
     l.Font = Enum.Font.GothamMedium
-    l.TextSize = 12
+    l.TextSize = 13
     l.TextXAlignment = Enum.TextXAlignment.Left
     l.Parent = row
 
     local vl = Instance.new("TextLabel")
-    vl.Size = UDim2.new(0, 60, 0, 18)
-    vl.Position = UDim2.new(1, -72, 0, 4)
+    vl.Size = UDim2.new(0, 60, 0, 20)
+    vl.Position = UDim2.new(1, -74, 0, 6)
     vl.BackgroundTransparency = 1
     vl.Text = tostring(math.floor(initial * 100) / 100)
-    vl.TextColor3 = ACCENT
+    vl.TextColor3 = Color3.fromRGB(255, 160, 80)
     vl.Font = Enum.Font.GothamBold
-    vl.TextSize = 12
+    vl.TextSize = 13
     vl.TextXAlignment = Enum.TextXAlignment.Right
     vl.Parent = row
 
     local bg = Instance.new("Frame")
-    bg.Size = UDim2.new(1, -24, 0, 6)
-    bg.Position = UDim2.new(0, 12, 0, 32)
-    bg.BackgroundColor3 = Color3.fromRGB(50, 42, 45)
+    bg.Size = UDim2.new(1, -28, 0, 10)
+    bg.Position = UDim2.new(0, 14, 0, 32)
+    bg.BackgroundColor3 = Color3.fromRGB(50, 50, 65)
     bg.BorderSizePixel = 0
     bg.Parent = row
-    Instance.new("UICorner", bg).CornerRadius = UDim.new(1, 0)
+    local sc = Instance.new("UICorner"); sc.CornerRadius = UDim.new(1, 0); sc.Parent = bg
 
     local fill = Instance.new("Frame")
     fill.Size = UDim2.new(0, 0, 1, 0)
-    fill.BackgroundColor3 = ACCENT
+    fill.BackgroundColor3 = Color3.fromRGB(255, 120, 40)
     fill.BorderSizePixel = 0
     fill.Parent = bg
-    Instance.new("UICorner", fill).CornerRadius = UDim.new(1, 0)
+    local fc = Instance.new("UICorner"); fc.CornerRadius = UDim.new(1, 0); fc.Parent = fill
 
     local function setV(v)
         local pct = (v - minV) / (maxV - minV)
@@ -871,36 +802,36 @@ local function sliderRow(page, name, minV, maxV, initial, callback)
     end)
 end
 
-local function dropdownRow(page, name, options, initial, callback)
+local function makeDropdown(name, options, initial, callback)
     local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, 0, 0, 38)
-    row.BackgroundColor3 = BG_ROW
+    row.Size = UDim2.new(1, -8, 0, 50)
+    row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
     row.BorderSizePixel = 0
-    row.Parent = page
-    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+    row.Parent = scroll
+    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
+    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
 
     local l = Instance.new("TextLabel")
-    l.Size = UDim2.new(1, -130, 1, 0)
-    l.Position = UDim2.fromOffset(12, 0)
+    l.Size = UDim2.new(1, -160, 1, 0)
+    l.Position = UDim2.fromOffset(14, 0)
     l.BackgroundTransparency = 1
     l.Text = name
-    l.TextColor3 = TEXT_MAIN
+    l.TextColor3 = Color3.fromRGB(230, 230, 240)
     l.Font = Enum.Font.GothamMedium
-    l.TextSize = 12
+    l.TextSize = 14
     l.TextXAlignment = Enum.TextXAlignment.Left
     l.Parent = row
 
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.fromOffset(100, 24)
-    btn.Position = UDim2.new(1, -112, 0.5, -12)
-    btn.BackgroundColor3 = BG_DARK
+    btn.Size = UDim2.fromOffset(130, 30)
+    btn.Position = UDim2.new(1, -144, 0.5, -15)
+    btn.BackgroundColor3 = Color3.fromRGB(60, 60, 80)
     btn.Text = initial
-    btn.TextColor3 = ACCENT
+    btn.TextColor3 = Color3.new(1, 1, 1)
     btn.Font = Enum.Font.GothamBold
-    btn.TextSize = 11
-    btn.AutoButtonColor = false
+    btn.TextSize = 12
     btn.Parent = row
-    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 5)
+    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = btn
 
     local idx = 1
     for i, opt in ipairs(options) do
@@ -916,77 +847,62 @@ local function dropdownRow(page, name, options, initial, callback)
     return btn
 end
 
-local function buttonRow(page, name, callback, color)
-    local b = Instance.new("TextButton")
-    b.Size = UDim2.new(1, 0, 0, 34)
-    b.BackgroundColor3 = color or BG_ROW
-    b.Text = name
-    b.TextColor3 = color and Color3.new(1, 1, 1) or TEXT_MAIN
-    b.Font = Enum.Font.GothamMedium
-    b.TextSize = 12
-    b.AutoButtonColor = false
-    b.Parent = page
-    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 6)
+local function makeButton(name, callback)
+    local row = Instance.new("Frame")
+    row.Size = UDim2.new(1, -8, 0, 44)
+    row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
+    row.BorderSizePixel = 0
+    row.Parent = scroll
+    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
+    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
 
-    b.MouseEnter:Connect(function()
-        b.BackgroundColor3 = (color or BG_ROW):Lerp(Color3.new(1,1,1), 0.12)
-    end)
-    b.MouseLeave:Connect(function()
-        b.BackgroundColor3 = color or BG_ROW
-    end)
-    b.MouseButton1Click:Connect(function()
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(1, -16, 1, -8)
+    btn.Position = UDim2.new(0, 8, 0, 4)
+    btn.BackgroundColor3 = Color3.fromRGB(60, 100, 160)
+    btn.Text = name
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 13
+    btn.Parent = row
+    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = btn
+
+    btn.MouseButton1Click:Connect(function()
         if callback then callback() end
     end)
-    return b
+    return btn
 end
 
--- ============================================================
--- BUILD TABS
--- ============================================================
-makeTab("Block")
-makeTab("SSHT")
-makeTab("Info")
+makeHeader("Status")
+local statusLbl = makeLabel("Scanning...", Color3.fromRGB(255, 220, 100))
 
-local blockPage = makePage("Block")
-local sshtPage = makePage("SSHT")
-local infoPage = makePage("Info")
+makeHeader("Auto Block")
+makeToggle("Enable Auto Block", S.AutoBlock, function(v) S.AutoBlock = v end)
+makeSlider("Block Range", 5, 40, S.BlockRange, function(v) S.BlockRange = v end)
 
--- BLOCK page
-sectionLabel(blockPage, "Auto Block")
-toggleRow(blockPage, "Enable Auto Block", S.AutoBlock, function(v) S.AutoBlock = v end)
-sliderRow(blockPage, "Block Range", 5, 40, S.BlockRange, function(v) S.BlockRange = v end)
+makeHeader("SSHT")
+makeToggle("Enable SSHT", S.SSHTEnabled, function(v) S.SSHTEnabled = v end)
+makeDropdown("SSHT Mode", {"Legit", "Blatant"}, S.SSHTMode, function(v) S.SSHTMode = v end)
+makeSlider("SSHT Speed", 5, 100, S.SSHTSpeed, function(v) S.SSHTSpeed = v end)
 
-sectionLabel(blockPage, "Auto Parry")
-toggleRow(blockPage, "Aim on Parry", S.ParryAim, function(v) S.ParryAim = v end)
-toggleRow(blockPage, "Punch on Parry", S.ParryPunch, function(v) S.ParryPunch = v end)
+makeHeader("Box Visuals")
+makeToggle("Show Range Box", S.ShowRangeBox, function(v) S.ShowRangeBox = v end)
+makeToggle("Show Facing Box", S.ShowFacingBox, function(v) S.ShowFacingBox = v end)
 
-sectionLabel(blockPage, "Box Visuals")
-toggleRow(blockPage, "Show Range Box", S.ShowRangeBox, function(v) S.ShowRangeBox = v end)
-toggleRow(blockPage, "Show Facing Box", S.ShowFacingBox, function(v) S.ShowFacingBox = v end)
+makeHeader("Auto Parry")
+makeToggle("Aim on Parry", S.ParryAim, function(v) S.ParryAim = v end)
+makeToggle("Punch on Parry", S.ParryPunch, function(v) S.ParryPunch = v end)
+makeSlider("Parry Aim Delay (s)", 0.02, 0.3, S.ParryAimDelay, function(v) S.ParryAimDelay = v end)
+makeSlider("Parry Prediction (s)", 0, 0.4, S.ParryPredict, function(v) S.ParryPredict = v end)
 
--- SSHT page
-sectionLabel(sshtPage, "SSHT")
-toggleRow(sshtPage, "Enable SSHT", S.SSHTEnabled, function(v) S.SSHTEnabled = v end)
-dropdownRow(sshtPage, "SSHT Mode", {"Legit", "Blatant"}, S.SSHTMode, function(v) S.SSHTMode = v end)
-sliderRow(sshtPage, "SSHT Speed", 5, 100, S.SSHTSpeed, function(v) S.SSHTSpeed = v end)
-
--- INFO page
-sectionLabel(infoPage, "Killer Detection")
-dropdownRow(infoPage, "Manual Killer", {"Auto", "c00lkidd", "Slasher", "Noli", "JohnDoe", "1x1x1x1", "Sixer", "Nosferatu", "Azure", "All"}, S.ManualKiller, function(v)
+makeHeader("Killer Detection")
+makeDropdown("Manual Killer", {"Auto", "c00lkidd", "Slasher", "Noli", "JohnDoe", "1x1x1x1", "Sixer", "Nosferatu", "Azure", "All"}, S.ManualKiller, function(v)
     S.ManualKiller = v
+    statusLbl.Text = "Manual override: " .. v
+    statusLbl.TextColor3 = Color3.fromRGB(255, 200, 100)
 end)
 
-local statusLbl = Instance.new("TextLabel")
-statusLbl.Size = UDim2.new(1, 0, 0, 22)
-statusLbl.BackgroundTransparency = 1
-statusLbl.Text = "Scanning..."
-statusLbl.TextColor3 = Color3.fromRGB(255, 220, 100)
-statusLbl.Font = Enum.Font.GothamMedium
-statusLbl.TextSize = 11
-statusLbl.TextXAlignment = Enum.TextXAlignment.Left
-statusLbl.Parent = infoPage
-
-buttonRow(infoPage, "Refresh Killers", function()
+makeButton("Refresh Killers", function()
     local count = scanAllKillers()
     if count > 0 then
         local names = detectKillerNames()
@@ -996,66 +912,23 @@ buttonRow(infoPage, "Refresh Killers", function()
         statusLbl.Text = "Refreshed — 0 killers found"
         statusLbl.TextColor3 = Color3.fromRGB(255, 100, 100)
     end
-end, ACCENT_DIM)
-
--- status updater
-task.spawn(function()
-    while gui.Parent do
-        task.wait(2)
-        pcall(function()
-            local names = detectKillerNames()
-            if #names > 0 then
-                statusLbl.Text = #names .. " killers: " .. table.concat(names, ", ")
-                statusLbl.TextColor3 = Color3.fromRGB(90, 255, 150)
-            else
-                statusLbl.Text = "No killers yet — waiting"
-                statusLbl.TextColor3 = Color3.fromRGB(255, 180, 60)
-            end
-        end)
-    end
 end)
 
--- Default tab
-for _, tb in pairs(tabButtons) do
-    tb.TextColor3 = TEXT_DIM
-    tb.BackgroundColor3 = BG_DARK
-end
-tabButtons["Block"].TextColor3 = ACCENT
-tabButtons["Block"].BackgroundColor3 = BG_ROW
-pages["Block"].Visible = true
-
--- ============================================================
--- OPEN / CLOSE
--- ============================================================
-local windowOpen = false
-local function setOpen(v)
-    windowOpen = v
-    window.Visible = v
-    toggleBtn.Visible = not v
-end
-
-toggleBtn.MouseButton1Click:Connect(function() setOpen(true) end)
-closeBtn.MouseButton1Click:Connect(function() setOpen(false) end)
-
-UserInputService.InputBegan:Connect(function(input, processed)
-    if processed then return end
-    if input.KeyCode == Enum.KeyCode.K then
-        setOpen(not windowOpen)
-    end
-end)
-
--- ============================================================
 -- DRAG
--- ============================================================
-local dragging, dragStart, startPos = false, nil, nil
+local dragging, dragStart, startPos
+local locked = false
 
-header.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1
-       or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = true
-        dragStart = input.Position
-        startPos = window.Position
+panel.InputBegan:Connect(function(input)
+    if locked then return end
+    if input.UserInputType ~= Enum.UserInputType.MouseButton1
+       and input.UserInputType ~= Enum.UserInputType.Touch then return end
+    local hit = gui:GetGuiObjectsAtPosition(input.Position.X, input.Position.Y)
+    for _, obj in ipairs(hit) do
+        if obj:IsA("TextButton") then return end
     end
+    dragging = true
+    dragStart = input.Position
+    startPos = panel.Position
 end)
 
 UserInputService.InputChanged:Connect(function(input)
@@ -1063,7 +936,7 @@ UserInputService.InputChanged:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseMovement
        or input.UserInputType == Enum.UserInputType.Touch then
         local delta = input.Position - dragStart
-        window.Position = UDim2.new(
+        panel.Position = UDim2.new(
             startPos.X.Scale, startPos.X.Offset + delta.X,
             startPos.Y.Scale, startPos.Y.Offset + delta.Y
         )
@@ -1074,8 +947,49 @@ UserInputService.InputEnded:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1
        or input.UserInputType == Enum.UserInputType.Touch then
         dragging = false
-        dragStart = nil
     end
 end)
 
-print("[HunterBlock] v8 loaded.")
+lockBtn.MouseButton1Click:Connect(function()
+    locked = not locked
+    lockBtn.Text = locked and "🔒" or "🔓"
+    lockBtn.BackgroundColor3 = locked and Color3.fromRGB(180, 30, 30) or Color3.fromRGB(80, 80, 100)
+end)
+
+local function setOpen(open)
+    panel.Visible = open
+    toggleBtn.Text = open and "×" or "HB"
+    toggleBtn.BackgroundColor3 = open and Color3.fromRGB(80, 80, 100) or Color3.fromRGB(255, 120, 40)
+end
+
+toggleBtn.MouseButton1Click:Connect(function()
+    setOpen(not panel.Visible)
+end)
+
+closeBtn.MouseButton1Click:Connect(function()
+    setOpen(false)
+end)
+
+UserInputService.InputBegan:Connect(function(input, processed)
+    if processed then return end
+    if input.KeyCode == Enum.KeyCode.K then
+        setOpen(not panel.Visible)
+    end
+end)
+
+-- Status loop
+task.spawn(function()
+    while true do
+        task.wait(2)
+        local names = detectKillerNames()
+        if #names > 0 then
+            statusLbl.Text = #names .. " killers: " .. table.concat(names, ", ")
+            statusLbl.TextColor3 = Color3.fromRGB(90, 255, 150)
+        else
+            statusLbl.Text = "No killers yet — waiting"
+            statusLbl.TextColor3 = Color3.fromRGB(255, 180, 60)
+        end
+    end
+end)
+
+print("[HunterBlock] v8 Loaded")
