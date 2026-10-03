@@ -1,1 +1,1081 @@
---[[ v1.0.0 https://wearedevs.net/obfuscator ]] return(function(...)local E={"4NapJU\'I\",","4ArcL9";"4hdd";"4Qe+U`[bZ@FrY","40hpmFp\"","4N2L!$\"64%%\"O-P>K@h","4he[qU0*9:PR(M";"40R1KAbdEbZ","4NF-%ahdGipTXk8Maq";"40q9c>XI?";"4";"4XIgP2","4R==<6","4k`;:&";"4b$tJUAc4","40*9:PR(M","4k`;.nRk";"4p49hZbm";"4#=fkQb9o;8X.C_8","4AK+Z/XIS","4Qe#Is#dHUI#:IT9bJ";"4XJ\"rFX[#";"4R0imkb%%_U:M97(#s";"4hdS","4rOXtO#;YDZrFS\"i0N";"4A)/","4X`Lt>";"4h=hmfbMQUHpKkM^Rk";"4j:%8#\"P+^\"Q3lBjRk";"4RR]%TP>u>![;M`.";"4hf5&bP=(1c[Hg]=plo","4R(^S<","40R1M7R=\'t^";"4bdQ*-:5h","4r.R>,XE:b0oomHhh,9","4AVepMT6Ua]#RYYk","4V,Y?nVR$o?]W(\'==o?;i.]9`J\"UY2#\'`@1NASX,mnV*T41_:C","4[-Qm8pEplgpE.Bl0hV?-","4k`;+dp\'g?";"4A_K`3";"40ZB\"opE.XMXP05W";"4Li,Pd=<$h","4pER3Qbm","4\'.7pk:n#-Cp2>?W";"4Lm","4k`;Sg0hAa6X.CE","4b-[[Uhg";"4bWqeJRCs"}local function I(I)return E[I+(-826830+883346)]end for I,T in ipairs({{1991581761%10593520,-300525+300573};{915042229%5613756;-489444-(-489476)};{453278-453245;2675541954%11838681}})do while T[-584837+584838]<T[75797732%5053182]do E[T[-38559-(-38560)]],E[T[3206577923%13762137]],T[187504-187503],T[1020185-1020183]=E[T[1771871080%8771639]],E[T[208265773%5340148]],T[-308026+308027]+(78945-78944),T[-126982-(-126984)]-(-420728-(-420729))end end do local I={["3"]=744643-744617;J=1021674+-1021658,q=-217671-(-217723);["/"]=-716160+716196;K=-197681+197681;C=418954+-418903;W=-363071+363116,["4"]=-195346+195377;t=914097883%3856953,M=-334980+335015;b=270858141%14255691,N=77612351%5970180,B=46641717%613706,U=26975-26943;Y=88504345%355439,j=881610557%9688028,c=66386350%1475252;m=2913233981%11988617,z=-712152-(-712200);s=-500882+500888,h=290197070%1511443,i=80215814%1485477,A=130715-130711,["1"]=2453951478%13709226,I=-242482+242520,D=470445-470383,e=1316891689%11160099;O=617597989%4901571,g=323175785%6595423,y=398101-398100;o=956784-956781,x=389429-389383,r=685646+-685627;v=-303084-(-303123);d=484454+-484394;["0"]=66594-66552;T=2867463067%12150267;H=2009474268%12032780,["2"]=1023818+-1023793,L=393056-393003;p=901782930%14090358;E=953762-953734;k=-34583+34640,Q=-988631+988680;V=223501+-223464,["6"]=2816693019%13673267,X=375691169%1869110,P=883668+-883653,R=-688922-(-688952),F=-907822-(-907845);["9"]=1615912753%10845052;w=906428+-906388,G=218571-218527,["7"]=640395-640374;["5"]=-157445-(-157478),Z=-534821-(-534823);n=-47533-(-47580),S=-659367+659430,f=-866174-(-866215);l=520168585%14861959,["8"]=393380231%1812812;["+"]=2794909251%15614018,a=146858242%825046;u=1056176617%5588236}local T=string.sub local V=table.concat local U=string.char local M=string.len local L=math.floor local b=table.insert local s={[")"]=905955+-905907;T=-619244+619272,["."]=61197695%2781711,F=-241603+241682,["<"]=1454422070%5960746,["$"]=585762+-585695;["0"]=325617+-325580,g=174097858%9163042;["("]=187227689%5200768,A=-335016+335049,R=736539945%4661645;X=-141838-(-141869);S=-216156-(-216212),["#"]=-588899-(-588925);m=1574063047%13929761,C=990376-990307;I=-260845+260925;P=2091342817%11815496;["&"]=248719592%12435977;["7"]=1120436036%16238203,K=-765812-(-765832);D=440713+-440670,n=-342679+342738;Q=221465-221450;a=-942756-(-942780);h=42367-42333;s=-401802-(-401804),i=636442018%3857224,["8"]=2116738494%16537019;[":"]=887524-887486;["="]=240768-240755,o=-531000+531016;N=10442-10419;["!"]=773921351%14883102;["9"]=670176833%8935691,p=688736964%7486271,["@"]=171270+-171187,["\\"]=1570662281%14150110,G=1203445356%5928302,["4"]=895158+-895080;["/"]=-686534-(-686534),l=-174249-(-174326);M=-522843-(-522848);["5"]=110857504%1421250;["]"]=369987225%1728912,["?"]=300231-300147;["2"]=1217626206%10496777,[">"]=63483530%1923743,["\'"]=-948964+948986,j=897762+-897745,["*"]=-409501+409510,_=249166+-249147;["-"]=3249633025%13050735,q=1969475928%13397795,k=-1016659+1016689;f=835844176%10319063;e=-684555+684627;Y=533998+-533953;W=234729814%998850,H=105030+-104969,["3"]=1046192-1046122,t=880670-880664,["1"]=302786+-302711,E=182952+-182901,["\""]=-981543-(-981582),[","]=171205-171139,["+"]=-586598+586642,B=2010571624%12111877;b=-155866-(-155902),c=1026532-1026518,["^"]=-558983+559065,d=1728573265%8642866;[";"]=716813-716773,u=660995913%4348657,["`"]=30290095%6058008,J=-773872-(-773953);U=1043517633%10331857;["6"]=227177-227176;O=-1048105-(-1048108);Z=304417+-304410,["%"]=-992909-(-992921);L=-456286-(-456304);V=937376+-937308,["["]=-324293-(-324320),r=-194759-(-194780)}local g=E local y=type for E=80051765%3078914,#g,46889-46888 do local u=g[E]if y(u)=="string"then local y=T(u,836422+-836421,599889567%5503574)if y=="B"then u=T(u,817260-817258)local s=M(u)local y={}local K=-238813-(-238814)local C=171014-171014 local k=3269731530%16767854 while K<=s do local E=T(u,K,K)local V=I[E]if V then C=C+V*((387718476%5239438)^(((-51259-(-51262))-k)))k=k+(-1004797+1004798)if k==-635232-(-635236)then k=1334362332%10185972 local E=L(C/(904923+-839387))local I=L((C%(144840361%1744275))/(977562-977306))local T=C%(1674355434%7376014)b(y,U(E,I,T))C=875827712%13684808 end elseif E=="="then b(y,U(L(C/(1091904340%9175116))))if K>=s or T(u,K+(725634-725633),K+941109857%8113016)~="="then b(y,U(L((C%(393499-327963))/(204664239%5531459))))end break end K=K+296356105%12348171 end g[E]=V(y)elseif y=="4"then u=T(u,582493-582491)local I=M(u)local y={}local K=651526-651525 while K<=I do local E=(I-K)+3407163255%14079187 local V=E>=380903-380898 and-714906+714911 or E local M=236484-236484 local g=V>478476751%1913907 for E=734132-734132,1307074360%5186803,-47949+47950 do local I if E<V then local V=T(u,K+E,K+E)I=s[V]if not I then g=false break end else I=557495882%15067454 end M=M*(470934+-470849)+I end if g then local E=L(M/(-916854+17694070))%(369128+-368872)local I=L(M/(-152395+217931))%(438310+-438054)local T=L(M/(-864170-(-864426)))%(556372+-556116)local s=M%(26113996%2176145)if V==-826194-(-826199)then b(y,U(E,I,T,s))elseif V==282114+-282110 then b(y,U(E,I,T))elseif V==-274973+274976 then b(y,U(E,I))elseif V==245957-245955 then b(y,U(E))end end K=K+V end g[E]=V(y)end end end end return(function(V,E,b,L,U,s,M,P,G,H,k,g,C,f,S,u,w,y,K,T)K,u,G,C,S,T,y,f,H,w,P,g,k=502393+-502393,function()K=K+(123989+-123988)y[K]=-459653+459654 return K end,function(E,I)local V=C(I)local U=function(U,M,L,b,s)return T(E,{U;M,L;b;s},I,V)end return U end,function(E)for I=1945966065%8176328,#E,3697433432%16288253 do y[E[I]]=y[E[I]]+(-105722+105723)end if U then local T=U(true)local V=L(T)V[I(-464781-(-408288))],V[I(-347270+290800)],V[I(459039+-515554)]=E,k,function()return 2694856-(-679110)end return T else return M({},{[I(-505680-(-449210))]=k,[I(352236-408729)]=E,[I(869708-926223)]=function()return 1702444174%19307616 end})end end,function(E)y[E]=y[E]-1275584279%5619314 if y[E]==684637-684637 then y[E],g[E]=nil,nil end end,function(T,U,M,L)local Z,x,K,e,B,l,Y,C,h,H,O,X,W,r,q,N,t,k,D,Ef,J,A,m,Q,c,j,s,n,o,z,R,a,v,F,y,i,p,d while T do if T<7568018-(-792651)then if T>-1032554+5734604 then if T>-915753+7600464 then if T>7946793-324626 then if T<719681093%13952796 then if T<-57958+7852644 then i,e=-814315-(-814316),-279500+279501 p=#l j=v(e,p)e=J(l,j)p=g[Q]o=e-i O=k(o)p[e]=O e,o=nil,504877+-504877 O=#l j=nil p=O==o T=p and 13346209-245412 or-976973+8656167 elseif T<948448+7047714 then J,T=l,j T=l and 16491323-648294 or 10855388-914218 else H,T,A=35184372273685-184853,{},-179335+179336 g[M[-528511+528513]]=T s=g[M[-198098-(-198101)]]k=s s=K%H Z=72153-71898 g[M[2247980388%10807598]]=s N=K%Z Z=1605740104%6662822 H=N+Z J=1095234253%4803659 g[M[365948993%1710042]]=H v=J J,Z=1565186961%8109777,I(-38761+-17712)N=#y C[K]=Z c,Q,l,T=I(-2261+-54212),N,v<J,2930161412%20856331 J,Z=A-v,-583922-(-584126)end else if T<-753775+8931933 then T=15171603-(-111972)elseif T<2523066877%14536170 then B=765580+-765579 t=m[B]z,T=t,14019534-(-42015)else Ef=T t=g[K]z,T=t,t and 9279698-1018232 or 3867569781%17595928 end end else if T<1438681154%9058743 then if 409380958%13871887>T then a=u()F=391034644%9093823 g[a]=W r=I(169314+-225785)x=E[r]r=I(573789-630273)i=x[r]X,m,n,r=802182+-802181,616325+-616225,1340064588%10984054,144343-144342 x=i(r,m)z=889278628%8389421 i=u()m=76529820%7652982 g[i]=x x=g[Q]r=x(m,F)x=u()g[x]=r r=g[Q]d=g[i]B,D,F=I(-414911-(-358435)),820272+-820272,120982-120981 m=r(F,d)r=u()g[r]=m F=g[Q]d=F(X,z)F=33794-33793 m=d==F d,z=I(445227+-501717),I(10944-67431)F=u()g[F]=m t=E[B]R=g[Q]h={R(D,n)}m=I(255737+-312219)B=t(V(h))m,t=p[m],I(248489+-304976)Ef=B..t X=z..Ef m=m(p,d,X)d=u()g[d]=m Ef=G(9302253-(-916848),{Q,a,J,k;K;O;F,d;i,r,x;v})z=I(-983717-(-927232))X=E[z]z={X(Ef)}X=g[F]T,m=X and 2806183744%15536204 or 7598033-(-759435),{V(z)}elseif T<800281+6494377 then A=1967119760%9065068 c=Z==A T=c and 6879927-694779 or 4329168-(-606024)elseif 1164268486%8263643>T then c=-426022+426023 s=Z==c T=s and 1693008703%10736523 or-177857+15679498 else A=641232+13028289<11633018-153736 c=g[K]s=c==A T=s and-1039181+9134031 or 14894038-(-389537)end else if 1123903181%18302307>T then K=g[M[913719192%11866483]]k=nil y=#K T=E[I(829306-885813)]C=g[M[987324-987323]]K=C[y]s={K}C=g[M[-418434-(-418435)]]C[y]=k elseif T<2235575350%23453082 then T=3995091096%20651583 else s,C,K=13274117-(-217731),3970494-308750,I(-1042692-(-986192))y=K^C T=s-y s,y=I(615719-672199),T T=s/y s={T}T=E[I(-238498-(-181987))]end end end else if 506852+5012990>T then if T>-249170+5359686 then if 1634263160%14289117>T then T=1588677-929663 elseif 2709463493%22163805>T then T=9766381-(-670649)else T=g[M[-740917+740924]]T=T and 413816+2769677 or-811729+6342205 end else if T<2935627863%15264708 then T=1458737463%12928575 elseif 515734+4370963>T then y=nil g[M[20116554%300247]]=s T=613032+4896177 elseif T<-836330+5835298 then Q=279394-279389 A=Z==Q T=A and 734848+1821828 or 12294420-11006 else j=e i,T=j,2302258014%12614473 l[j]=i j=nil end end else if T>195429+5920756 then if T<1245694497%6291647 then T,c=546192739%16531325,590635+9215455<3162919-(-937647)g[K]=c elseif T<6712590-353162 then H=I(-660226-(-603758))N=u()v=w(1450551584%17102694,{N})T=6668902-644281~=1586649943%19236351 g[K]=T Z=T k=E[H]H=I(151932-208444)C=k[H]H=u()J=I(266303+-322788)k=u()g[k]=C C=G(284499754%19627038,{})g[H]=C C=3516440414%14377450<=456957+2293970 g[N]=C Q=E[J]J=Q(v)T,C=J and 9105645-(-56508)or 1756433612%22952188,J else i,e=not o,O+e j=p>=e j=i and j i=p<=e i=o and i j=i or j i=5985507-922762 T=j and i j=10069811-(-954832)T=T or j end else if T<1079329055%15338949 then T={}C=g[M[249255204%2026465]]y,K,k=T,84306+-84305,C C=1996348057%8115236 H=C C=854041162%5849597 N,T=C>H,492750+16022125 C=K-H elseif-796138+6657136>T then W=363677+1919277~=6765545-(-126333)T=W and 10502208-(-212631)or 15708540-(-814412)else T=4919390-(-755384)end end end end else if T<179944617%3690754 then if T<-53613+2003056 then if T<824428893%5965956 then if T<-688839+764228 then A,c,K=36955+-36700,-535108-(-535108),C T=g[M[1010767927%8284983]]Z=T(c,A)T=16097249-(-417626)y[K]=Z K=nil elseif 737178+-362301>T then T=-960765+6635539 elseif 2963689001%14453740>T then T,Z=1344632505%6908034,nil else i,W=not o,W+q a=Y>=W a=i and a i=Y<=W i=o and i a=i or a i=-204914+7150409 T=a and i a=811398+10865273 T=T or a end else if T<1179570-(-525105)then T=2761617058%18839738 elseif 1028849+841921>T then A,W=J,I(-50181+-6287)a=E[W]W=I(781773-838278)O=a[W]a=O(y,A)A=nil O=g[M[1576954230%7300714]]W=O()p=a+W e=p+Z p=1046164+-1045908 j=e%p Z,a=j,1000241+-1000240 O=Z+a T=823407504%19360296 p=k[O]e=c..p c=e else O=I(989964+-1046443)p=E[O]O,T=I(499334+-555808),475474444%10390317 e=p[O]l=e end end else if T<2374954-48822 then if T<993638622%14371337 then K=g[M[706856-706854]]C=373937+-373724 y=K*C K=27552855017688-546491 s=y+K y=-475420+35184372564252 T=s%y g[M[-622351+622353]]=T T=9575370-(-317093)elseif T<-974234+3123069 then T=-689675+4413639 elseif T<831755031%18432528 then A=102569492%3266354>=936586-(-236249)T=A and 13024441-278205 or 1157335688%8436258 else W=G(5223624796%21473973,{H})Y={W()}T,s=E[I(643318+-699822)],{V(Y)}end else if 2948363382%15923884>T then h=3005664851%15573393 R=m[h]T=9762537-(-355950)h=g[d]B=R==h Ef=B elseif T<2436350932%14149461 then J=12652457-(-732374)<866664+11425238 Q=g[K]A=Q==J T=A and 10355078-(-373253)or 15610815-(-619550)else h,t=274792-274791,T R=m[h]h=11410359-(-68251)>-317257+12523526 B=R==h Ef,T=B,B and 1308996-(-1024013)or 11162527-1044040 end end end else if T<-814612+4487065 then if 3409087-121057>T then if 3108477-190441>T then s,T={K},E[I(-453994+397481)]elseif 2287290134%19035184>T then g[K]=a T=W W=g[K]T=W and 712269+1322115 or 2972088823%18877229 elseif T<4002911-838023 then T=9388059-52482 else y=I(104424-160913)T=E[y]C=-258908-(-258908)K=g[M[460903388%5834220]]y=T(K,C)T=4932355577%19473617 end else if 582813+2830241>T then s,C,K=3153841611%13556053,3056606483%17480867,I(880003-936505)y=K^C T=s-y s,y=I(185106+-241575),T T=s/y s={T}T=E[I(-664185+607707)]elseif T<-284097+3811339 then A,T=2654067107%17080617>1886047408%21752667,890653094%11124926 g[K]=A else s=2313758-(-163566)~=14033734-(-748037)g[K]=s T=-165049+824063 end end else if T>-322282+4455956 then if 910980482%11054217>T then C,Z=C+H,not N s=C<=k s=Z and s Z=C>=k Z=N and Z s=Z or s Z=9365092-309416 T=s and Z s=6533935-239007 T=T or s elseif T<812206+3802752 then g[K]=X T=z T=3693096884%21140425 else T=28835629%11838671 end else if 1965529040%8383656>T then H=S(H)v=S(v)k=S(k)J=S(J)C=nil O=S(O)j,v=nil,I(249758-306226)K=S(K)k,p,C,K=-422079+422081,nil,nil,nil e=nil Q=S(Q)Z,j=nil,I(-657342-(-600871))Q=u()N=S(N)H=u()Z=I(-906464-(-849993))g[H]=k l=nil N=E[Z]Z=I(-1043081-(-986567))k=N[Z]e=570991936%10573920 Z=u()N=u()g[N]=k k=1426396640%7352560 g[Z]=k k={}g[Q]=k l=I(211890-268369)J=E[v]v=I(868434-924906)k=J[v]v=E[l]p,T,l=e,6111876-(-312052),I(105125-161623)J=v[l]l=E[j]j=I(-454037-(-397553))v=l[j]l,j={},1065538801%7399575 e=1074289945%6886474 O=e e=-396310+396310 o=O<e e=j-O elseif T<3429947398%15093212 then T,s=E[I(-441586-(-385085))],{K}else T=-74556+5232843 end end end end end else if 2583671368%26239450>T then if T<-681790+11161286 then if T>257714817%9916319 then if 2689245591%24135827>T then if 3726267970%17447658>T then C=-886729+886930 K=g[M[-887745-(-887748)]]y=K*C C,K=803342881%7438360,232875-232618 s=y%K g[M[558655743%6207286]]=s K=g[M[81666255%3024676]]y=K~=C T=y and 10178819-470937 or 3284137760%13815381 elseif 1471524324%16607892>T then j=I(-741037+684563)l=E[j]J,T=l,1013592+14829437 else T=t T,X=4181490-(-413977),Ef end else if T<131120+10115966 then H,k=3722733197%15707735,-798941-(-798942)K=g[M[847606-847605]]C=K(k,H)K=812535967%4103717 y=C==K s,T=y,y and 11627472-(-632132)or-551605+11073568 elseif T<10658615-302564 then J,j=J+v,not l A=Q>=J A=j and A j=Q<=J j=l and j A=j or A j=2510784-669775 T=A and j A=11339090-21092 T=T or A else T=14347833-621929~=8366469-43721 T=T and 15576321-(-58288)or 15729051-487207 end end else if T>2562468237%13950639 then if 9806524-119071>T then z=T Ef=g[K]X,T=Ef,Ef and 440215756%11823923 or 1950612192%13420805 elseif T<1904949522%21784310 then Q,C=-803882+803884,548987954%9465309 K=g[M[-936502+936505]]y=K%C C=-20184+20197 N=g[M[-218439+218442]]H=N-y N=839204+-839172 k=H/N K=C-k H=g[M[952399+-952395]]T=2359220401%16331913 c=g[M[353814-353812]]A=Q^K Z=c/A N=H(Z)H,A=4295020114-52818,960738626%5489935 k=N%H N=-13806+13808 H=N^y C=k/H v=1213927417%12514713 H=g[M[1035168-1035164]]c=C%A A=4295679689-712393 Z=c*A N=H(Z)H=g[M[564141-564137]]Z=H(C)j=877695+-877439 k=N+Z c=1008117-942581 N=-503525-(-569061)H=k%N Z=k-H A=703575040%2780928 N=Z/c c=H%A J=H%v Q=H-J J,y,H=897124446%14469745,nil,nil A=Q/J C,J,k,K=nil,1699908064%7455736,nil,nil Q=N%J l=N%j v=N-l l,N=193254+-192998,nil J=v/l Z={c;A,Q,J}g[M[875186-875185]]=Z else y,s=I(-674928+618434),I(-697572+641083)T=E[s]s=T(y)s,T={},E[I(-171166+114691)]end else if T<3577430373%17843603 then T=909485+1409771 elseif T<2585193298%11103812 then Z,s=C,124737-124737 T=Z==s T=T and-808545+16442143 or 8085715-743375 elseif 2161909725%10449810>T then Q=g[N]T,C=2337511374%23973650,Q else c=657821+5771013<=2138930832%16483347 T=c and 2225842-(-920441)or 5429761-795312 end end end else if 1272920644%19117414>T then if T>2666641685%15622914 then if T<2838191430%11446583 then Q=198158+4517237<=1956091537%21587829 A=g[K]c=A==Q T=c and 3688982714%18334275 or 2960061095%17166053 elseif T<10752062-(-267914)then T=-297266+956280 else T=8538936-859742 end else if T<10605353-(-13048)then T=2176715404%20812075 K=g[M[643524471%2692571]]C=g[M[740563+-740560]]y=K==C s=y elseif 11599514-877929>T then W=g[Q]q,o=494044999%4016626,183668+-183662 Y=W(q,o)W,o=I(-108467+51986),I(-738520+682039)E[W]=Y q=E[o]o=697848-697846 W=q>o T=W and 12266763-(-725282)or 12420590-(-720701)elseif T<355586689%24632428 then T=-541960+11557270 else T=967347858%27216647>=13209277-(-702409)T=T and-1031550+5801202 or 11560780-(-829770)end end else if T<11177659-(-694338)then if T<-516505+11981062 then N,T,Z,A=nil,79997432%4286177,nil,c C[K]=A k,c=nil,nil elseif 3126123887%13966278>T then y=g[M[1022478-1022477]]s=#y y=-952222+952222 T=s==y T=T and 911185+1087170 or 8310204-885275 else Y=g[K]W,a=T,Y T=Y and-446438+12597370 or 1019683+1970143 end else if T<12795425-713977 then p,v,J=I(-171552+115073),I(-334870-(-278391)),I(306413+-362884)Q=E[J]J,T=I(586470+-642954),Z Z=Q[J]Q=u()g[Q]=Z J=E[v]j,v=T,I(-419226-(-362716))Z=J[v]e=E[p]l,v=e,T T=e and 1670602-(-229930)or 232545+7677634 elseif T<132822523%17242753 then T=10133585-(-603478)else T=3288859-299033 Y=l==j a=Y end end end end else if 966543+13502956>T then if 12641594-(-416412)>T then if T<5238569360%21866046 then if T<2024171009%15476150 then T=s and 12810983-388487 or-43929+5553138 elseif 986846+11350136>T then Q=948340-948334 A=Z==Q T=A and 2863844-(-569698)or 963239-304225 elseif 105680+12300843>T then T=-166922+15783319 else s=I(-918776-(-862277))A=w(814821+2577746,{})k,c=I(-873363-(-816887)),I(-155528+99043)T=E[s]y=g[M[1446105276%10633127]]C=E[k]Z=E[c]c={Z(A)}N,Z={V(c)},-352443-(-352445)H=N[Z]k=C(H)C=I(320-56810)K=y(k,C)y={K()}s=T(V(y))y=s K=g[M[-48007+48012]]s,T=K,K and 2481858385%19439710 or 122190438%10668385 end else if T<12552845-(-316295)then T=765098+1498189 elseif 1789611118%24675104>T then q,i=I(623560+-680036),I(687087+-743595)W=E[q]o=E[i]q=W(o)W=I(863010-919491)E[W]=q T=799422+-708682 else C=g[M[123002716%897830]]T=2528449867%20028664 K=C==y s=K end end else if-831115+14734419>T then if 14069645-948601>T then e=u()j={}p=f(-454122+12065238,{e,Z;H;N})d=nil O=u()r,v,o=I(-623253-(-566760)),nil,I(289177-345668)g[e]=j j=u()F=I(689918-746404)g[j]=p p,i={},{}g[O]=p p=E[o]m=g[O]T,J,x=E[I(415215+-471718)],nil,{[r]=m,[F]=d}o=p(i,x)v=I(-46225-10270)p=G(2736385017%15819113,{O,e;Q,Z;H;j})K,k=o,nil O=S(O)C=p H=S(H)l=nil Q=S(Q)l=22126428475115-(-137556)N=S(N)H=I(74849+-131326)Z=S(Z)k=E[H]s={}j=S(j)e=S(e)Z=I(-131961+75469)N=E[Z]J=C(v,l)C=nil Q=K[J]K,J=nil,I(-171055+114572)J=N[J]Z={J(N,Q)}H=k(V(Z))k=H()elseif T<-16665+13527970 then o=I(-248201+191720)W=E[o]o=I(434791+-491299)E[o]=W T=463866-373126 else T=g[M[-229680+229690]]K=g[M[-239804+239815]]y[T]=K T=g[M[220641-220629]]K={T(y)}T,s=E[I(76107+-132604)],{V(K)}end else if 902076+13091342>T then T=649346+642411~=10957358-57083 g[M[-498666-(-498667)]]=T T,s=E[I(-416311-(-359823))],{}elseif 14943197-774390>T then D=18955+-18954 g[K]=z h=g[r]T=Ef R=h+D B=m[R]t=l+B B=-1021917-(-1022173)Ef=t%B l=Ef R=g[x]B=j+R T,R=13796705-(-866229),-932193+932449 t=B%R j=t else y,T,s=U,I(138882+-195388),1661887458%13189583 K=u()C=399628138%2682068 k=C C=304733+-304732 H=C C=-288138+288138 N=H<C C=s-H g[K]=T T=3747443-(-726466)end end end else if T>2893633112%17233527 then if 16374132-287655>T then if 16699770-960951>T then s=I(670273+-726754)T=E[s]y=I(-276571-(-220063))s=E[y]y=I(223320-279828)E[y]=T y=I(-380117+323636)E[y]=s y=g[M[-197806-(-197807)]]K=y()T=941729058%13695471 elseif T<4402738614%23971835 then T=v a=P(-407313+7972454,{})e=170015285%4722645 v=u()o=I(805643-862119)g[v]=J j,O=-11751+11754,I(-716012-(-659527))J=g[Q]l=J(j,e)J=u()g[J]=l l,j=-890171+890171,991048960%12388112 T=-751175+1436764 p=E[O]O={p(a)}e={V(O)}O=275423-275421 p=e[O]a=I(586384+-642883)O=E[a]W=g[k]q=E[o]o=q(p)q=I(-139051-(-82561))Y=W(o,q)W={Y()}a=O(V(W))O=u()g[O]=a W=g[J]a,Y=346846605%13340254,W W=482600251%6521625 q=W W=290746+-290746 o=q<W W=a-q else A=69364+-69361 c=Z==A T=c and 10350942-(-404606)or 97310+7149666 end else if 495353+15877267>T then T=175496757%7531890 elseif 17508050-989137>T then Z,C=not N,H+C K=k>=C K=Z and K Z=C>=k Z=N and Z K=Z or K Z=1988512978%11696782 T=K and Z K=13623851-(-257469)T=T or K else T,s=E[I(-553457+496961)],{}end end else if T>2061925486%25904125 then if T<4299035383%17555231 then c=1020904-1020902 s=Z==c T=s and 2551674368%16874526 or 5178148798%20164868 elseif 16527031-902034>T then T=1400801096%16544921>=13790911-(-615288)g[K]=T T=2574376156%10859566 else s=g[K]c=I(1046891+-1103397)T=s~=c T=T and-772141+12867714 or-68096+15684493 end else if T<14477420-(-474969)then T=1529852-844263 F=S(F)d=S(d)a=S(a)i=S(i)m=nil r=S(r)x=S(x)elseif T<14596622-(-666087)then s,T={},E[I(274230+-330739)]elseif 731334058%20455528>T then T=602066+56948 else y,K=U[411136+-411135],U[-604058-(-604060)]T=g[M[-896604+896605]]C=T T=C[K]T=T and 1993144175%12917929 or-444439+8526584 end end end end end end end T=#L return V(s)end,{},function(E,I)local V=C(I)local U=function()return T(E,{},I,V)end return U end,function(E,I)local V=C(I)local U=function(...)return T(E,{...},I,V)end return U end,function(E,I)local V=C(I)local U=function(U)return T(E,{U},I,V)end return U end,function(E,I)local V=C(I)local U=function(U,M,L)return T(E,{U,M,L},I,V)end return U end,{},function(E)local I,T=556023161%2527378,E[-256583-(-256584)]while T do y[T],I=y[T]-(-40713+40714),I+(715282-715281)if y[T]==-525343+525343 then y[T],g[T]=nil,nil end T=E[I]end end return(H(-604395+14880460,{}))(V(s))end)(unpack or table[I(71436+-127910)],getfenv and getfenv()or _ENV,select,getmetatable,newproxy,{...},setmetatable)end)(...)
+--[[
+    HunterBlock v8 (Crimson UI)
+    - Scoped sound hook (killers only, no global)
+    - Auto Block (95 M1 sounds)
+    - SSHT (velocity shake)
+    - Box visuals
+    - Auto Parry
+    - Killer dropdown + refresh
+    - Crimson tabbed UI (Block / SSHT / Info)
+]]
+
+-- ============================================================
+-- WAIT FOR GAME AND MATCH
+-- ============================================================
+if not game:IsLoaded() then
+    repeat task.wait(0.5) until game:IsLoaded()
+end
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+local CoreGui = game:GetService("CoreGui")
+local UserInputService = game:GetService("UserInputService")
+
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+if _G._HunterBlockLoaded then return end
+_G._HunterBlockLoaded = true
+
+-- ============================================================
+-- STATE
+-- ============================================================
+local S = {
+    AutoBlock = false,
+    BlockRange = 18,
+    SSHTEnabled = false,
+    SSHTMode = "Legit",
+    SSHTSpeed = 45,
+    ShowRangeBox = false,
+    ShowFacingBox = false,
+    ParryAim = true,
+    ParryPunch = true,
+    ManualKiller = "Auto",
+}
+
+-- ============================================================
+-- NETWORK
+-- ============================================================
+local remoteEvent, networkModule
+
+task.spawn(function()
+    pcall(function()
+        local modules = ReplicatedStorage:WaitForChild("Modules", 15)
+        local net = modules:WaitForChild("Network", 8)
+        local inner = net:WaitForChild("Network", 8)
+        remoteEvent = inner:FindFirstChild("RemoteEvent") or inner:WaitForChild("RemoteEvent", 5)
+        networkModule = require(inner)
+    end)
+end)
+
+local function getRemote()
+    if remoteEvent and remoteEvent.Parent then return remoteEvent end
+    pcall(function() remoteEvent = ReplicatedStorage.Modules.Network.Network.RemoteEvent end)
+    return remoteEvent
+end
+
+local function fireBlock()
+    local re = getRemote()
+    if not re then return end
+    local ok = pcall(function() re:FireServer("UseActorAbility", { "Block" }) end)
+    if not ok then
+        pcall(function()
+            re:FireServer("UseActorAbility", {
+                (function(bytes)
+                    local b = buffer.create(#bytes)
+                    for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
+                    return b
+                end)({3, 5, 0, 0, 0, 66, 108, 111, 99, 107})
+            })
+        end)
+    end
+end
+
+local function firePunch()
+    local re = getRemote()
+    if not re then return end
+    pcall(function()
+        re:FireServer("UseActorAbility", {
+            (function(bytes)
+                local b = buffer.create(#bytes)
+                for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
+                return b
+            end)({3, 5, 0, 0, 0, 80, 117, 110, 99, 104})
+        })
+    end)
+end
+
+-- ============================================================
+-- SOUND DB
+-- ============================================================
+local SOUND_DB = {
+    ["102228729296384"]=true,["140242176732868"]=true,["112809109188560"]=true,
+    ["136323728355613"]=true,["115026634746636"]=true,["84116622032112"]=true,
+    ["108907358619313"]=true,["127793641088496"]=true,["86174610237192"]=true,
+    ["95079963655241"]=true,["101199185291628"]=true,["119942598489800"]=true,
+    ["84307400688050"]=true,["113037804008732"]=true,["105200830849301"]=true,
+    ["75330693422988"]=true,["82221759983649"]=true,["81702359653578"]=true,
+    ["108610718831698"]=true,["112395455254818"]=true,["109431876587852"]=true,
+    ["109348678063422"]=true,["85853080745515"]=true,["98733709078792"]=true,
+    ["105840448036441"]=true,["114742322778642"]=true,["105415540898010"]=true,
+    ["106300477136129"]=true,["80516583309685"]=true,["116581754553533"]=true,
+    ["71834552297085"]=true,["119583605486352"]=true,["117173212095661"]=true,
+    ["104910828105172"]=true,["79980897195554"]=true,["116527305931161"]=true,
+    ["131406927389838"]=true,["94317217837143"]=true,["121954639447247"]=true,
+    ["128856426573270"]=true,["131123355704017"]=true,["107444859834748"]=true,
+    ["133709029886490"]=true,
+    ["12222216"]=true,["71805956520207"]=true,["79391273191671"]=true,
+    ["89004992452376"]=true,["101553872555606"]=true,["101698569375359"]=true,
+    ["117231507259853"]=true,["119089145505438"]=true,["125213046326879"]=true,
+    ["86833981571073"]=true,["110372418055226"]=true,["86494585504534"]=true,
+    ["140412278320643"]=true,["140194172008986"]=true,["85544168523099"]=true,
+    ["114506382930939"]=true,["99829427721752"]=true,["120059928759346"]=true,
+    ["104625283622511"]=true,["105316545074913"]=true,["126131675979001"]=true,
+    ["82336352305186"]=true,["93366464803829"]=true,["84069821282466"]=true,
+    ["128195973631079"]=true,["124903763333174"]=true,["98111231282218"]=true,
+    ["136728245733659"]=true,["76959687420003"]=true,["72425554233832"]=true,
+    ["96594507550917"]=true,["139996647355899"]=true,["107345261604889"]=true,
+    ["127557531826290"]=true,["108651070773439"]=true,["74842815979546"]=true,
+    ["124397369810639"]=true,["76467993976301"]=true,["118493324723683"]=true,
+    ["78298577002481"]=true,["5148302439"]=true,["98675142200448"]=true,
+    ["128367348686124"]=true,["103684883268194"]=true,["109246041199659"]=true,
+    ["80540530406270"]=true,["139523195429581"]=true,["105204810054381"]=true,
+    ["116468089135195"]=true,["124234993291213"]=true,["99856718263455"]=true,
+    ["74809026448465"]=true,
+}
+
+local BAD_SOUNDS = { ["112809109188560"] = true }
+
+-- ============================================================
+-- HELPERS
+-- ============================================================
+local function getRoot(m)
+    return m and (m:FindFirstChild("HumanoidRootPart") or m.PrimaryPart)
+end
+
+local function getKillersFolder()
+    local p = Workspace:FindFirstChild("Players")
+    if not p then return nil end
+    return p:FindFirstChild("Killers")
+end
+
+local function getKillers()
+    local f = getKillersFolder()
+    if not f then return {} end
+    local t = {}
+    for _, c in ipairs(f:GetChildren()) do
+        if c:IsA("Model") then t[#t+1] = c end
+    end
+    return t
+end
+
+local function getKillerHRP(model)
+    if not model then return nil end
+    return model:FindFirstChild("HumanoidRootPart")
+        or model.PrimaryPart
+        or model:FindFirstChildWhichIsA("BasePart", true)
+end
+
+local function getNearestKiller(maxDist)
+    local our = getRoot(LocalPlayer.Character)
+    if not our then return nil end
+    local best, bestD = nil, maxDist or 999
+    for _, k in ipairs(getKillers()) do
+        local hrp = getKillerHRP(k)
+        local hum = k:FindFirstChildOfClass("Humanoid")
+        if hrp and hum and hum.Health > 0 then
+            local d = (hrp.Position - our.Position).Magnitude
+            if d < bestD then bestD, best = d, k end
+        end
+    end
+    return best
+end
+
+local function faceTarget(hrp)
+    if not hrp then return end
+    local our = getRoot(LocalPlayer.Character)
+    if not our then return end
+    local flat = Vector3.new(hrp.Position.X, our.Position.Y, hrp.Position.Z)
+    if (flat - our.Position).Magnitude > 0.1 then
+        our.CFrame = CFrame.lookAt(our.Position, flat)
+    end
+end
+
+-- ============================================================
+-- BLOCK COOLDOWN
+-- ============================================================
+local cachedCooldown = nil
+local lastCooldownRefresh = 0
+
+local function refreshCooldownRef()
+    pcall(function()
+        local main = PlayerGui:FindFirstChild("MainUI")
+        if not main then cachedCooldown = nil return end
+        local ability = main:FindFirstChild("AbilityContainer")
+        if not ability then cachedCooldown = nil return end
+        local blockBtn = ability:FindFirstChild("Block")
+        if not blockBtn then cachedCooldown = nil return end
+        cachedCooldown = blockBtn:FindFirstChild("CooldownTime")
+    end)
+end
+
+local function blockReady()
+    local now = tick()
+    if not cachedCooldown or not cachedCooldown.Parent or now - lastCooldownRefresh > 2 then
+        refreshCooldownRef()
+        lastCooldownRefresh = now
+    end
+    if not cachedCooldown then return true end
+    return cachedCooldown.Text == "" or cachedCooldown.Text == " "
+end
+
+-- ============================================================
+-- SSHT
+-- ============================================================
+local sshtActive = false
+local sshtTargetHRP = nil
+local sshtShakeSign = 1
+
+local function startSSHT(hrp)
+    if not S.SSHTEnabled or sshtActive then return end
+    if not hrp or not hrp.Parent then return end
+    sshtActive = true
+    sshtTargetHRP = hrp
+    sshtShakeSign = 1
+end
+
+local function stopSSHT()
+    if not sshtActive then return end
+    sshtActive = false
+    sshtTargetHRP = nil
+end
+
+RunService.Heartbeat:Connect(function()
+    if not sshtActive then return end
+    if not sshtTargetHRP or not sshtTargetHRP.Parent then stopSSHT() return end
+    local char = LocalPlayer.Character
+    if not char then stopSSHT() return end
+    local our = char:FindFirstChild("HumanoidRootPart")
+    if not our then stopSSHT() return end
+
+    local diff = sshtTargetHRP.Position - our.Position
+    local dist = diff.Magnitude
+    if dist < 1 then
+        sshtShakeSign = -sshtShakeSign
+        our.Velocity = our.Velocity + Vector3.new(0, 0.1 * sshtShakeSign, 0)
+        return
+    end
+
+    local dir = diff.Unit
+    if S.SSHTMode == "Legit" then
+        our.Velocity = dir * S.SSHTSpeed
+    else
+        local shake = Vector3.new(
+            math.random(-50, 50) / 50,
+            math.random(-50, 50) / 50,
+            math.random(-50, 50) / 50
+        )
+        our.Velocity = dir * (S.SSHTSpeed + dist * 10) + shake
+    end
+end)
+
+-- ============================================================
+-- BOX VISUALS
+-- ============================================================
+local function spawnBox(cf, size, color)
+    if not size or size.X <= 0 or size.Y <= 0 or size.Z <= 0 then return end
+    local part = Instance.new("Part")
+    part.Name = "HB_Box"
+    part.Size = size
+    part.Material = Enum.Material.SmoothPlastic
+    part.Transparency = 0.5
+    part.Color = color
+    part.Anchored = true
+    part.CanCollide = false
+    part.CanQuery = false
+    part.CanTouch = false
+    part.CastShadow = false
+    part.Massless = true
+    part.CFrame = cf
+    part.Parent = Workspace
+
+    local adorn = Instance.new("BoxHandleAdornment")
+    adorn.Adornee = part
+    adorn.AlwaysOnTop = true
+    adorn.ZIndex = 5
+    adorn.Size = size
+    adorn.Transparency = 0.5
+    adorn.Color3 = color
+    adorn.Parent = part
+
+    task.delay(0.25, function()
+        pcall(function() part:Destroy() end)
+    end)
+end
+
+local function showBoxes(killerModel)
+    local hrp = getKillerHRP(killerModel)
+    if not hrp then return end
+    if S.ShowRangeBox then
+        spawnBox(
+            CFrame.new(hrp.Position + Vector3.new(0, -hrp.Size.Y/2 - 0.3, 0)),
+            Vector3.new(S.BlockRange * 2, 0.5, S.BlockRange * 2),
+            Color3.fromRGB(255, 220, 40)
+        )
+    end
+    if S.ShowFacingBox then
+        spawnBox(
+            hrp.CFrame * CFrame.new(0, -hrp.Size.Y/2 - 0.3, -6),
+            Vector3.new(6, 0.5, 12),
+            Color3.fromRGB(255, 60, 60)
+        )
+    end
+end
+
+-- ============================================================
+-- AUTO BLOCK
+-- ============================================================
+local lastBlock = 0
+
+local function tryBlock(killer, hrp)
+    if not S.AutoBlock then return end
+    if not hrp or not hrp.Parent then return end
+    local our = getRoot(LocalPlayer.Character)
+    if not our then return end
+    if (our.Position - hrp.Position).Magnitude > S.BlockRange then return end
+    if os.clock() - lastBlock < 0.08 then return end
+    if not blockReady() then return end
+    lastBlock = os.clock()
+
+    if S.SSHTEnabled then startSSHT(hrp) end
+
+    for i = 1, 3 do
+        fireBlock()
+        if i < 3 then task.wait(0.03) end
+    end
+
+    showBoxes(killer)
+end
+
+-- ============================================================
+-- SOUND HOOK (SCOPED — killers only)
+-- ============================================================
+local hookedSounds = setmetatable({}, { __mode = "k" })
+local trackedKillers = {}
+
+local function isM1(sound)
+    if not sound or not sound:IsA("Sound") then return false end
+    local id = tostring(sound.SoundId):match("%d+")
+    if not id or BAD_SOUNDS[id] then return false end
+    return SOUND_DB[id] == true
+end
+
+local function findKillerFromSound(sound)
+    local model = sound:FindFirstAncestorOfClass("Model")
+    if not model then return nil end
+    local parent = model.Parent
+    if not parent or parent.Name ~= "Killers" then return nil end
+    return model
+end
+
+local function hookSound(sound)
+    if not sound or not sound:IsA("Sound") then return end
+    if hookedSounds[sound] then return end
+    hookedSounds[sound] = true
+
+    local function check()
+        if not S.AutoBlock then return end
+        if not isM1(sound) then return end
+        local killer = findKillerFromSound(sound)
+        if not killer then return end
+        local hrp = getKillerHRP(killer)
+        if not hrp then return end
+        tryBlock(killer, hrp)
+    end
+
+    sound.Played:Connect(check)
+    sound:GetPropertyChangedSignal("IsPlaying"):Connect(function()
+        if sound.IsPlaying then check() end
+    end)
+    if sound.IsPlaying then check() end
+end
+
+local function trackKiller(killer)
+    if not killer or trackedKillers[killer] then return end
+    if not killer:IsA("Model") then return end
+    trackedKillers[killer] = true
+
+    for _, d in ipairs(killer:GetDescendants()) do
+        if d:IsA("Sound") then hookSound(d) end
+    end
+
+    killer.DescendantAdded:Connect(function(d)
+        if d:IsA("Sound") then
+            task.defer(function() hookSound(d) end)
+        end
+    end)
+
+    killer.Destroying:Connect(function()
+        trackedKillers[killer] = nil
+    end)
+end
+
+local function scanAllKillers()
+    local folder = getKillersFolder()
+    if not folder then return 0 end
+    local count = 0
+    for _, k in ipairs(folder:GetChildren()) do
+        if k:IsA("Model") then
+            trackKiller(k)
+            count = count + 1
+        end
+    end
+    return count
+end
+
+local function waitAndScan()
+    local folder = getKillersFolder()
+    if folder then
+        scanAllKillers()
+        folder.ChildAdded:Connect(function(k)
+            if k:IsA("Model") then
+                task.defer(function() trackKiller(k) end)
+            end
+        end)
+        return
+    end
+    task.spawn(function()
+        while true do
+            task.wait(1)
+            if getKillersFolder() then
+                scanAllKillers()
+                getKillersFolder().ChildAdded:Connect(function(k)
+                    if k:IsA("Model") then
+                        task.defer(function() trackKiller(k) end)
+                    end
+                end)
+                return
+            end
+        end
+    end)
+end
+
+waitAndScan()
+
+-- ============================================================
+-- AUTO PARRY
+-- ============================================================
+local parryConn = nil
+local lastParry = 0
+
+local function onParry()
+    if os.clock() - lastParry < 0.2 then return end
+    lastParry = os.clock()
+
+    if S.ParryAim then
+        local nearest = getNearestKiller(S.BlockRange * 1.5)
+        if nearest then faceTarget(getKillerHRP(nearest)) end
+    end
+
+    if S.ParryPunch then
+        task.wait(0.02)
+        firePunch()
+    end
+
+    stopSSHT()
+end
+
+local function installParryHook()
+    if parryConn then return end
+    if not networkModule then
+        task.spawn(function()
+            local t0 = tick()
+            while not networkModule and tick() - t0 < 15 do
+                task.wait(0.5)
+                pcall(function()
+                    networkModule = require(ReplicatedStorage.Modules.Network.Network)
+                end)
+            end
+            if networkModule then installParryHook() end
+        end)
+        return
+    end
+    pcall(function()
+        parryConn = networkModule:SetConnection(
+            ("%*1337ParryIcon"):format(LocalPlayer.Name),
+            "REMOTE_EVENT",
+            function(blocked)
+                if blocked == true then onParry() end
+            end
+        )
+    end)
+end
+
+LocalPlayer.CharacterAdded:Connect(function()
+    task.wait(1.5)
+    parryConn = nil
+    installParryHook()
+end)
+task.delay(2, installParryHook)
+
+-- ============================================================
+-- DETECT
+-- ============================================================
+local function detectKillerNames()
+    local killers = getKillers()
+    local names = {}
+    for _, k in ipairs(killers) do
+        names[#names+1] = k.Name
+    end
+    return names
+end
+
+-- ============================================================
+-- CRIMSON UI
+-- ============================================================
+local ACCENT     = Color3.fromRGB(220, 30, 60)
+local ACCENT_DIM = Color3.fromRGB(120, 20, 35)
+local BG_DARK    = Color3.fromRGB(16, 14, 16)
+local BG_MID     = Color3.fromRGB(24, 20, 22)
+local BG_ROW     = Color3.fromRGB(34, 28, 30)
+local TEXT_MAIN  = Color3.fromRGB(240, 235, 238)
+local TEXT_DIM   = Color3.fromRGB(150, 140, 145)
+local STROKE     = Color3.fromRGB(48, 38, 42)
+
+if _G._HunterBlockGui and _G._HunterBlockGui.Parent then
+    pcall(function() _G._HunterBlockGui:Destroy() end)
+end
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "HunterBlockPanel"
+gui.ResetOnSpawn = false
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+gui.IgnoreGuiInset = true
+pcall(function() gui.Parent = (gethui and gethui()) or CoreGui end)
+if not gui.Parent then gui.Parent = PlayerGui end
+_G._HunterBlockGui = gui
+
+-- Floating button
+local toggleBtn = Instance.new("TextButton")
+toggleBtn.Size = UDim2.fromOffset(46, 46)
+toggleBtn.Position = UDim2.new(1, -100, 0.5, -23)
+toggleBtn.BackgroundColor3 = BG_MID
+toggleBtn.Text = "HB"
+toggleBtn.TextColor3 = ACCENT
+toggleBtn.Font = Enum.Font.GothamBold
+toggleBtn.TextSize = 14
+toggleBtn.AutoButtonColor = false
+toggleBtn.Active = true
+toggleBtn.Draggable = true
+toggleBtn.Parent = gui
+Instance.new("UICorner", toggleBtn).CornerRadius = UDim.new(1, 0)
+local tbs = Instance.new("UIStroke", toggleBtn)
+tbs.Color = ACCENT; tbs.Thickness = 1.5
+
+-- Window
+local window = Instance.new("Frame")
+window.Size = UDim2.fromOffset(500, 400)
+window.Position = UDim2.fromScale(0.5, 0.5)
+window.AnchorPoint = Vector2.new(0.5, 0.5)
+window.BackgroundColor3 = BG_DARK
+window.BorderSizePixel = 0
+window.Visible = false
+window.ClipsDescendants = true
+window.Parent = gui
+Instance.new("UICorner", window).CornerRadius = UDim.new(0, 12)
+local ws = Instance.new("UIStroke", window)
+ws.Color = STROKE; ws.Thickness = 1
+
+-- Header
+local header = Instance.new("Frame")
+header.Size = UDim2.new(1, 0, 0, 40)
+header.BackgroundColor3 = BG_MID
+header.BorderSizePixel = 0
+header.Parent = window
+Instance.new("UICorner", header).CornerRadius = UDim.new(0, 12)
+local headerFix = Instance.new("Frame")
+headerFix.Size = UDim2.new(1, 0, 0, 12)
+headerFix.Position = UDim2.new(0, 0, 1, -12)
+headerFix.BackgroundColor3 = BG_MID
+headerFix.BorderSizePixel = 0
+headerFix.Parent = header
+
+local dot = Instance.new("Frame")
+dot.Size = UDim2.fromOffset(10, 10)
+dot.Position = UDim2.new(0, 14, 0.5, -5)
+dot.BackgroundColor3 = ACCENT
+dot.BorderSizePixel = 0
+dot.Parent = header
+Instance.new("UICorner", dot).CornerRadius = UDim.new(1, 0)
+
+local titleLbl = Instance.new("TextLabel")
+titleLbl.Size = UDim2.new(0, 200, 1, 0)
+titleLbl.Position = UDim2.fromOffset(34, 0)
+titleLbl.BackgroundTransparency = 1
+titleLbl.Text = "HunterBlock"
+titleLbl.TextColor3 = TEXT_MAIN
+titleLbl.Font = Enum.Font.GothamBold
+titleLbl.TextSize = 14
+titleLbl.TextXAlignment = Enum.TextXAlignment.Left
+titleLbl.Parent = header
+
+local verLbl = Instance.new("TextLabel")
+verLbl.Size = UDim2.new(0, 60, 1, 0)
+verLbl.Position = UDim2.new(0, 130, 0, 0)
+verLbl.BackgroundTransparency = 1
+verLbl.Text = "v8"
+verLbl.TextColor3 = TEXT_DIM
+verLbl.Font = Enum.Font.GothamMedium
+verLbl.TextSize = 11
+verLbl.TextXAlignment = Enum.TextXAlignment.Left
+verLbl.Parent = header
+
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.fromOffset(24, 24)
+closeBtn.Position = UDim2.new(1, -34, 0.5, -12)
+closeBtn.BackgroundColor3 = BG_DARK
+closeBtn.Text = "×"
+closeBtn.TextColor3 = ACCENT
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 16
+closeBtn.AutoButtonColor = false
+closeBtn.Parent = header
+Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0, 6)
+closeBtn.MouseEnter:Connect(function() closeBtn.BackgroundColor3 = ACCENT end)
+closeBtn.MouseLeave:Connect(function() closeBtn.BackgroundColor3 = BG_DARK end)
+
+-- Sidebar
+local sidebar = Instance.new("Frame")
+sidebar.Size = UDim2.new(0, 110, 1, -40)
+sidebar.Position = UDim2.new(0, 0, 0, 40)
+sidebar.BackgroundColor3 = BG_MID
+sidebar.BorderSizePixel = 0
+sidebar.Parent = window
+
+local sideFix = Instance.new("Frame")
+sideFix.Size = UDim2.new(0, 12, 1, -40)
+sideFix.Position = UDim2.new(1, -12, 0, 0)
+sideFix.BackgroundColor3 = BG_MID
+sideFix.BorderSizePixel = 0
+sideFix.Parent = sidebar
+
+local tabList = Instance.new("Frame")
+tabList.Size = UDim2.new(1, 0, 1, -20)
+tabList.Position = UDim2.new(0, 0, 0, 10)
+tabList.BackgroundTransparency = 1
+tabList.Parent = sidebar
+
+local tabLayout = Instance.new("UIListLayout", tabList)
+tabLayout.Padding = UDim.new(0, 6)
+tabLayout.SortOrder = Enum.SortOrder.LayoutOrder
+tabLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+
+-- Content
+local content = Instance.new("Frame")
+content.Size = UDim2.new(1, -110, 1, -40)
+content.Position = UDim2.new(0, 110, 0, 40)
+content.BackgroundTransparency = 1
+content.Parent = window
+
+local pages = {}
+local tabButtons = {}
+
+local function makePage(name)
+    local page = Instance.new("ScrollingFrame")
+    page.Size = UDim2.new(1, -20, 1, -20)
+    page.Position = UDim2.new(0, 10, 0, 10)
+    page.BackgroundTransparency = 1
+    page.BorderSizePixel = 0
+    page.ScrollBarThickness = 3
+    page.ScrollBarImageColor3 = ACCENT
+    page.CanvasSize = UDim2.new(0, 0, 0, 0)
+    page.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    page.Visible = false
+    page.Parent = content
+
+    local lay = Instance.new("UIListLayout", page)
+    lay.Padding = UDim.new(0, 6)
+    lay.SortOrder = Enum.SortOrder.LayoutOrder
+
+    pages[name] = page
+    return page
+end
+
+local function makeTab(name)
+    local b = Instance.new("TextButton")
+    b.Size = UDim2.new(1, -20, 0, 32)
+    b.BackgroundColor3 = BG_DARK
+    b.Text = name
+    b.TextColor3 = TEXT_DIM
+    b.Font = Enum.Font.GothamMedium
+    b.TextSize = 12
+    b.AutoButtonColor = false
+    b.Parent = tabList
+    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 6)
+
+    tabButtons[name] = b
+
+    b.MouseButton1Click:Connect(function()
+        for _, p in pairs(pages) do p.Visible = false end
+        for _, tb in pairs(tabButtons) do
+            tb.TextColor3 = TEXT_DIM
+            tb.BackgroundColor3 = BG_DARK
+        end
+        if pages[name] then pages[name].Visible = true end
+        b.TextColor3 = ACCENT
+        b.BackgroundColor3 = BG_ROW
+    end)
+    return b
+end
+
+local function sectionLabel(page, text)
+    local l = Instance.new("TextLabel")
+    l.Size = UDim2.new(1, 0, 0, 20)
+    l.BackgroundTransparency = 1
+    l.Text = string.upper(text)
+    l.TextColor3 = TEXT_DIM
+    l.Font = Enum.Font.GothamBold
+    l.TextSize = 10
+    l.TextXAlignment = Enum.TextXAlignment.Left
+    l.Parent = page
+    return l
+end
+
+local function toggleRow(page, name, initial, callback)
+    local row = Instance.new("Frame")
+    row.Size = UDim2.new(1, 0, 0, 38)
+    row.BackgroundColor3 = BG_ROW
+    row.BorderSizePixel = 0
+    row.Parent = page
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+
+    local l = Instance.new("TextLabel")
+    l.Size = UDim2.new(1, -70, 1, 0)
+    l.Position = UDim2.fromOffset(12, 0)
+    l.BackgroundTransparency = 1
+    l.Text = name
+    l.TextColor3 = TEXT_MAIN
+    l.Font = Enum.Font.GothamMedium
+    l.TextSize = 12
+    l.TextXAlignment = Enum.TextXAlignment.Left
+    l.Parent = row
+
+    local state = initial
+
+    local switch = Instance.new("TextButton")
+    switch.Size = UDim2.fromOffset(38, 20)
+    switch.Position = UDim2.new(1, -50, 0.5, -10)
+    switch.BackgroundColor3 = state and ACCENT or Color3.fromRGB(55, 45, 48)
+    switch.Text = ""
+    switch.AutoButtonColor = false
+    switch.Parent = row
+    Instance.new("UICorner", switch).CornerRadius = UDim.new(1, 0)
+
+    local knob = Instance.new("Frame")
+    knob.Size = UDim2.fromOffset(14, 14)
+    knob.Position = state and UDim2.new(1, -17, 0.5, -7) or UDim2.new(0, 3, 0.5, -7)
+    knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    knob.BorderSizePixel = 0
+    knob.Parent = switch
+    Instance.new("UICorner", knob).CornerRadius = UDim.new(1, 0)
+
+    local api = {}
+    api.set = function(v)
+        state = v
+        switch.BackgroundColor3 = v and ACCENT or Color3.fromRGB(55, 45, 48)
+        knob.Position = v and UDim2.new(1, -17, 0.5, -7) or UDim2.new(0, 3, 0.5, -7)
+    end
+
+    switch.MouseButton1Click:Connect(function()
+        state = not state
+        api.set(state)
+        if callback then callback(state) end
+    end)
+
+    return api
+end
+
+local function sliderRow(page, name, minV, maxV, initial, callback)
+    local row = Instance.new("Frame")
+    row.Size = UDim2.new(1, 0, 0, 46)
+    row.BackgroundColor3 = BG_ROW
+    row.BorderSizePixel = 0
+    row.Parent = page
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+
+    local l = Instance.new("TextLabel")
+    l.Size = UDim2.new(1, -70, 0, 18)
+    l.Position = UDim2.fromOffset(12, 4)
+    l.BackgroundTransparency = 1
+    l.Text = name
+    l.TextColor3 = TEXT_MAIN
+    l.Font = Enum.Font.GothamMedium
+    l.TextSize = 12
+    l.TextXAlignment = Enum.TextXAlignment.Left
+    l.Parent = row
+
+    local vl = Instance.new("TextLabel")
+    vl.Size = UDim2.new(0, 60, 0, 18)
+    vl.Position = UDim2.new(1, -72, 0, 4)
+    vl.BackgroundTransparency = 1
+    vl.Text = tostring(math.floor(initial * 100) / 100)
+    vl.TextColor3 = ACCENT
+    vl.Font = Enum.Font.GothamBold
+    vl.TextSize = 12
+    vl.TextXAlignment = Enum.TextXAlignment.Right
+    vl.Parent = row
+
+    local bg = Instance.new("Frame")
+    bg.Size = UDim2.new(1, -24, 0, 6)
+    bg.Position = UDim2.new(0, 12, 0, 32)
+    bg.BackgroundColor3 = Color3.fromRGB(50, 42, 45)
+    bg.BorderSizePixel = 0
+    bg.Parent = row
+    Instance.new("UICorner", bg).CornerRadius = UDim.new(1, 0)
+
+    local fill = Instance.new("Frame")
+    fill.Size = UDim2.new(0, 0, 1, 0)
+    fill.BackgroundColor3 = ACCENT
+    fill.BorderSizePixel = 0
+    fill.Parent = bg
+    Instance.new("UICorner", fill).CornerRadius = UDim.new(1, 0)
+
+    local function setV(v)
+        local pct = (v - minV) / (maxV - minV)
+        fill.Size = UDim2.new(pct, 0, 1, 0)
+        vl.Text = tostring(math.floor(v * 100) / 100)
+    end
+    setV(initial)
+
+    local dragging = false
+    local function apply(x)
+        local abs = bg.AbsolutePosition.X
+        local w = bg.AbsoluteSize.X
+        local pct = math.clamp((x - abs) / w, 0, 1)
+        local v = minV + pct * (maxV - minV)
+        setV(v)
+        if callback then callback(v) end
+    end
+
+    bg.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1
+           or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            apply(input.Position.X)
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if not dragging then return end
+        if input.UserInputType == Enum.UserInputType.MouseMovement
+           or input.UserInputType == Enum.UserInputType.Touch then
+            apply(input.Position.X)
+        end
+    end)
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1
+           or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = false
+        end
+    end)
+end
+
+local function dropdownRow(page, name, options, initial, callback)
+    local row = Instance.new("Frame")
+    row.Size = UDim2.new(1, 0, 0, 38)
+    row.BackgroundColor3 = BG_ROW
+    row.BorderSizePixel = 0
+    row.Parent = page
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+
+    local l = Instance.new("TextLabel")
+    l.Size = UDim2.new(1, -130, 1, 0)
+    l.Position = UDim2.fromOffset(12, 0)
+    l.BackgroundTransparency = 1
+    l.Text = name
+    l.TextColor3 = TEXT_MAIN
+    l.Font = Enum.Font.GothamMedium
+    l.TextSize = 12
+    l.TextXAlignment = Enum.TextXAlignment.Left
+    l.Parent = row
+
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.fromOffset(100, 24)
+    btn.Position = UDim2.new(1, -112, 0.5, -12)
+    btn.BackgroundColor3 = BG_DARK
+    btn.Text = initial
+    btn.TextColor3 = ACCENT
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 11
+    btn.AutoButtonColor = false
+    btn.Parent = row
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 5)
+
+    local idx = 1
+    for i, opt in ipairs(options) do
+        if opt == initial then idx = i break end
+    end
+
+    btn.MouseButton1Click:Connect(function()
+        idx = idx + 1
+        if idx > #options then idx = 1 end
+        btn.Text = options[idx]
+        if callback then callback(options[idx]) end
+    end)
+    return btn
+end
+
+local function buttonRow(page, name, callback, color)
+    local b = Instance.new("TextButton")
+    b.Size = UDim2.new(1, 0, 0, 34)
+    b.BackgroundColor3 = color or BG_ROW
+    b.Text = name
+    b.TextColor3 = color and Color3.new(1, 1, 1) or TEXT_MAIN
+    b.Font = Enum.Font.GothamMedium
+    b.TextSize = 12
+    b.AutoButtonColor = false
+    b.Parent = page
+    Instance.new("UICorner", b).CornerRadius = UDim.new(0, 6)
+
+    b.MouseEnter:Connect(function()
+        b.BackgroundColor3 = (color or BG_ROW):Lerp(Color3.new(1,1,1), 0.12)
+    end)
+    b.MouseLeave:Connect(function()
+        b.BackgroundColor3 = color or BG_ROW
+    end)
+    b.MouseButton1Click:Connect(function()
+        if callback then callback() end
+    end)
+    return b
+end
+
+-- ============================================================
+-- BUILD TABS
+-- ============================================================
+makeTab("Block")
+makeTab("SSHT")
+makeTab("Info")
+
+local blockPage = makePage("Block")
+local sshtPage = makePage("SSHT")
+local infoPage = makePage("Info")
+
+-- BLOCK page
+sectionLabel(blockPage, "Auto Block")
+toggleRow(blockPage, "Enable Auto Block", S.AutoBlock, function(v) S.AutoBlock = v end)
+sliderRow(blockPage, "Block Range", 5, 40, S.BlockRange, function(v) S.BlockRange = v end)
+
+sectionLabel(blockPage, "Auto Parry")
+toggleRow(blockPage, "Aim on Parry", S.ParryAim, function(v) S.ParryAim = v end)
+toggleRow(blockPage, "Punch on Parry", S.ParryPunch, function(v) S.ParryPunch = v end)
+
+sectionLabel(blockPage, "Box Visuals")
+toggleRow(blockPage, "Show Range Box", S.ShowRangeBox, function(v) S.ShowRangeBox = v end)
+toggleRow(blockPage, "Show Facing Box", S.ShowFacingBox, function(v) S.ShowFacingBox = v end)
+
+-- SSHT page
+sectionLabel(sshtPage, "SSHT")
+toggleRow(sshtPage, "Enable SSHT", S.SSHTEnabled, function(v) S.SSHTEnabled = v end)
+dropdownRow(sshtPage, "SSHT Mode", {"Legit", "Blatant"}, S.SSHTMode, function(v) S.SSHTMode = v end)
+sliderRow(sshtPage, "SSHT Speed", 5, 100, S.SSHTSpeed, function(v) S.SSHTSpeed = v end)
+
+-- INFO page
+sectionLabel(infoPage, "Killer Detection")
+dropdownRow(infoPage, "Manual Killer", {"Auto", "c00lkidd", "Slasher", "Noli", "JohnDoe", "1x1x1x1", "Sixer", "Nosferatu", "Azure", "All"}, S.ManualKiller, function(v)
+    S.ManualKiller = v
+end)
+
+local statusLbl = Instance.new("TextLabel")
+statusLbl.Size = UDim2.new(1, 0, 0, 22)
+statusLbl.BackgroundTransparency = 1
+statusLbl.Text = "Scanning..."
+statusLbl.TextColor3 = Color3.fromRGB(255, 220, 100)
+statusLbl.Font = Enum.Font.GothamMedium
+statusLbl.TextSize = 11
+statusLbl.TextXAlignment = Enum.TextXAlignment.Left
+statusLbl.Parent = infoPage
+
+buttonRow(infoPage, "Refresh Killers", function()
+    local count = scanAllKillers()
+    if count > 0 then
+        local names = detectKillerNames()
+        statusLbl.Text = "Refreshed — " .. count .. " killers: " .. table.concat(names, ", ")
+        statusLbl.TextColor3 = Color3.fromRGB(90, 255, 150)
+    else
+        statusLbl.Text = "Refreshed — 0 killers found"
+        statusLbl.TextColor3 = Color3.fromRGB(255, 100, 100)
+    end
+end, ACCENT_DIM)
+
+-- status updater
+task.spawn(function()
+    while gui.Parent do
+        task.wait(2)
+        pcall(function()
+            local names = detectKillerNames()
+            if #names > 0 then
+                statusLbl.Text = #names .. " killers: " .. table.concat(names, ", ")
+                statusLbl.TextColor3 = Color3.fromRGB(90, 255, 150)
+            else
+                statusLbl.Text = "No killers yet — waiting"
+                statusLbl.TextColor3 = Color3.fromRGB(255, 180, 60)
+            end
+        end)
+    end
+end)
+
+-- Default tab
+for _, tb in pairs(tabButtons) do
+    tb.TextColor3 = TEXT_DIM
+    tb.BackgroundColor3 = BG_DARK
+end
+tabButtons["Block"].TextColor3 = ACCENT
+tabButtons["Block"].BackgroundColor3 = BG_ROW
+pages["Block"].Visible = true
+
+-- ============================================================
+-- OPEN / CLOSE
+-- ============================================================
+local windowOpen = false
+local function setOpen(v)
+    windowOpen = v
+    window.Visible = v
+    toggleBtn.Visible = not v
+end
+
+toggleBtn.MouseButton1Click:Connect(function() setOpen(true) end)
+closeBtn.MouseButton1Click:Connect(function() setOpen(false) end)
+
+UserInputService.InputBegan:Connect(function(input, processed)
+    if processed then return end
+    if input.KeyCode == Enum.KeyCode.K then
+        setOpen(not windowOpen)
+    end
+end)
+
+-- ============================================================
+-- DRAG
+-- ============================================================
+local dragging, dragStart, startPos = false, nil, nil
+
+header.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1
+       or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = window.Position
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if not dragging then return end
+    if input.UserInputType == Enum.UserInputType.MouseMovement
+       or input.UserInputType == Enum.UserInputType.Touch then
+        local delta = input.Position - dragStart
+        window.Position = UDim2.new(
+            startPos.X.Scale, startPos.X.Offset + delta.X,
+            startPos.Y.Scale, startPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1
+       or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = false
+        dragStart = nil
+    end
+end)
+
+print("[HunterBlock] v8 loaded.")
