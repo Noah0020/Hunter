@@ -1,10 +1,6 @@
 --[[
-    HunterBlock v8
-    - Auto Block (95 M1 sounds, scoped hook)
-    - SSHT (velocity shake, Legit/Blatant)
-    - Box visuals
-    - Auto Parry with aim-before-punch + prediction
-    - Manual killer dropdown, refresh button
+    HunterBlock v20
+    Auto Block + HDT + Aim + Parry + Reach
 ]]
 
 if not game:IsLoaded() then
@@ -20,9 +16,26 @@ local UserInputService = game:GetService("UserInputService")
 
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local Camera = Workspace.CurrentCamera
 
 if _G._HunterBlockLoaded then return end
 _G._HunterBlockLoaded = true
+
+-- ============================================================
+-- FINDKILLERID LOADER
+-- ============================================================
+local findkillerid = nil
+do
+    local ok, result = pcall(function()
+        return loadstring(game:HttpGet("https://gist.githubusercontent.com/randomforsakenscripter/c8469d06874aa73c751c50f8c1671b2a/raw/76b20167bfa7c017465dab3f7955a7d04eec75e4/gistfile1.txt"))()
+    end)
+    if ok and type(result) == "function" then
+        findkillerid = result
+        print("[HB] findkillerid loaded")
+    else
+        warn("[HB] findkillerid failed, using fallback only")
+    end
+end
 
 -- ============================================================
 -- STATE
@@ -30,72 +43,38 @@ _G._HunterBlockLoaded = true
 local S = {
     AutoBlock = false,
     BlockRange = 18,
-    SSHTEnabled = false,
-    SSHTMode = "Legit",
-    SSHTSpeed = 45,
-    ShowRangeBox = false,
-    ShowFacingBox = false,
-    ParryAim = true,
-    ParryPunch = true,
-    ParryAimDelay = 0.08,
-    ParryPredict = 0.12,
-    ManualKiller = "Auto",
+    FacingThreshold = 0.0,
+
+    AimOnBlock = false,
+    AimMode = "HRP + Camera",
+    AimHold = 0.35,
+    PunchOnBlock = false,
+    PunchDelay = 0.05,
+
+    Reach = false,
+    ReachSize = 4,
+
+    HDT_Enabled = false,
+    HDT_Speed = 20,
+    HDT_Mode = "Legit",
+    HDT_Duration = 1.0,
+
+    Debug = false,
 }
 
 -- ============================================================
--- NETWORK
+-- M1 KEYWORDS
 -- ============================================================
-local remoteEvent, networkModule
-
-task.spawn(function()
-    pcall(function()
-        local modules = ReplicatedStorage:WaitForChild("Modules", 15)
-        local net = modules:WaitForChild("Network", 8)
-        local inner = net:WaitForChild("Network", 8)
-        remoteEvent = inner:FindFirstChild("RemoteEvent") or inner:WaitForChild("RemoteEvent", 5)
-        networkModule = require(inner)
-    end)
-end)
-
-local function getRemote()
-    if remoteEvent and remoteEvent.Parent then return remoteEvent end
-    pcall(function() remoteEvent = ReplicatedStorage.Modules.Network.Network.RemoteEvent end)
-    return remoteEvent
-end
-
-local function fireBlock()
-    local re = getRemote()
-    if not re then return end
-    local ok = pcall(function() re:FireServer("UseActorAbility", { "Block" }) end)
-    if not ok then
-        pcall(function()
-            re:FireServer("UseActorAbility", {
-                (function(bytes)
-                    local b = buffer.create(#bytes)
-                    for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
-                    return b
-                end)({3, 5, 0, 0, 0, 66, 108, 111, 99, 107})
-            })
-        end)
-    end
-end
-
-local function firePunch()
-    local re = getRemote()
-    if not re then return end
-    pcall(function()
-        re:FireServer("UseActorAbility", {
-            (function(bytes)
-                local b = buffer.create(#bytes)
-                for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
-                return b
-            end)({3, 5, 0, 0, 0, 80, 117, 110, 99, 104})
-        })
-    end)
-end
+local M1_KEYWORDS = {
+    "Swing",
+    "SlashWindup",
+    "SmashPower",
+    "SlashGround",
+    "Chomp",
+}
 
 -- ============================================================
--- SOUND DB
+-- FALLBACK SOUND DB
 -- ============================================================
 local SOUND_DB = {
     ["102228729296384"]=true,["140242176732868"]=true,["112809109188560"]=true,
@@ -112,28 +91,107 @@ local SOUND_DB = {
     ["104910828105172"]=true,["79980897195554"]=true,["116527305931161"]=true,
     ["131406927389838"]=true,["94317217837143"]=true,["121954639447247"]=true,
     ["128856426573270"]=true,["131123355704017"]=true,["107444859834748"]=true,
-    ["133709029886490"]=true,
-    ["12222216"]=true,["71805956520207"]=true,["79391273191671"]=true,
-    ["89004992452376"]=true,["101553872555606"]=true,["101698569375359"]=true,
-    ["117231507259853"]=true,["119089145505438"]=true,["125213046326879"]=true,
-    ["86833981571073"]=true,["110372418055226"]=true,["86494585504534"]=true,
-    ["140412278320643"]=true,["140194172008986"]=true,["85544168523099"]=true,
-    ["114506382930939"]=true,["99829427721752"]=true,["120059928759346"]=true,
-    ["104625283622511"]=true,["105316545074913"]=true,["126131675979001"]=true,
-    ["82336352305186"]=true,["93366464803829"]=true,["84069821282466"]=true,
-    ["128195973631079"]=true,["124903763333174"]=true,["98111231282218"]=true,
-    ["136728245733659"]=true,["76959687420003"]=true,["72425554233832"]=true,
-    ["96594507550917"]=true,["139996647355899"]=true,["107345261604889"]=true,
-    ["127557531826290"]=true,["108651070773439"]=true,["74842815979546"]=true,
-    ["124397369810639"]=true,["76467993976301"]=true,["118493324723683"]=true,
-    ["78298577002481"]=true,["5148302439"]=true,["98675142200448"]=true,
-    ["128367348686124"]=true,["103684883268194"]=true,["109246041199659"]=true,
-    ["80540530406270"]=true,["139523195429581"]=true,["105204810054381"]=true,
-    ["116468089135195"]=true,["124234993291213"]=true,["99856718263455"]=true,
-    ["74809026448465"]=true,
+    ["133709029886490"]=true,["12222216"]=true,["71805956520207"]=true,
+    ["79391273191671"]=true,["89004992452376"]=true,["101553872555606"]=true,
+    ["101698569375359"]=true,["117231507259853"]=true,["119089145505438"]=true,
+    ["125213046326879"]=true,["86833981571073"]=true,["110372418055226"]=true,
+    ["86494585504534"]=true,["140412278320643"]=true,["140194172008986"]=true,
+    ["85544168523099"]=true,["114506382930939"]=true,["99829427721752"]=true,
+    ["120059928759346"]=true,["104625283622511"]=true,["105316545074913"]=true,
+    ["126131675979001"]=true,["82336352305186"]=true,["93366464803829"]=true,
+    ["84069821282466"]=true,["128195973631079"]=true,["124903763333174"]=true,
+    ["98111231282218"]=true,["136728245733659"]=true,["76959687420003"]=true,
+    ["72425554233832"]=true,["96594507550917"]=true,["139996647355899"]=true,
+    ["107345261604889"]=true,["127557531826290"]=true,["108651070773439"]=true,
+    ["74842815979546"]=true,["124397369810639"]=true,["76467993976301"]=true,
+    ["118493324723683"]=true,["78298577002481"]=true,["5148302439"]=true,
+    ["98675142200448"]=true,["128367348686124"]=true,["103684883268194"]=true,
+    ["109246041199659"]=true,["80540530406270"]=true,["139523195429581"]=true,
+    ["105204810054381"]=true,["116468089135195"]=true,["124234993291213"]=true,
+    ["99856718263455"]=true,["74809026448465"]=true,
 }
 
 local BAD_SOUNDS = { ["112809109188560"] = true }
+
+-- ============================================================
+-- DYNAMIC SOUND CACHE
+-- ============================================================
+local killerSoundCache = {}
+local killerScanStatus = {}
+
+local function getKillerSounds(killerModel)
+    if not killerModel then return nil end
+    if killerSoundCache[killerModel] then
+        return killerSoundCache[killerModel]
+    end
+
+    if not findkillerid then
+        killerSoundCache[killerModel] = {}
+        killerScanStatus[killerModel] = "failed"
+        return {}
+    end
+
+    local charName = killerModel:GetAttribute("CharacterName") or killerModel.Name
+    local ok, result = pcall(findkillerid, "Killers", charName, M1_KEYWORDS)
+
+    if ok and type(result) == "table" then
+        killerSoundCache[killerModel] = result
+        local count = 0
+        for _ in pairs(result) do count += 1 end
+        killerScanStatus[killerModel] = count > 0 and "ok" or "empty"
+        print(string.format("[HB] %s -> %d M1 sound(s)", charName, count))
+        return result
+    else
+        killerScanStatus[killerModel] = "failed"
+        killerSoundCache[killerModel] = {}
+        return {}
+    end
+end
+
+-- ============================================================
+-- NETWORK
+-- ============================================================
+local remoteEvent
+
+task.spawn(function()
+    pcall(function()
+        local modules = ReplicatedStorage:WaitForChild("Modules", 15)
+        local net = modules:WaitForChild("Network", 8)
+        local inner = net:WaitForChild("Network", 8)
+        remoteEvent = inner:FindFirstChild("RemoteEvent") or inner:WaitForChild("RemoteEvent", 5)
+    end)
+end)
+
+local function getRemote()
+    if remoteEvent and remoteEvent.Parent then return remoteEvent end
+    pcall(function() remoteEvent = ReplicatedStorage.Modules.Network.Network.RemoteEvent end)
+    return remoteEvent
+end
+
+local function fireBlock()
+    local re = getRemote()
+    if not re then return end
+    local ok = pcall(function() re:FireServer("UseActorAbility", { "Block" }) end)
+    if not ok then
+        pcall(function()
+            local b = buffer.create(6)
+            local bytes = {3, 5, 0, 0, 0, 66, 108, 111, 99, 107}
+            for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
+            re:FireServer("UseActorAbility", { b })
+        end)
+    end
+end
+
+local function firePunch()
+    local re = getRemote()
+    if not re then return end
+    pcall(function()
+        local b = buffer.create(6)
+        local bytes = {3, 5, 0, 0, 0, 80, 117, 110, 99, 104}
+        for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
+        re:FireServer("UseActorAbility", { b })
+    end)
+end
 
 -- ============================================================
 -- HELPERS
@@ -144,8 +202,7 @@ end
 
 local function getKillersFolder()
     local p = Workspace:FindFirstChild("Players")
-    if not p then return nil end
-    return p:FindFirstChild("Killers")
+    return p and p:FindFirstChild("Killers")
 end
 
 local function getKillers()
@@ -165,10 +222,10 @@ local function getKillerHRP(model)
         or model:FindFirstChildWhichIsA("BasePart", true)
 end
 
-local function getNearestKiller(maxDist)
+local function getNearestKiller()
     local our = getRoot(LocalPlayer.Character)
     if not our then return nil end
-    local best, bestD = nil, maxDist or 999
+    local best, bestD = nil, 999
     for _, k in ipairs(getKillers()) do
         local hrp = getKillerHRP(k)
         local hum = k:FindFirstChildOfClass("Humanoid")
@@ -180,15 +237,80 @@ local function getNearestKiller(maxDist)
     return best
 end
 
-local function faceTarget(hrp)
-    if not hrp then return end
-    local our = getRoot(LocalPlayer.Character)
-    if not our then return end
-    local flat = Vector3.new(hrp.Position.X, our.Position.Y, hrp.Position.Z)
-    if (flat - our.Position).Magnitude > 0.1 then
-        our.CFrame = CFrame.lookAt(our.Position, flat)
+-- ============================================================
+-- FACING CHECK
+-- ============================================================
+local function isKillerFacingMe(ourRoot, killerRoot, threshold)
+    threshold = threshold or S.FacingThreshold or 0.0
+    if not ourRoot or not killerRoot then return false end
+
+    local dx = ourRoot.Position.X - killerRoot.Position.X
+    local dy = ourRoot.Position.Y - killerRoot.Position.Y
+    local dz = ourRoot.Position.Z - killerRoot.Position.Z
+
+    local mag = math.sqrt(dx*dx + dy*dy + dz*dz)
+    if mag < 0.001 then return true end
+    local inv = 1 / mag
+
+    local ux, uy, uz = dx * inv, dy * inv, dz * inv
+    local lv = killerRoot.CFrame.LookVector
+
+    local dot = lv.X * ux + lv.Y * uy + lv.Z * uz
+    return dot >= threshold
+end
+
+-- ============================================================
+-- AIM (with AutoRotate lock + short hold)
+-- ============================================================
+local aimLockUntil = 0
+local aimTargetPos = nil
+
+local function aimAt(targetPos)
+    if not targetPos then return end
+    aimTargetPos = targetPos
+    aimLockUntil = os.clock() + (S.AimHold or 0.35)
+
+    local char = LocalPlayer.Character
+    if not char then return end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if hum then
+        hum.AutoRotate = false
     end
 end
+
+RunService.RenderStepped:Connect(function()
+    if os.clock() > aimLockUntil then
+        if aimLockUntil ~= 0 then
+            aimLockUntil = 0
+            aimTargetPos = nil
+            local char = LocalPlayer.Character
+            local hum = char and char:FindFirstChildOfClass("Humanoid")
+            if hum then hum.AutoRotate = true end
+        end
+        return
+    end
+
+    if not aimTargetPos then return end
+    local char = LocalPlayer.Character
+    if not char then return end
+    local our = char:FindFirstChild("HumanoidRootPart")
+    if not our then return end
+
+    local mode = S.AimMode or "HRP + Camera"
+
+    if mode == "HRP" or mode == "HRP + Camera" then
+        local flat = Vector3.new(aimTargetPos.X, our.Position.Y, aimTargetPos.Z)
+        if (flat - our.Position).Magnitude > 0.1 then
+            our.CFrame = CFrame.lookAt(our.Position, flat)
+        end
+    end
+
+    if mode == "Camera" or mode == "HRP + Camera" then
+        if Camera then
+            Camera.CFrame = CFrame.lookAt(Camera.CFrame.Position, aimTargetPos)
+        end
+    end
+end)
 
 -- ============================================================
 -- BLOCK COOLDOWN CHECK
@@ -219,145 +341,260 @@ local function blockReady()
 end
 
 -- ============================================================
--- SSHT
+-- REACH
 -- ============================================================
-local sshtActive = false
-local sshtTargetHRP = nil
-local sshtShakeSign = 1
+local reachOrigSizes = {}
 
-local function startSSHT(hrp)
-    if not S.SSHTEnabled or sshtActive then return end
-    if not hrp or not hrp.Parent then return end
-    sshtActive = true
-    sshtTargetHRP = hrp
-    sshtShakeSign = 1
+local function applyReach()
+    if not S.Reach then return end
+    local char = LocalPlayer.Character
+    if not char then return end
+
+    for _, name in ipairs({
+        "RightHand", "LeftHand", "Handle",
+        "Hitbox", "CollisionHitbox", "QueryHitbox",
+        "Weapon", "Sword", "Blade", "Punch"
+    }) do
+        local p = char:FindFirstChild(name, true)
+        if p and p:IsA("BasePart") then
+            if not reachOrigSizes[p] then
+                reachOrigSizes[p] = p.Size
+            end
+            local sz = S.ReachSize or 4
+            p.Size = Vector3.new(sz, sz, sz)
+            p.Massless = true
+            p.CanCollide = false
+        end
+    end
 end
 
-local function stopSSHT()
-    if not sshtActive then return end
-    sshtActive = false
-    sshtTargetHRP = nil
+local function clearReach()
+    for p, orig in pairs(reachOrigSizes) do
+        if p and p.Parent then
+            pcall(function() p.Size = orig end)
+        end
+    end
+    reachOrigSizes = {}
+end
+
+task.spawn(function()
+    while true do
+        task.wait(0.05)
+        if S.Reach then
+            applyReach()
+        elseif next(reachOrigSizes) then
+            clearReach()
+        end
+    end
+end)
+
+-- ============================================================
+-- HDT
+-- ============================================================
+local hdtActive = false
+local hdtTargetHRP = nil
+local hdtEndTime = 0
+
+local function getHDTMaxSpeed()
+    return S.HDT_Mode == "Blatant" and 50 or 25
+end
+
+local function startHDT(hrp)
+    if not S.HDT_Enabled then return end
+    if hdtActive then return end
+    if not hrp or not hrp.Parent then return end
+
+    if S.HDT_Speed > getHDTMaxSpeed() then
+        S.HDT_Speed = getHDTMaxSpeed()
+    end
+
+    hdtActive = true
+    hdtTargetHRP = hrp
+    hdtEndTime = os.clock() + (S.HDT_Duration or 1.0)
+end
+
+local function stopHDT()
+    if not hdtActive then return end
+    hdtActive = false
+    hdtTargetHRP = nil
+    hdtEndTime = 0
+
+    local char = LocalPlayer.Character
+    local hrp = char and char:FindFirstChild("HumanoidRootPart")
+    if hrp then
+        hrp.AssemblyLinearVelocity = Vector3.new(0, hrp.AssemblyLinearVelocity.Y, 0)
+    end
 end
 
 RunService.Heartbeat:Connect(function()
-    if not sshtActive then return end
-    if not sshtTargetHRP or not sshtTargetHRP.Parent then stopSSHT() return end
-    local char = LocalPlayer.Character
-    if not char then stopSSHT() return end
-    local our = char:FindFirstChild("HumanoidRootPart")
-    if not our then stopSSHT() return end
+    if not hdtActive then return end
 
-    local diff = sshtTargetHRP.Position - our.Position
+    if os.clock() > hdtEndTime then stopHDT() return end
+    if not hdtTargetHRP or not hdtTargetHRP.Parent then stopHDT() return end
+
+    local char = LocalPlayer.Character
+    if not char then stopHDT() return end
+    local our = char:FindFirstChild("HumanoidRootPart")
+    if not our then stopHDT() return end
+
+    local diff = hdtTargetHRP.Position - our.Position
     local dist = diff.Magnitude
-    if dist < 1 then
-        sshtShakeSign = -sshtShakeSign
-        our.Velocity = our.Velocity + Vector3.new(0, 0.1 * sshtShakeSign, 0)
+
+    if dist < 2.5 then
+        stopHDT()
         return
     end
 
     local dir = diff.Unit
-    if S.SSHTMode == "Legit" then
-        our.Velocity = dir * S.SSHTSpeed
+    local speed = math.min(S.HDT_Speed, getHDTMaxSpeed())
+
+    if S.HDT_Mode == "Legit" then
+        our.AssemblyLinearVelocity = dir * speed
     else
         local shake = Vector3.new(
             math.random(-50, 50) / 50,
             math.random(-50, 50) / 50,
             math.random(-50, 50) / 50
         )
-        our.Velocity = dir * (S.SSHTSpeed + dist * 10) + shake
+        our.AssemblyLinearVelocity = dir * (speed + dist * 5) + shake
     end
 end)
 
 -- ============================================================
--- BOX VISUALS
+-- AUTO PARRY
 -- ============================================================
-local function spawnBox(cf, size, color)
-    if not size or size.X <= 0 or size.Y <= 0 or size.Z <= 0 then return end
-    local part = Instance.new("Part")
-    part.Name = "HB_Box"
-    part.Size = size
-    part.Material = Enum.Material.SmoothPlastic
-    part.Transparency = 0.5
-    part.Color = color
-    part.Anchored = true
-    part.CanCollide = false
-    part.CanQuery = false
-    part.CanTouch = false
-    part.CastShadow = false
-    part.Massless = true
-    part.CFrame = cf
-    part.Parent = Workspace
+local networkModule = nil
+local parryConn = nil
+local lastParry = 0
 
-    local adorn = Instance.new("BoxHandleAdornment")
-    adorn.Adornee = part
-    adorn.AlwaysOnTop = true
-    adorn.ZIndex = 5
-    adorn.Size = size
-    adorn.Transparency = 0.5
-    adorn.Color3 = color
-    adorn.Parent = part
+task.spawn(function()
+    pcall(function()
+        networkModule = require(ReplicatedStorage.Modules.Network.Network)
+    end)
+end)
 
-    task.delay(0.25, function()
-        pcall(function() part:Destroy() end)
+local function fallbackParry()
+    if not S.PunchOnBlock then return end
+    if os.clock() - lastParry < 0.15 then return end
+    lastParry = os.clock()
+    task.spawn(function()
+        task.wait(0.05)
+        firePunch()
+        stopHDT()
     end)
 end
 
-local function showBoxes(killerModel)
-    local hrp = getKillerHRP(killerModel)
-    if not hrp then return end
-    if S.ShowRangeBox then
-        spawnBox(
-            CFrame.new(hrp.Position + Vector3.new(0, -hrp.Size.Y/2 - 0.3, 0)),
-            Vector3.new(S.BlockRange * 2, 0.5, S.BlockRange * 2),
-            Color3.fromRGB(255, 220, 40)
+local function installParryHook()
+    if parryConn then return end
+    if not networkModule then return end
+    pcall(function()
+        parryConn = networkModule:SetConnection(
+            ("%*1337ParryIcon"):format(LocalPlayer.Name),
+            "REMOTE_EVENT",
+            function(blocked)
+                if blocked == true and S.PunchOnBlock then
+                    if os.clock() - lastParry < 0.2 then return end
+                    lastParry = os.clock()
+                    firePunch()
+                    stopHDT()
+                end
+            end
         )
-    end
-    if S.ShowFacingBox then
-        spawnBox(
-            hrp.CFrame * CFrame.new(0, -hrp.Size.Y/2 - 0.3, -6),
-            Vector3.new(6, 0.5, 12),
-            Color3.fromRGB(255, 60, 60)
-        )
-    end
+        print("[HB] Parry hook installed")
+    end)
 end
 
+task.spawn(function()
+    for i = 1, 15 do
+        task.wait(1)
+        if not networkModule then
+            pcall(function()
+                networkModule = require(ReplicatedStorage.Modules.Network.Network)
+            end)
+        end
+        if networkModule and not parryConn then
+            installParryHook()
+        end
+        if parryConn then return end
+    end
+end)
+
+task.delay(2, installParryHook)
+
 -- ============================================================
--- AUTO BLOCK
+-- BLOCK HANDLER
 -- ============================================================
 local lastBlock = 0
 
-local function tryBlock(killer, hrp)
+local function handleAutoBlock(killerModel, killerHRP)
     if not S.AutoBlock then return end
-    if not hrp or not hrp.Parent then return end
+    if not killerHRP or not killerHRP.Parent then return end
+
     local our = getRoot(LocalPlayer.Character)
     if not our then return end
-    if (our.Position - hrp.Position).Magnitude > S.BlockRange then return end
-    if os.clock() - lastBlock < 0.08 then return end
+
+    local dist = (our.Position - killerHRP.Position).Magnitude
+    if dist > S.BlockRange then return end
+
+    if not isKillerFacingMe(our, killerHRP) then return end
+
+    if os.clock() - lastBlock < 0.05 then return end
     if not blockReady() then return end
     lastBlock = os.clock()
 
-    if S.SSHTEnabled then startSSHT(hrp) end
-
-    for i = 1, 3 do
-        fireBlock()
-        if i < 3 then task.wait(0.03) end
+    if S.Debug then
+        print("[HB] BLOCK -> " .. killerModel.Name)
     end
 
-    showBoxes(killer)
+    -- 1. Fire block
+    fireBlock()
+
+    -- 2. Aim
+    if S.AimOnBlock then
+        aimAt(killerHRP.Position)
+    end
+
+    -- 3. Punch (fallback parry, always fires)
+    if S.PunchOnBlock then
+        fallbackParry()
+    end
+
+    -- 4. HDT
+    if S.HDT_Enabled and not hdtActive then
+        startHDT(killerHRP)
+    end
+
+    -- 5. Safety auto-release
+    task.delay((S.HDT_Duration or 1.0) + 0.2, function()
+        if hdtActive then stopHDT() end
+    end)
 end
 
 -- ============================================================
--- SOUND HOOK (scoped to killers)
+-- SOUND CHECK
+-- ============================================================
+local function isM1Sound(sound, killerModel)
+    if not sound or not sound:IsA("Sound") then return false end
+
+    local sid = tostring(sound.SoundId)
+    local numeric = sid:match("%d+")
+    if not numeric then return false end
+    if BAD_SOUNDS[numeric] then return false end
+
+    if killerModel then
+        local dyn = killerSoundCache[killerModel]
+        if dyn and dyn[sid] then return true end
+    end
+
+    if SOUND_DB[numeric] then return true end
+
+    return false
+end
+
+-- ============================================================
+-- SOUND HOOK
 -- ============================================================
 local hookedSounds = setmetatable({}, { __mode = "k" })
-local trackedKillers = {}
-
-local function isM1(sound)
-    if not sound or not sound:IsA("Sound") then return false end
-    local id = tostring(sound.SoundId):match("%d+")
-    if not id or BAD_SOUNDS[id] then return false end
-    return SOUND_DB[id] == true
-end
 
 local function findKillerFromSound(sound)
     local model = sound:FindFirstAncestorOfClass("Model")
@@ -374,12 +611,12 @@ local function hookSound(sound)
 
     local function check()
         if not S.AutoBlock then return end
-        if not isM1(sound) then return end
         local killer = findKillerFromSound(sound)
         if not killer then return end
+        if not isM1Sound(sound, killer) then return end
         local hrp = getKillerHRP(killer)
         if not hrp then return end
-        tryBlock(killer, hrp)
+        handleAutoBlock(killer, hrp)
     end
 
     sound.Played:Connect(check)
@@ -389,10 +626,19 @@ local function hookSound(sound)
     if sound.IsPlaying then check() end
 end
 
+-- ============================================================
+-- KILLER TRACKING
+-- ============================================================
+local trackedKillers = {}
+
 local function trackKiller(killer)
     if not killer or trackedKillers[killer] then return end
     if not killer:IsA("Model") then return end
     trackedKillers[killer] = true
+
+    task.spawn(function()
+        getKillerSounds(killer)
+    end)
 
     for _, d in ipairs(killer:GetDescendants()) do
         if d:IsA("Sound") then hookSound(d) end
@@ -406,6 +652,8 @@ local function trackKiller(killer)
 
     killer.Destroying:Connect(function()
         trackedKillers[killer] = nil
+        killerSoundCache[killer] = nil
+        killerScanStatus[killer] = nil
     end)
 end
 
@@ -436,9 +684,10 @@ local function waitAndScan()
     task.spawn(function()
         while true do
             task.wait(1)
-            if getKillersFolder() then
+            local f = getKillersFolder()
+            if f then
                 scanAllKillers()
-                getKillersFolder().ChildAdded:Connect(function(k)
+                f.ChildAdded:Connect(function(k)
                     if k:IsA("Model") then
                         task.defer(function() trackKiller(k) end)
                     end
@@ -451,92 +700,34 @@ end
 
 waitAndScan()
 
--- ============================================================
--- AUTO PARRY (aim before punch with prediction)
--- ============================================================
-local parryConn = nil
-local lastParry = 0
-
-local function faceTargetPredicted(hrp)
-    if not hrp then return end
-    local our = getRoot(LocalPlayer.Character)
-    if not our then return end
-    local vel = hrp.AssemblyLinearVelocity or Vector3.new()
-    local predictedPos = hrp.Position + vel * S.ParryPredict
-    local flat = Vector3.new(predictedPos.X, our.Position.Y, predictedPos.Z)
-    if (flat - our.Position).Magnitude > 0.1 then
-        our.CFrame = CFrame.lookAt(our.Position, flat)
-    end
-end
-
-local function onParry()
-    if os.clock() - lastParry < 0.2 then return end
-    lastParry = os.clock()
-
-    local nearest = getNearestKiller(S.BlockRange * 1.5)
-    local targetHRP = nearest and getKillerHRP(nearest) or nil
-
-    if S.ParryAim and targetHRP then
-        faceTargetPredicted(targetHRP)
-    end
-
-    if S.ParryPunch then
-        task.spawn(function()
-            task.wait(S.ParryAimDelay)
-            if S.ParryAim and targetHRP and targetHRP.Parent then
-                faceTargetPredicted(targetHRP)
-            end
-            firePunch()
-        end)
-    end
-
-    stopSSHT()
-end
-
-local function installParryHook()
-    if parryConn then return end
-    if not networkModule then
-        task.spawn(function()
-            local t0 = tick()
-            while not networkModule and tick() - t0 < 15 do
-                task.wait(0.5)
-                pcall(function()
-                    networkModule = require(ReplicatedStorage.Modules.Network.Network)
-                end)
-            end
-            if networkModule then installParryHook() end
-        end)
-        return
-    end
-    pcall(function()
-        parryConn = networkModule:SetConnection(
-            ("%*1337ParryIcon"):format(LocalPlayer.Name),
-            "REMOTE_EVENT",
-            function(blocked)
-                if blocked == true then onParry() end
-            end
-        )
-    end)
-end
-
 LocalPlayer.CharacterAdded:Connect(function()
+    stopHDT()
+    clearReach()
     task.wait(1.5)
     parryConn = nil
     installParryHook()
+    scanAllKillers()
 end)
-task.delay(2, installParryHook)
 
 -- ============================================================
--- DETECT
+-- STUCK-STATE SAFETY NET
 -- ============================================================
-local function detectKillerNames()
-    local killers = getKillers()
-    local names = {}
-    for _, k in ipairs(killers) do
-        names[#names+1] = k.Name
+task.spawn(function()
+    while true do
+        task.wait(0.1)
+        if not hdtActive then
+            local char = LocalPlayer.Character
+            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                local vel = hrp.AssemblyLinearVelocity
+                local horiz = Vector3.new(vel.X, 0, vel.Z)
+                if horiz.Magnitude > 30 then
+                    hrp.AssemblyLinearVelocity = Vector3.new(0, vel.Y, 0)
+                end
+            end
+        end
     end
-    return names
-end
+end)
 
 -- ============================================================
 -- GUI
@@ -565,11 +756,13 @@ toggleBtn.TextSize = 20
 toggleBtn.Active = true
 toggleBtn.Draggable = true
 toggleBtn.Parent = gui
-local tbc = Instance.new("UICorner"); tbc.CornerRadius = UDim.new(1, 0); tbc.Parent = toggleBtn
-local tbs = Instance.new("UIStroke"); tbs.Color = Color3.fromRGB(255, 160, 80); tbs.Thickness = 2; tbs.Parent = toggleBtn
+Instance.new("UICorner", toggleBtn).CornerRadius = UDim.new(1, 0)
+local tbs = Instance.new("UIStroke", toggleBtn)
+tbs.Color = Color3.fromRGB(255, 160, 80)
+tbs.Thickness = 2
 
 local panel = Instance.new("Frame")
-panel.Size = UDim2.fromOffset(500, 560)
+panel.Size = UDim2.fromOffset(660, 460)
 panel.Position = UDim2.fromScale(0.5, 0.5)
 panel.AnchorPoint = Vector2.new(0.5, 0.5)
 panel.BackgroundColor3 = Color3.fromRGB(20, 20, 26)
@@ -577,8 +770,10 @@ panel.BorderSizePixel = 0
 panel.Visible = false
 panel.Active = true
 panel.Parent = gui
-local pc = Instance.new("UICorner"); pc.CornerRadius = UDim.new(0, 14); pc.Parent = panel
-local ps = Instance.new("UIStroke"); ps.Color = Color3.fromRGB(255, 120, 40); ps.Thickness = 2; ps.Parent = panel
+Instance.new("UICorner", panel).CornerRadius = UDim.new(0, 14)
+local ps = Instance.new("UIStroke", panel)
+ps.Color = Color3.fromRGB(255, 120, 40)
+ps.Thickness = 2
 
 local titleBar = Instance.new("Frame")
 titleBar.Size = UDim2.new(1, 0, 0, 44)
@@ -586,25 +781,23 @@ titleBar.BackgroundColor3 = Color3.fromRGB(50, 35, 25)
 titleBar.BorderSizePixel = 0
 titleBar.Active = false
 titleBar.Parent = panel
-local atbc = Instance.new("UICorner"); atbc.CornerRadius = UDim.new(0, 14); atbc.Parent = titleBar
+Instance.new("UICorner", titleBar).CornerRadius = UDim.new(0, 14)
 local tbFix = Instance.new("Frame")
 tbFix.Size = UDim2.new(1, 0, 0, 14)
 tbFix.Position = UDim2.new(0, 0, 1, -14)
 tbFix.BackgroundColor3 = Color3.fromRGB(50, 35, 25)
 tbFix.BorderSizePixel = 0
-tbFix.Active = false
 tbFix.Parent = titleBar
 
 local titleText = Instance.new("TextLabel")
 titleText.Size = UDim2.new(1, -120, 1, 0)
 titleText.Position = UDim2.fromOffset(12, 0)
 titleText.BackgroundTransparency = 1
-titleText.Text = "HunterBlock"
+titleText.Text = "HunterBlock v20"
 titleText.TextColor3 = Color3.fromRGB(255, 160, 80)
 titleText.Font = Enum.Font.GothamBold
 titleText.TextSize = 16
 titleText.TextXAlignment = Enum.TextXAlignment.Left
-titleText.Active = false
 titleText.Parent = titleBar
 
 local lockBtn = Instance.new("TextButton")
@@ -616,7 +809,7 @@ lockBtn.TextColor3 = Color3.new(1, 1, 1)
 lockBtn.Font = Enum.Font.GothamBold
 lockBtn.TextSize = 16
 lockBtn.Parent = titleBar
-local lbc = Instance.new("UICorner"); lbc.CornerRadius = UDim.new(1, 0); lbc.Parent = lockBtn
+Instance.new("UICorner", lockBtn).CornerRadius = UDim.new(1, 0)
 
 local closeBtn = Instance.new("TextButton")
 closeBtn.Size = UDim2.fromOffset(30, 30)
@@ -627,64 +820,102 @@ closeBtn.TextColor3 = Color3.new(1, 1, 1)
 closeBtn.Font = Enum.Font.GothamBold
 closeBtn.TextSize = 20
 closeBtn.Parent = titleBar
-local cbc = Instance.new("UICorner"); cbc.CornerRadius = UDim.new(1, 0); cbc.Parent = closeBtn
+Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(1, 0)
+
+local tabStrip = Instance.new("Frame")
+tabStrip.Size = UDim2.new(0, 140, 1, -68)
+tabStrip.Position = UDim2.fromOffset(12, 56)
+tabStrip.BackgroundColor3 = Color3.fromRGB(28, 28, 36)
+tabStrip.BorderSizePixel = 0
+tabStrip.Parent = panel
+Instance.new("UICorner", tabStrip).CornerRadius = UDim.new(0, 10)
+
+local tabList = Instance.new("UIListLayout", tabStrip)
+tabList.Padding = UDim.new(0, 4)
+tabList.SortOrder = Enum.SortOrder.LayoutOrder
+
+local tabTopPad = Instance.new("Frame")
+tabTopPad.Size = UDim2.new(1, 0, 0, 8)
+tabTopPad.BackgroundTransparency = 1
+tabTopPad.LayoutOrder = -1
+tabTopPad.Parent = tabStrip
 
 local content = Instance.new("Frame")
-content.Size = UDim2.new(1, -24, 1, -68)
-content.Position = UDim2.fromOffset(12, 56)
+content.Size = UDim2.new(1, -168, 1, -68)
+content.Position = UDim2.fromOffset(160, 56)
 content.BackgroundTransparency = 1
-content.Active = false
 content.Parent = panel
 
-local scroll = Instance.new("ScrollingFrame")
-scroll.Size = UDim2.new(1, 0, 1, 0)
-scroll.BackgroundTransparency = 1
-scroll.BorderSizePixel = 0
-scroll.ScrollBarThickness = 4
-scroll.ScrollBarImageColor3 = Color3.fromRGB(255, 120, 40)
-scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
-scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
-scroll.Active = true
-scroll.Parent = content
+local statusLbl = Instance.new("TextLabel")
+statusLbl.Size = UDim2.new(1, -24, 0, 22)
+statusLbl.Position = UDim2.new(0, 12, 1, -28)
+statusLbl.BackgroundTransparency = 1
+statusLbl.Text = "Scanning..."
+statusLbl.TextColor3 = Color3.fromRGB(255, 220, 100)
+statusLbl.Font = Enum.Font.GothamMedium
+statusLbl.TextSize = 12
+statusLbl.TextXAlignment = Enum.TextXAlignment.Left
+statusLbl.Parent = panel
 
-local list = Instance.new("UIListLayout")
-list.Padding = UDim.new(0, 8)
-list.SortOrder = Enum.SortOrder.LayoutOrder
-list.Parent = scroll
+local pages = {}
+local tabButtons = {}
 
-local function makeLabel(text, color)
-    local l = Instance.new("TextLabel")
-    l.Size = UDim2.new(1, -8, 0, 22)
-    l.BackgroundTransparency = 1
-    l.Text = text
-    l.TextColor3 = color or Color3.fromRGB(200, 200, 220)
-    l.Font = Enum.Font.GothamMedium
-    l.TextSize = 12
-    l.TextXAlignment = Enum.TextXAlignment.Left
-    l.Parent = scroll
-    return l
+local function makeTab(name)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(1, -16, 0, 36)
+    btn.BackgroundColor3 = Color3.fromRGB(38, 38, 48)
+    btn.Text = name
+    btn.TextColor3 = Color3.fromRGB(180, 180, 200)
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 13
+    btn.Parent = tabStrip
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
+
+    local page = Instance.new("ScrollingFrame")
+    page.Size = UDim2.new(1, 0, 1, 0)
+    page.BackgroundTransparency = 1
+    page.BorderSizePixel = 0
+    page.ScrollBarThickness = 4
+    page.ScrollBarImageColor3 = Color3.fromRGB(255, 120, 40)
+    page.CanvasSize = UDim2.new(0, 0, 0, 0)
+    page.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    page.Visible = false
+    page.Parent = content
+
+    local layout = Instance.new("UIListLayout", page)
+    layout.Padding = UDim.new(0, 8)
+    layout.SortOrder = Enum.SortOrder.LayoutOrder
+
+    pages[name] = page
+    tabButtons[name] = btn
+
+    btn.MouseButton1Click:Connect(function()
+        for n, p in pairs(pages) do p.Visible = (n == name) end
+        for n, b in pairs(tabButtons) do
+            b.BackgroundColor3 = (n == name) and Color3.fromRGB(255, 120, 40) or Color3.fromRGB(38, 38, 48)
+            b.TextColor3 = (n == name) and Color3.new(1, 1, 1) or Color3.fromRGB(180, 180, 200)
+        end
+    end)
 end
 
-local function makeHeader(text)
-    local l = Instance.new("TextLabel")
-    l.Size = UDim2.new(1, -8, 0, 26)
-    l.BackgroundTransparency = 1
-    l.Text = "— " .. text .. " —"
-    l.TextColor3 = Color3.fromRGB(255, 160, 80)
-    l.Font = Enum.Font.GothamBold
-    l.TextSize = 12
-    l.TextXAlignment = Enum.TextXAlignment.Left
-    l.Parent = scroll
-end
+makeTab("Main")
+makeTab("HDT")
+makeTab("Diagnostics")
 
-local function makeToggle(name, initial, callback)
+pages.Main.Visible = true
+tabButtons.Main.BackgroundColor3 = Color3.fromRGB(255, 120, 40)
+tabButtons.Main.TextColor3 = Color3.new(1, 1, 1)
+
+local function makeToggle(page, name, initial, callback)
     local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, -8, 0, 48)
+    row.Size = UDim2.new(1, -8, 0, 44)
     row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
     row.BorderSizePixel = 0
-    row.Parent = scroll
-    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
-    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
+    row.Parent = page
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 8)
+    local rs = Instance.new("UIStroke", row)
+    rs.Color = Color3.fromRGB(60, 60, 80)
+    rs.Thickness = 1
 
     local l = Instance.new("TextLabel")
     l.Size = UDim2.new(1, -80, 1, 0)
@@ -693,20 +924,20 @@ local function makeToggle(name, initial, callback)
     l.Text = name
     l.TextColor3 = Color3.fromRGB(230, 230, 240)
     l.Font = Enum.Font.GothamMedium
-    l.TextSize = 14
+    l.TextSize = 13
     l.TextXAlignment = Enum.TextXAlignment.Left
     l.Parent = row
 
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.fromOffset(50, 26)
-    btn.Position = UDim2.new(1, -64, 0.5, -13)
+    btn.Size = UDim2.fromOffset(50, 24)
+    btn.Position = UDim2.new(1, -62, 0.5, -12)
     btn.BackgroundColor3 = initial and Color3.fromRGB(255, 120, 40) or Color3.fromRGB(70, 70, 90)
     btn.Text = initial and "ON" or "OFF"
     btn.TextColor3 = Color3.new(1, 1, 1)
     btn.Font = Enum.Font.GothamBold
-    btn.TextSize = 12
+    btn.TextSize = 11
     btn.Parent = row
-    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = btn
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
 
     btn.MouseButton1Click:Connect(function()
         local state = btn.Text ~= "ON"
@@ -717,51 +948,53 @@ local function makeToggle(name, initial, callback)
     return btn
 end
 
-local function makeSlider(name, minV, maxV, initial, callback)
+local function makeSlider(page, name, minV, maxV, initial, callback)
     local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, -8, 0, 58)
+    row.Size = UDim2.new(1, -8, 0, 52)
     row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
     row.BorderSizePixel = 0
-    row.Parent = scroll
-    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
-    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
+    row.Parent = page
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 8)
+    local rs = Instance.new("UIStroke", row)
+    rs.Color = Color3.fromRGB(60, 60, 80)
+    rs.Thickness = 1
 
     local l = Instance.new("TextLabel")
     l.Size = UDim2.new(1, -80, 0, 20)
-    l.Position = UDim2.fromOffset(14, 6)
+    l.Position = UDim2.fromOffset(14, 4)
     l.BackgroundTransparency = 1
     l.Text = name
     l.TextColor3 = Color3.fromRGB(230, 230, 240)
     l.Font = Enum.Font.GothamMedium
-    l.TextSize = 13
+    l.TextSize = 12
     l.TextXAlignment = Enum.TextXAlignment.Left
     l.Parent = row
 
     local vl = Instance.new("TextLabel")
     vl.Size = UDim2.new(0, 60, 0, 20)
-    vl.Position = UDim2.new(1, -74, 0, 6)
+    vl.Position = UDim2.new(1, -74, 0, 4)
     vl.BackgroundTransparency = 1
     vl.Text = tostring(math.floor(initial * 100) / 100)
     vl.TextColor3 = Color3.fromRGB(255, 160, 80)
     vl.Font = Enum.Font.GothamBold
-    vl.TextSize = 13
+    vl.TextSize = 12
     vl.TextXAlignment = Enum.TextXAlignment.Right
     vl.Parent = row
 
     local bg = Instance.new("Frame")
-    bg.Size = UDim2.new(1, -28, 0, 10)
-    bg.Position = UDim2.new(0, 14, 0, 32)
+    bg.Size = UDim2.new(1, -28, 0, 8)
+    bg.Position = UDim2.new(0, 14, 0, 28)
     bg.BackgroundColor3 = Color3.fromRGB(50, 50, 65)
     bg.BorderSizePixel = 0
     bg.Parent = row
-    local sc = Instance.new("UICorner"); sc.CornerRadius = UDim.new(1, 0); sc.Parent = bg
+    Instance.new("UICorner", bg).CornerRadius = UDim.new(1, 0)
 
     local fill = Instance.new("Frame")
     fill.Size = UDim2.new(0, 0, 1, 0)
     fill.BackgroundColor3 = Color3.fromRGB(255, 120, 40)
     fill.BorderSizePixel = 0
     fill.Parent = bg
-    local fc = Instance.new("UICorner"); fc.CornerRadius = UDim.new(1, 0); fc.Parent = fill
+    Instance.new("UICorner", fill).CornerRadius = UDim.new(1, 0)
 
     local function setV(v)
         local pct = (v - minV) / (maxV - minV)
@@ -802,14 +1035,16 @@ local function makeSlider(name, minV, maxV, initial, callback)
     end)
 end
 
-local function makeDropdown(name, options, initial, callback)
+local function makeDropdown(page, name, options, initial, callback)
     local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, -8, 0, 50)
+    row.Size = UDim2.new(1, -8, 0, 46)
     row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
     row.BorderSizePixel = 0
-    row.Parent = scroll
-    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
-    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
+    row.Parent = page
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 8)
+    local rs = Instance.new("UIStroke", row)
+    rs.Color = Color3.fromRGB(60, 60, 80)
+    rs.Thickness = 1
 
     local l = Instance.new("TextLabel")
     l.Size = UDim2.new(1, -160, 1, 0)
@@ -818,20 +1053,20 @@ local function makeDropdown(name, options, initial, callback)
     l.Text = name
     l.TextColor3 = Color3.fromRGB(230, 230, 240)
     l.Font = Enum.Font.GothamMedium
-    l.TextSize = 14
+    l.TextSize = 13
     l.TextXAlignment = Enum.TextXAlignment.Left
     l.Parent = row
 
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.fromOffset(130, 30)
-    btn.Position = UDim2.new(1, -144, 0.5, -15)
+    btn.Size = UDim2.fromOffset(130, 28)
+    btn.Position = UDim2.new(1, -144, 0.5, -14)
     btn.BackgroundColor3 = Color3.fromRGB(60, 60, 80)
     btn.Text = initial
     btn.TextColor3 = Color3.new(1, 1, 1)
     btn.Font = Enum.Font.GothamBold
     btn.TextSize = 12
     btn.Parent = row
-    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = btn
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
 
     local idx = 1
     for i, opt in ipairs(options) do
@@ -847,75 +1082,175 @@ local function makeDropdown(name, options, initial, callback)
     return btn
 end
 
-local function makeButton(name, callback)
-    local row = Instance.new("Frame")
-    row.Size = UDim2.new(1, -8, 0, 44)
-    row.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
-    row.BorderSizePixel = 0
-    row.Parent = scroll
-    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
-    local rs = Instance.new("UIStroke"); rs.Color = Color3.fromRGB(60, 60, 80); rs.Thickness = 1; rs.Parent = row
-
+local function makeButton(page, name, callback, color)
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(1, -16, 1, -8)
-    btn.Position = UDim2.new(0, 8, 0, 4)
-    btn.BackgroundColor3 = Color3.fromRGB(60, 100, 160)
+    btn.Size = UDim2.new(1, -8, 0, 40)
+    btn.BackgroundColor3 = color or Color3.fromRGB(60, 100, 160)
     btn.Text = name
     btn.TextColor3 = Color3.new(1, 1, 1)
     btn.Font = Enum.Font.GothamBold
     btn.TextSize = 13
-    btn.Parent = row
-    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = btn
-
+    btn.Parent = page
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 8)
     btn.MouseButton1Click:Connect(function()
         if callback then callback() end
     end)
-    return btn
 end
 
-makeHeader("Status")
-local statusLbl = makeLabel("Scanning...", Color3.fromRGB(255, 220, 100))
+local function makeHeader(page, text)
+    local l = Instance.new("TextLabel")
+    l.Size = UDim2.new(1, -8, 0, 24)
+    l.BackgroundTransparency = 1
+    l.Text = "— " .. text .. " —"
+    l.TextColor3 = Color3.fromRGB(255, 160, 80)
+    l.Font = Enum.Font.GothamBold
+    l.TextSize = 12
+    l.TextXAlignment = Enum.TextXAlignment.Left
+    l.Parent = page
+end
 
-makeHeader("Auto Block")
-makeToggle("Enable Auto Block", S.AutoBlock, function(v) S.AutoBlock = v end)
-makeSlider("Block Range", 5, 40, S.BlockRange, function(v) S.BlockRange = v end)
+-- ============================================================
+-- MAIN TAB
+-- ============================================================
+makeHeader(pages.Main, "Auto Block")
+makeToggle(pages.Main, "Enable Auto Block", S.AutoBlock, function(v) S.AutoBlock = v end)
+makeToggle(pages.Main, "Aim on Block", S.AimOnBlock, function(v) S.AimOnBlock = v end)
+makeDropdown(pages.Main, "Aim Mode", {"HRP", "Camera", "HRP + Camera"}, S.AimMode, function(v) S.AimMode = v end)
+makeSlider(pages.Main, "Aim Hold (s)", 0.1, 1, S.AimHold, function(v) S.AimHold = v end)
+makeToggle(pages.Main, "Punch on Block", S.PunchOnBlock, function(v) S.PunchOnBlock = v end)
+makeSlider(pages.Main, "Punch Delay (s)", 0, 0.3, S.PunchDelay, function(v) S.PunchDelay = v end)
 
-makeHeader("SSHT")
-makeToggle("Enable SSHT", S.SSHTEnabled, function(v) S.SSHTEnabled = v end)
-makeDropdown("SSHT Mode", {"Legit", "Blatant"}, S.SSHTMode, function(v) S.SSHTMode = v end)
-makeSlider("SSHT Speed", 5, 100, S.SSHTSpeed, function(v) S.SSHTSpeed = v end)
+makeHeader(pages.Main, "Range & Facing")
+makeSlider(pages.Main, "Block Range", 5, 40, S.BlockRange, function(v) S.BlockRange = v end)
+makeSlider(pages.Main, "Facing Threshold", -1, 1, S.FacingThreshold, function(v) S.FacingThreshold = v end)
 
-makeHeader("Box Visuals")
-makeToggle("Show Range Box", S.ShowRangeBox, function(v) S.ShowRangeBox = v end)
-makeToggle("Show Facing Box", S.ShowFacingBox, function(v) S.ShowFacingBox = v end)
-
-makeHeader("Auto Parry")
-makeToggle("Aim on Parry", S.ParryAim, function(v) S.ParryAim = v end)
-makeToggle("Punch on Parry", S.ParryPunch, function(v) S.ParryPunch = v end)
-makeSlider("Parry Aim Delay (s)", 0.02, 0.3, S.ParryAimDelay, function(v) S.ParryAimDelay = v end)
-makeSlider("Parry Prediction (s)", 0, 0.4, S.ParryPredict, function(v) S.ParryPredict = v end)
-
-makeHeader("Killer Detection")
-makeDropdown("Manual Killer", {"Auto", "c00lkidd", "Slasher", "Noli", "JohnDoe", "1x1x1x1", "Sixer", "Nosferatu", "Azure", "All"}, S.ManualKiller, function(v)
-    S.ManualKiller = v
-    statusLbl.Text = "Manual override: " .. v
-    statusLbl.TextColor3 = Color3.fromRGB(255, 200, 100)
+makeHeader(pages.Main, "Reach")
+makeToggle(pages.Main, "Enable Reach", S.Reach, function(v)
+    S.Reach = v
+    if not v then clearReach() end
+end)
+makeSlider(pages.Main, "Reach Size", 2, 12, S.ReachSize, function(v)
+    S.ReachSize = v
 end)
 
-makeButton("Refresh Killers", function()
-    local count = scanAllKillers()
-    if count > 0 then
-        local names = detectKillerNames()
-        statusLbl.Text = "Refreshed — " .. count .. " killers: " .. table.concat(names, ", ")
-        statusLbl.TextColor3 = Color3.fromRGB(90, 255, 150)
-    else
-        statusLbl.Text = "Refreshed — 0 killers found"
-        statusLbl.TextColor3 = Color3.fromRGB(255, 100, 100)
+-- ============================================================
+-- HDT TAB
+-- ============================================================
+makeHeader(pages.HDT, "HDT — Velocity Drag")
+makeToggle(pages.HDT, "Enable HDT", S.HDT_Enabled, function(v)
+    S.HDT_Enabled = v
+    if not v then stopHDT() end
+end)
+makeDropdown(pages.HDT, "Mode", {"Legit", "Blatant"}, S.HDT_Mode, function(v)
+    S.HDT_Mode = v
+    local cap = (v == "Blatant") and 50 or 25
+    if S.HDT_Speed > cap then S.HDT_Speed = cap end
+end)
+makeSlider(pages.HDT, "Speed", 5, 50, S.HDT_Speed, function(v)
+    S.HDT_Speed = math.min(v, getHDTMaxSpeed())
+end)
+makeSlider(pages.HDT, "Duration (s)", 0.3, 5, S.HDT_Duration, function(v)
+    S.HDT_Duration = v
+end)
+
+-- ============================================================
+-- DIAGNOSTICS TAB
+-- ============================================================
+makeHeader(pages.Diagnostics, "Live Status")
+local diagLabel = Instance.new("TextLabel")
+diagLabel.Size = UDim2.new(1, -8, 0, 300)
+diagLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
+diagLabel.BorderSizePixel = 0
+diagLabel.Text = "Loading..."
+diagLabel.TextColor3 = Color3.fromRGB(220, 220, 220)
+diagLabel.Font = Enum.Font.Code
+diagLabel.TextSize = 12
+diagLabel.TextXAlignment = Enum.TextXAlignment.Left
+diagLabel.TextYAlignment = Enum.TextYAlignment.Top
+diagLabel.TextWrapped = true
+diagLabel.Parent = pages.Diagnostics
+Instance.new("UICorner", diagLabel).CornerRadius = UDim.new(0, 8)
+
+makeHeader(pages.Diagnostics, "Actions")
+makeToggle(pages.Diagnostics, "Debug Mode", S.Debug, function(v) S.Debug = v end)
+
+makeButton(pages.Diagnostics, "Rescan Killer Sounds", function()
+    for killer in pairs(killerSoundCache) do
+        killerSoundCache[killer] = nil
+        killerScanStatus[killer] = nil
+    end
+    for _, k in ipairs(getKillers()) do
+        task.spawn(function() getKillerSounds(k) end)
+    end
+    statusLbl.Text = "Rescanned"
+    statusLbl.TextColor3 = Color3.fromRGB(255, 200, 100)
+end, Color3.fromRGB(100, 60, 180))
+
+makeButton(pages.Diagnostics, "Force Stop HDT", function()
+    stopHDT()
+    statusLbl.Text = "HDT force-stopped"
+    statusLbl.TextColor3 = Color3.fromRGB(255, 100, 100)
+end, Color3.fromRGB(160, 60, 60))
+
+makeButton(pages.Diagnostics, "Fire Punch Now", function()
+    firePunch()
+    statusLbl.Text = "Manual punch fired"
+    statusLbl.TextColor3 = Color3.fromRGB(255, 200, 100)
+end, Color3.fromRGB(100, 140, 60))
+
+task.spawn(function()
+    while true do
+        task.wait(0.5)
+        local killers = getKillers()
+        local lines = {
+            "[ FINDKILLERID ]",
+            "  Loaded:      " .. (findkillerid and "YES" or "NO"),
+            "",
+            "[ PARRY ]",
+            "  Hook:        " .. (parryConn and "active" or "waiting"),
+            "  NetworkMod:  " .. (networkModule and "ready" or "not loaded"),
+            "",
+            "[ KILLERS ]",
+        }
+
+        if #killers == 0 then
+            table.insert(lines, "  (none)")
+        else
+            for _, k in ipairs(killers) do
+                local charName = k:GetAttribute("CharacterName") or k.Name
+                local status = killerScanStatus[k] or "pending"
+                local cache = killerSoundCache[k]
+                local count = 0
+                if cache then
+                    for _ in pairs(cache) do count = count + 1 end
+                end
+                table.insert(lines, string.format("  %s", k.Name))
+                table.insert(lines, string.format("    CharName: %s", charName))
+                table.insert(lines, string.format("    Scan: %s | Sounds: %d", status, count))
+            end
+        end
+
+        table.insert(lines, "")
+        table.insert(lines, "[ CONFIG ]")
+        table.insert(lines, "  AutoBlock:   " .. (S.AutoBlock and "ON" or "OFF"))
+        table.insert(lines, "  Aim:         " .. (S.AimOnBlock and "ON" or "OFF") .. " | " .. S.AimMode)
+        table.insert(lines, "  Punch:       " .. (S.PunchOnBlock and "ON" or "OFF"))
+        table.insert(lines, "  Reach:       " .. (S.Reach and ("ON (" .. S.ReachSize .. ")") or "OFF"))
+        table.insert(lines, "  HDT:         " .. (S.HDT_Enabled and "ON" or "OFF") .. " | " .. S.HDT_Mode)
+        table.insert(lines, "  HDT Speed:   " .. math.floor(S.HDT_Speed))
+        table.insert(lines, "  HDT Duration:" .. string.format("%.2f", S.HDT_Duration))
+        table.insert(lines, "  HDT Running: " .. (hdtActive and "YES" or "no"))
+        table.insert(lines, "  Range:       " .. math.floor(S.BlockRange))
+        table.insert(lines, "  Facing:      " .. string.format("%.2f", S.FacingThreshold))
+
+        diagLabel.Text = table.concat(lines, "\n")
     end
 end)
 
--- DRAG
-local dragging, dragStart, startPos
+-- ============================================================
+-- PANEL DRAG
+-- ============================================================
+local draggingPanel, dragStart, startPos
 local locked = false
 
 panel.InputBegan:Connect(function(input)
@@ -926,13 +1261,13 @@ panel.InputBegan:Connect(function(input)
     for _, obj in ipairs(hit) do
         if obj:IsA("TextButton") then return end
     end
-    dragging = true
+    draggingPanel = true
     dragStart = input.Position
     startPos = panel.Position
 end)
 
 UserInputService.InputChanged:Connect(function(input)
-    if not dragging then return end
+    if not draggingPanel then return end
     if input.UserInputType == Enum.UserInputType.MouseMovement
        or input.UserInputType == Enum.UserInputType.Touch then
         local delta = input.Position - dragStart
@@ -946,7 +1281,7 @@ end)
 UserInputService.InputEnded:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1
        or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = false
+        draggingPanel = false
     end
 end)
 
@@ -962,13 +1297,8 @@ local function setOpen(open)
     toggleBtn.BackgroundColor3 = open and Color3.fromRGB(80, 80, 100) or Color3.fromRGB(255, 120, 40)
 end
 
-toggleBtn.MouseButton1Click:Connect(function()
-    setOpen(not panel.Visible)
-end)
-
-closeBtn.MouseButton1Click:Connect(function()
-    setOpen(false)
-end)
+toggleBtn.MouseButton1Click:Connect(function() setOpen(not panel.Visible) end)
+closeBtn.MouseButton1Click:Connect(function() setOpen(false) end)
 
 UserInputService.InputBegan:Connect(function(input, processed)
     if processed then return end
@@ -977,19 +1307,22 @@ UserInputService.InputBegan:Connect(function(input, processed)
     end
 end)
 
--- Status loop
+-- ============================================================
+-- STATUS LOOP
+-- ============================================================
 task.spawn(function()
     while true do
         task.wait(2)
-        local names = detectKillerNames()
+        local names = {}
+        for _, k in ipairs(getKillers()) do names[#names+1] = k.Name end
         if #names > 0 then
             statusLbl.Text = #names .. " killers: " .. table.concat(names, ", ")
             statusLbl.TextColor3 = Color3.fromRGB(90, 255, 150)
         else
-            statusLbl.Text = "No killers yet — waiting"
+            statusLbl.Text = "No killers yet"
             statusLbl.TextColor3 = Color3.fromRGB(255, 180, 60)
         end
     end
 end)
 
-print("[HunterBlock] v8 Loaded")
+print("[HB-v20] Loaded")
