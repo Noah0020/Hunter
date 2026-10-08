@@ -1,1 +1,2087 @@
-return(function(...) local _1f=bit32.rshift local _2s,_9r,_7m=string.gsub,pcall,rawget local _9a=bit32.byteswap local _8f=bit32.extract local _6h=type local _6c,_7b=table.concat,table.insert local _2v=assert local _7e,_0c=bit32.bxor,bit32.band local _4q,_5m,_1s=string.byte,string.char,string.rep local _5d=string.sub local _8g=string.find local _8d=[=[D2plq`oJ9W2?e-nUn6*.jqo_T0m*<:I*4pSZA9>@/'hAU-A4Y&d/uS#MJkI6n!Pn76Oi@_-e^'p3#1T_JBN>oWUd"?^<?V+C<%?:AXA1D/=25ZIeYL"NLnu(J396nF2sI"8&Qh0aIk;,<"rD7#-)a&9dOUhhY7>uAI)U+I9qj!)e%s?](eiN22)c'd_6N^Gjmr%O?G1s>En7It\L0G]%ib#1bgq?n5Yj"R6F(r;sLeKDHXHd0kao/siY$g`GRu@mn?O%=or,j>d.ff\O^K+m)TS6fgH1oM*"hadp?'[:?HK6(46CK,%eB6$,qF\B%ZS7>at!Gl#*DT;`)^gh+H::OQt`4%1WVX_*;i5S]Y\&0O:P7>?%RJgQJ8k+h?+>1O!W@&V2D:?<BrulmO[l7%YE/;aT/)D7\=`,^@>RmZLP*DmkD-&c@$u.lk;?UGIbM1.Ae+BWA#3MJJHWrV0CZ_8$.[4=&/\A4dqW(5"s](!aQFP1WgM)^$Po>l]sBGM=R!O'C"-=1h7j'UNj]o&7:/T`7+J(ud4*,BYnt?afS>N7Rkd$//0EOS)dLU\JTbafhjZa%uD^eu:hK8P;qVILatsl&U'PW&D:-Ja$gu0b<6LoHd`17*ehXWiBja2_WETOu<0!/?ShT!u>?fAM(*\%W#r.M7+U^O`Oo?^TWf:_DPgg.ND*1QiNNR!^FdO=,XC9ognS>QN;T9c3V%A_g/QQsZj?&NYt,-@CJ^5C7AqWms]fK]mG./>4LTAt+G*)*r<=M\H8Wb:s*,THc5D)ap=7*&:b_E;!YqUOA!@<EZ_RgHf=L1</JlB$r@.sGn1UZ;Z_30Jod^/aCh"T^#.n'!$QCKQT=T;PO2r720]3VWC>Peuj]9S"JPUU,VjBIiDnEYa7a%:RV!Nm"<7P:@iL9L>4RMWNf^l^S[GNA3Y$eTPE75VT^?fFSnsC*pXoXK,jXFe=7:'_EFB*[`=W?>lWWZH,Y\qKRdI*\eV6+A2`Put-Ft2cJ)qEjJfcY(*Kg`_&tnQYpeV&f<u-k#s3)/NA$?D]e*/(0G.$4sCB-Tl3gh!ghJK-(jEDOP*b\"CMoYX#Sd;P16(q]@#L.83]^0\(+f5cKgQ,[O82^3KF;)#"(Lr5k8p_9V7)-/.+>jnD#\N=u",H"AqZCga3P_nj:gJVj"oj;*C?FCZJd@lpKSdVPiagG!RWGNhgOJJb`6Jc!Fl"7m*T'sj&aW],Nm"u^2-jZAV5MV+^D^*PKGH9oiCaL,SOC.A,QRc22Ko3e]="/M6IXaU^70L"tB&u6Ks5:TSrK>2@dV1O%[g&]"LCnM?=:G6)^j#<fLr"%ZHmk]2god"-*+0BWUh5:@KBmD7AlNcJ,%Nh!5V\n@j2Fjqq?*nO#I_%9'#,j9#LS7_`L_T8supBjl]^J%N5/DHF[le)$#RC)[&$JS6V7bDF^!o1gpLu2US'#-^L[%A#e]`uP9m<l(SQ\\c)Zkh+?sJJOmlV`aPn(!E[e%j,G2!B`:(C;A.`!(sp?C;<p<*LDAe@IX&N2:,`%0<V4Fdc$.#AmQL`J.uX&s+qF@HT:%WBqa/r.F_k`,j#Zi!BLO*1;_Jok?!]KUq25m8=EUK:W"*?H^l/$&.Ni$PDs9h&NIi[Q*6aTn/(5/W]X1KmOFP]tn2p"?0eiT;fLNpQfq$t>i8Q<18qo[t,Rb!C/_hV'8TjtP\1JINC\P]@QP.a9_,HAGKkbYVSX8iAIZC4]@\+$<;J3/N_Hdj?[taX"tb9h\.$GI%tOR;Os%%&*\W%il<^)<<UQ#7]l8hPd%[d>(nKDPnTF5JWI8%R3+GVoP-(C?keN&t]8>YVb@_2aj^YP'2u,Z,&&hS&SH6m7<nl@Wp)nlUs82=Fh#2)N[$sE&>gGG%qG,,o#?pToE353]M*2CB)NSr`Fg'DFu&:41$-$-RgH<06"WBF)b??JOph:^%rckbOkh;2>+?t!hNE\R%MMh@noR'TLX5D+3X>?Kni3?JA"S%G-:`BY<$OOW!Z^Sp`"F0[;gT.\0=fY:qgq,5-sVaq`%dDkr$Fjl>ZX=g9j"]li/NfZ`3ZsJI_&H'9ltG2N<gA6K1*6Ol3rl,8Ni4WR2*>=GI"+"$t))4.OLm:gG!A:<`s>3?HKG:-&H481c**knV*U2=L5i!!f/CFiHooX9kWC*on[?]BWd"+n^jX@RS3QN*b$0;]p![/>F,a:!i*m&:.ifc(PTdDElSi:K0CSLSn]?.mWS>F,1[krXh_b,@^Z:JlLo)EkKF$mhZ7((#iDa^i\TlICkoG09pVVZk@c.Zg>T9T"IQGa222?\.)XutO=e`o+5a'0"f1OTSm>Bs=a2X2RZnc:m*duM$ua7m9XW&UOWPr]ekqk_t.7KV7>;9!NQW";$PMeZsmB=hFnZ%D?//&4tJGQ9[(Ol57:&+ZW1_$/o9*EM>&KNa7Q'+HF7aNU(IEj3_KHK^Tbes,L,'oc+Z_8po,dUUG.4p=XUj9]]7=LtK<t*2m6#LAUSVt%%RE2j=0P6Hts<f4k;@'[#a_&k+lX@sY1PGp`iri,!Ph]$\@,hr7]nkBJf@2P:hZn4?s/)jr77rIO!uo[#dK12-5#5m<TNi1%aTdsi?UXR)3=cMSG(TegJ%el+=&@SThgL_N]uf/G:VkX`L5Fd"X[\!7P8H?>RmP%L/kBo4))s;*Ca&r^pQ1\0gshB/QF4QMF1`,ck'hH$"-K;uWr=#*oql;Om$V*L&tXjsY1o[\-"M(HL')8rbPnr<A=5FAr`Jd;Dobm!S60eMMjDm$;1A@4Ns2>,[KE-U:QaUeT2]JBU'm=*c813N,<oCOKl@&u"c-?jiaXI3)-kRHYot>ES3/Sujlb/r70thKlU>,9iF4t^NHT&fPH/ik!BYuFZuu0SnAI#9S((/?VZ*iu3Bb/q$Vg:-GChF5hB]@RLi8MVR8On*SoEc1G'tLBHO+&.c=D[W$D`$l:X@n?Q75\/E#^X1Q&#.ORt7j`mU.o&AWMHUSc2(-!_p<\$rj*,NfnipB^pc6C6J=kt'FB%<Wb&PGo2q3,2++lu)*0k'.cIGk>3'l7H`YW5h,0d5`nSE>^I:%<chk`o\#sHm5Ao7L6<rue5skkIofKX*;reC^<n3pG1K9Ub&b1n^\lfENUtQp2rLb,'sE;.+)LPme;Nr,[`F8^C!K)!HOr$b36^4A=I:)rqq.ila0=aO>CZs^Dgbre5DnHc?O4Dgb=_$1n)4<9VHn@86`f'fYk]EksK0Y)tJ6n1^#i\sCK,Q.'<rkCEMHaAO!?Zs9fZZ'%P&:#G\@YJCM1sfCtN6A!e1Xe\AU!u54q^>S\l/3Vt,7R1:!MRf$jo%WCK\th?emB<Qo4,VQ[:H?>J2aM14flYPjd_:*Gph-MD!I5-Q83#&C?qE2:MOdXd*#M]CtI:QTsshpWUc(^*jn'6DJp<-qSk\1H$*0*m"WGQMCHA:n;`i^Pt(=Pb4>^R&U+35F)+M?Z$fn_T\b4VF`ZJlgt7UEe^cIM`'?\Xa8#\+Z'08W8L/%<rjTY%1A=Qq00GI66Iji'WnFNH3^5/Qe0=59Y'Uq\+a*LP1g4sLO>F=]ro7o$_[`S#,ZPDfbP5VOZZJDaWQ^$f:O\D[VXIG\Dk-![T_=N3d_?:A*NU#.P4=OBO!di:&<(lItn+`^.+B0R`KAjpWU`qiVh/%ZTT<((g5EZU^g]7Ci'roe`CDPl&5%3(Th3RrGjeC+8Dalj8/?2m@hdT*$kt/Eg$>kdEPfbO_bpk7)3)_HX6Ot/O#*:fD*:XE'D=*K08[`!We6$i_a.X#A4c/pR_9gfu05*1'&EY53SA0lC!:4l#JstR#j7@f/n-(XkKZb14.4mgpca9hh;[^['CWa:t>gBr0d#6iY%JWFJMWTWFD),com'!GI-D>aV-$L8hr4ZD9<nW0D%qgo^'@m,?1k5_5u4n/M<(50^5j8;rLoIN,<io7%0&=j,ch1*ZS'"nmflTs.@gRI#8Oecqij@PH.d:@6_#&Mg%lU.jnMO7Ob%;1(Ca6,LjMbLMH%S#\3O[D9KP$,TJq`_)3AAhU[21/t'Y=3jGk`9gc#*$8_d9cL7[_se$%*jr'Vh2/U<h8:LD0t+,]*h`>pJq*/RW^DqPV'C5R+>:GLY\U#pm(jXaqL@"X1U1T+rZ1P_8nPBbHSLS&KMk(rK0SWH`^&[duG,-r-#]rl<,\8sELX7r3t:bm$Ombp;:lr%`:%TGMEU?Y,R$NM[*'Dfled]LUJ4p/ZG8=/)4*3eBSR"g`G=me\anqXAd.#Fe`3mUr'qA0-P=$EC7,P$0-r52EfGPKi=,!!<HU02fK17We>`Wff\(311(=6b)I5H)5&Z,(a<Hs(4e)aUQUcoIk9FP3$%kN?`@bVH[#>e4SQASq7EHm;?p'32n9QqM9X_1K>9!lkd8]Y%1U!_fb?g(][WU5bGnOM'9t:Tk1tDQ"FW)5;X)AeuOa::*>eq$.-<*?5Y(d>(&66k=`:jI]k(!U.1Pj5_\8dMT!R-u4clIoBc(S!lV056]>0.6"ktSRD"O2oM%4gFd3<B"QERBE:5[emi\T6U##+*Oj?1q)UPm7$kU:4tmY[@@6GITRG1_5>8AliIMq9O/H$J?Fh`\@\kFOJ@k+d]fECVGQ)8K]DDC$6]=g[?M-Brq9'/,iCZ(l6Anc7-;"RJ+;i9?8t,*g+\!DT'tP6o=_DsDE*WK(f)mdE/E+W9:dkNM"02n_$D]lN5!>Wam.HCVQZgaRk!&U[RIZdftrHkGDD&k/&BXj=mh,%+d#4-WAOVFsIB$P4@_^!Hq6Rj9Zm&Fr#FA+9'6Ws_e9(Rd+@<7+jhT(:K1^LXkFgeU:;LOF^H=VD6,JjD-3O=DN1D;;*S"REjA?^kfE?2>!i#&ULokgQHqN#iTK>Wf-?V;$_Bn+Fu+#F22HiI&JVcriTm$0-YkQom%.dA&rPOIM+],9_q\*h74&q_Ee>N@fIE<.^>dh*9hROjuJ9o2Z3/UC(pH%mS,uJ=aD+Nn\iK6AlXcFV^$pIGh4q?]o_sNJWpe8\D;<^UC\B&0Mn]=U0$`IACsXBhF7NCQf46sC.1h?&n=am,Vk'_qCOKEJ<C"emK2\#In#of%pD),Ym1=#3_`0ernQE,k^n$F1nWKJAG0k:\>H)is,IWG];GFSQp6+J^)aV1@%A6sLi`+?R)qZe;38OPO4?u0)ud8QTSh$i<P]U,HMHSF6p-d`0]'*31`j,pB@Zj4"=q&Vn=iC0f,cOO'C%F-o8^gL(:V\),\/&Gp5?R5V>E_5RX-5p;B_=m1P\\_RJE"m(o")a7L3*]Y,*c%TJb=$YJBfBuCTWGJM9_u/p$F%-K&H,(J80[S63FBI;37i"CXu4Tc\"$j3cYKoF>V3[roSft.u'nut'2HA]Ge[%o91cK(%Jm/'TV.gi7gJ.X"+Pm5r[j:i/ljt03ic.c`8H8*u7<m`>?S;2L=;6M>G(D[^nMDV_p:?aeMVAf?aJAu[jNp.Y`\I[.JrfAm/ptUh2icP*jt6SRDseVZ<2l+^WsVFPq_:ZUB(HpZiL\9[!cR<]D.?n8_Om=-+PQ&!utHO3YerCZ\O.r><T:L[cO3EF@Knu=_t^APlV/h@JS/NQ_mE!7.-W1&lV?5k+$/FhV0AU>ibbJo1_RZ'$h6NZXZJj4h8C<5)()D'7)H5n@D?\[&aE9<6?<E>>P*:hS>iVc$!m$*Zq&nOS-2+G=t;sXQf1:*/3cc',o3q_B`Kl,[s4O(C:S^B.#2*pPmV>>TogG]ee^6a]VCoM*`Y?b:<*=@!"1C'G]OWoSt5aFgT_9?sM>"_>sE]aQQZ$=l6`J]ib[*3#;,-H9_2QVcMTF?FbQQ@jNsiA`9Dt_a<XZU>372dhs^'Eh5QD-GZflPR;IlXkAu'KKXm%[]473Y$[RK#WPR#50;[$Am/?1%2TDAS2X1O6K*Z/IE+pM$2dHMsS!Yc58D(JtRT(N[e_M%B?'(5"/<hW[O[/6(mdCpiI'^OPU\hXMk%2'B'dhF6BrDaTPD+.4j$I5)Y;[nhNIOeCea&SVF4DtN>c[gcoU!Kk9VB<B6XYGf'N8Fj<X\dDbB,QbukiRKO/k_=`g>it0l4KZ5#mSf)u'.P2DB,"Etut+ad_#PX:JlM7(5]fR$H.iSohc=SlhV989V4NG"7<7HW&9&dD@F%_JuHGNYQ.'75Cnh9nD+f^m3!+V*V!q_EKk9f6Ik#(l:E5&Z0@NP"aQjaR>"IG/>oEMY2:05rG:']uI9`9<j+U0;DTaBV$E1_r#sFO<GK'l83'VeuP!:0003poXDuF*,e7fHik"lT(*/[ttN_0i*F&?tTQ2^c`M^k3^86l8(2QRPTe7b^e2eo#D`Su,GQ^>jMC)0k00Tp#,f6K#0%J]f'`Hg^8`TQMPqR&,O=/]GC:`H(<hILp-L1EH2!1/3*-/k44O[n6S4-'=WJZY(n;2a@k";oY(]fA0rsaQ95k(l-OA!K=@;fX.)B56_DILr8A_'GP=q@_cI/d;r(G[<sAh#!_lGm9X\,(qBfdlqBX_]G](90%1hq>d\G[@?o;-`**0UMFR.fJL2'jmJGJk+jCnTUfm5_\OV=g,]B^CQ9+#\e6OYX0rN_H^i[k8Z+_np/+P2]=ThL1hLhG_p!)mU_7kK'0)LbF^W-aF-MX-',(`I2?8qi0)A49AZn@MPm'DsCndc\Qh,RcA*_q7W!jlH3*g*Wq<b`JP'iH:2*7or5?V!m+1D<,np3HUHKfqraUjei.IW$ro\!*Vu*!#f^BUpfSdXnAKWp'jaA@+)V)79JK#=!6Siq94BH,X;GKuuoGQI)epiV4s_K`r)u^S?Xc.N;?F!:cO-a%Kj=!iSc#L`g.Y@Xlo;=pJGjhcs"Z,U1^/_%rIfeahpu@Q:ob@&[[T)6+fCl:T/M#,H@dIZbS.?(Ptn,]65CP!ij_!\,qi!]F1XO(aM.22H/-D`Mm[iG1U@nJs@$^?t'_,X8ZB0[gD'q'+pB*hi28dW;8mUecQ1Wr,$\03Rnf%g,h-`.TFARW90L(mA_C5@6\tP7L-oTiN8KB818ekX>m5B2,_9?[5g'g+fZ-)k=YV9kY/VXM)Rc%c<nEl6N<H3AWXE_(e9Ho/OU.Wj^Ym5q"Cl]qR=RTIp27*Y3l8gQq8M:)9?@,SZBi^a#ZJk9OA+3?s;[g/?jm%;6q^PEG3+iJPY<t)M-We))Co%mK7Mof[mK_Uce74)ZOX\TKD=IK$moG^3@Q,HKnnX7l<?hL%*il/R\RB7/=mGs]&e=&`-'V$KKuC11VXpK>HA+_m5]&3^)e5<0Ed.JkLboQu;:AN'.'/9UA2&1/((No2S9^\PEJVqAJ]J!t8kV=^Z_4&-3$C1$&np/T]`*^bcU6qS;HmeRR$K&].Uut`V/)]CD!A/%im\$Ce:jIF;*Ue(j12o)q/X/s^3T^qc55Bm>$6;t%Yp'M]<7p[*3V'VcL"t2j"X!U(*6MTT6m]U&tjC[P28.@>m<epO=&R/;J6i5l2ejd_0:s=%kRFe!c*>rAV.1+I^BH4`ElEUHZ'm--iq-S2X2K:BjgL[rBW24WC7')1hM1;fQ!G"eW7Q3*dp.n#@9`"!gaUGbu=H[cfj0Gp!3O0cc$1][s]jt<HC$F-1$VUi]Hh+)p&.AnY5#p7!IapHLJrQ%NaYtEjJ?lE[DZj8=`TZ]6\7W#'DZ$hHu$0>RIE&g>BT<Ydo#q4<eH9U\9/ETpE)YbI?S7Mul,JB4![rI[KbCq:Sj]\mAcR/eU?[W#]uC4@Tj-)D2P@VA5HNrsQhQ(+_L^DWPMh#_\g$N0CG^e;E@Bcc@>k!P00IW+S"PP,VAUfA]V=""<eZ@$O"aL-2hlh,43$&U:\%UVqkM)#E1:&L^9dK/jmk/<.1[)M84k4-9@jkm^qR[L5i\Pb61c&MfQ]S2^K=X-uhq*=O5"UucuN,,\jA#GUbDcQ[Bf]dPM=6=72E>@V&lk'<rcEhi^*<s.$*X%.sAmMl$<!N<s%/,&2djERI\Qqa@'B".!NF@FtlE5`N3llIgZ^..W)8,[>^.RE!E*@ojujPEUd"mT%P.RN?BnP4ctOjimj"=npK(Z.UNQ0Le;Ci3n>4`ihU&P>)+3;^u-PF-IrNs93_L(i$24_f1qL*RsqJj3$!3HL3U,58:aar5%4k:N]C=>[]ZJAM0N_>U?+B,ZDk50$(T7PQ*<m$sf;`6R.6[:FN7?(pCGRpBut3T"Onh-+Z@?aEl/7flY=[C<>>j\2cAaF`3Icf9oer+I:4Hq0!/8oW6!Xk@eVZ:^2ES'?f//qMW!5X,R.:*t:bh:E`SR-V<a9:H-X"8SCFiB]I^Tg`!I/TsHJBLX6&3G0*]uR':J4P@o8Z%"D:9-ZFI4eAjBmG[SP[5udVGJ[m%sLDf@0@E*;76DenSckGX(Xco^NO(g1TLKZOI!#rta7R=$1>D9S7Dr:;gbpjU<ffa\aGtaS`T1$B3p0gKE!X.#r2j!i\8alZ=(Ag/';Ipa;RICr`86tKl\@WdruG91+7/t/*1JUg'nRuF+5`=V&nth$?\#\26,<fpaLh,EFaJE9'U]jo^T=Lshin/9cZZ67YlVZh$kp9*4#W]XO-#)X=F'fD\Ye+LBteD#4Afi6i!7[d=YPc7'%hL9R$`)_Z4+pO9om3rUqP#C]epEY"JBNl>19:eg_CG/_Y:^bP6ZRZ1QsNEtZ(cA=>lT!G_q[>753Y('RTS,Vl\),iQmI%/VU5kKX;aO%B2&uC.T/fMEPY?Lp&PCp*m>'TRQ>6$EWERYt58EP$<,BmP]Hcbe'DTNFinF)K&8OYEmZuDV..=9R5ZB!`AG&.'/`KPUeUC6;.o!X*DAV$NLmh$d=>OAuB0a>B-_NW!!ql>ZWVn\eT<hN*\N(IE(gLdodgYT\7@.pCXLK6L`r;la$&f:,huOpn+oF'pGfp:5L?fEtcuLVBPM1kX)_qh.TarOo<b@H2>!?[##;DumDd`cY28%Wh1T0J16(k,CmgI-KlNB':*5fniWYe;TQ[bZPi1R@t2rbQYJguE-D%.U!T@[-95R*h`)msNbCgg9[=9:9gGeApC&`E^6Xq6WqArp1c&jBu-Ga,HONmNAL2^3-e+I:E:@0ONfi5@Em)W\NUtSCn&?Mqlcj@`u&KeY:-0@$!)dT/QLf,"@tS9++mV^V[$WL5qlEP:^tt7(8?ibGd8mG`TlN@05N4t%nt++RGY$.h`n0Q3C$i>5!UJmtXe4J-*1%(?f2mPiI$m^/\?OlLgMmH4p/R:m2CVTnXiot8H,ViQ=2$GYtg>4#22!Bt7oo/@5%K>Ca2:K7)]re3+Vg)Tfh`&$L3lpU8S(6o(KmjXEi\+M39iek8B8a>*k7kD[@PFrO(]A,2Ei-QK,A]WW_I9/FZldWJ$\:CpSU-ZjDqI]h7_=2],'>4cfN&B,jJQE0,re.XPf/9OH8tkFf^%/nCf&IT1c"7u3I[F2BehHV;K3C<t1VXed<$6*(ghi$!M1OV$\;Q1B5YQAB;Z%Xjqenl:87m/JS,3%pKc+FB-Y&MN+oJ%t(!LN_2_QK]6;H8@sTB'X]cT#2#7S!fo:Nhjn/imQn.Vgb\mV=DDU'd=g=Lgg>Wfi;R[(bH>EGPk#s]c=u,+/VVr7T!e*M;-;0j>?4)PaL'Cb768eFeJOR/jLRlb*uE/=Y=[9N0W,`j6PUjdXPlPB],TPc^ll&XJ#U44+2dkRh_Q?ONof0m>R:$=XaR*fr06;;Jm?X,T2@+2Ek(1,YM6haHIhk[/69MqshIh-h[^aX!Xpo;tq7_E&2PJ3+si2<68\p#!7@4!Q\C%7_h<'^nL=E9)TZ[A5>PVNLePRB9GCWW&+8umnlW[4]qH6^9X=7J%n7]#4b]#rC581LphhQJ1!81V8@Qj<O.7bnTZtVg%u8J#S%PX7e<$'#MHGGB0`1Z.mf=0sM79"?`ccH/_YfU`n6]1P97g//a8O2u;4JKFQof0B,@MD9$n(p3rCg1CAH#.pE0rPREhjMN,ifbLR7?:hRN#/03^DTYTBA*P"Cf1)W=)**\C`%bnj3SnX*\Qj1.4@4*mW*0E6IM";.3K"Rj56FJH'T5jT=UI2ep/?o1a+)D`].h@*uoI@i&bgk.KNm]ST.UTb=l>%`>GH=DtPnuY/tTQhh?l]s&O^T7UR$1PaJch@R&]&VQoX^/n\.Z5201a=e]+_t]k?Iee0VIi8CpSrBEm!U*^5P*i=S]M`IUgVjfZ$WK184@&ZC+W*"X[+/do:rtV&;`-lJP8O$./F3"R96)ZCH`mSRRj%`HLhIfkX4Cf/L?jhJN6nq=N=d]VVUHiAu@=ZL];p+AILlOt(mie9>g'>Rp0TNFPU#[HLNdnr?9%IZ2#-56?\F$4<7An:pKL"E[l>E'IWnn(YJ8;>f5NUu/@WUN1Ytr1&GjolA*]U"FkjDZ$&NY/b52;R7^!lM4-HuQ!R)>\]Ydk`)kgm=K'Bs9ieMS@K+Pb9BFjVP0G!E9stOmFeCrR^n`rom7SPs4Z[MmlI'JK(20l#+,eXbr?10,<uh=iH-`/ORP/+S'b8mP'pq#R$6qe9$+S^iaLaB=HH9C\Yn%WPLEoXAN]*MK'YT#=EBgA^TA4WF=k1/Wb_S[`faZciR/%"l@3"h_o1lS+fh\<-eacF`@frru<e1rgE^q#l*gX5I6]Qt$gs"F5%a.mSIP8Hg*dQjuDIMKhS!?-sB`m=`,Xupui8$<PM]DageNl\Ebs8R4++!=#oX6m+7PYN>$*e3oV<Is6'o^\?1+_8grQ49Q'`YeK/+.u<lOOqgdeT3sUq&7u;b)H85b5B(>^;=o[(&tgH<Yl9-8_nB.t%ISM,>;?2<.4hL8_-!%sGh2!_%:J'r8J'cX7A6u0UX*9ujoGPepKC2&,R'!6;rZS+b`6TX%nNdH/Mk,gf+gB85Bm\C&c5-R9N#4fY8Hrt!f6R"Ca'')$eU)/."GrAcfLe02pN7TJeRK[IEY/bGcC9ikji&pJdo_I\ZhIi48ER5eRIr=IhQ=NoTWS[\pI6nUe(dGP="^/G_GssJhkKhTs^-#U&j`6:/ETZ>.%fD'$%md(d"g!h6[B4?ZdVYWU"hIMB%>HPSAen\HY:;d3Apu&-:\[MHVr&/BQ/*[J]P-7=@*=B]I,RS/F4FVe4iZ#HC)i->*)QQMuaa$`!H,$_L,'!"%Rt8))hX"u%T?h0L]LXsG)$2s6.PAQPJ:H'+PD-,L!JOu*O/Dp:\CoK1=gs*__i.0_t?u[?\3C'QIlYeklE%:\#]G_.A_)4S<L_2s/@5_M$'Stm0d)Isc1*_0hu&W(+@9)?S`ig0L9j0!nnt3`<`<$hlRX1mmRm<5o7gWJBZs,!8MGGA@QK#\*W<QmH5/\R2?+=b:pVR\LdjK+-Y4BoC[MF'[AWf]G?'E1t$E+@"nDf0W'2HB)4EZZt;&.i=$NB@QHZgI/\?uJ5DqqmERN[bft$P@:Rmpb.Dfhh>bn_,-2:UH"Bq1\(d27=;u>ec\gDW-M7!sM_g+gl&iB<BSg=&P=\*$2%<G@@_jDq=VE.r9Ms>=/:6\FRT4j/2'46d4i%^_k_T?;@3ftN]f&EL3BDfcI82FW#3[p4/%'[m=CXjV(slNc,R1p8]0BQD1qX,CUr=5\E5!u"FQjdsU6U[19ft^N]]W?5#.C\562=JAg`$,!W2F5"OL@i2,bk7Pa#F7Q*OF`QiQ,aR06KmOKG5@??m&a:P*;Ioi.?)g(#c;W34+Bg]7E:;S\T_r^A61(\Vh'[4/_;LCQJ#c&5r6r(BYUi0tJ4eBAIgAuS9j)<7<q(.!$#I9"r]o:EhMBp@#W;QG;As66_2\BFZljnlpB($ABN')^=K$_%<%\jdF.g*K+*cTG<=PoM7u7.W;n[4$>7*0H#\NXPJqLC'4UCAHh-0tRI!aA^$LlDn*d>l34X%E]b6g3.1iETVW61iqgJMe,.IVJ2OLArP+PsQc:j2o@Ck*r'C`X1$DKRqZ^L8;b1:0]QUYjPPR6_oG`ZJja:5KV94Uj:%hF&h`(/5F*3!"+]sh,#jVG4o'9kiD"\ZNfkK&AQt![:/6>B+s=l4C3giMhF+'DTAIlqA@.KhWUE^m'[XfZOX$)(pu\ZJL/jT]%?Z5B7UpgVJtNr+3YL-PeB?0%VskJE@IVIJ9;>,5a_B[$Dm#?_4']#,DVj7OH9:.)$_a^QG^\8nrL_)SD@](]\'QQdJ>MCuncc:$3LrcAP*n'F/BRGtB6M6u\r5Od\fU>p"M3X<O:WWnc@`f4&t"F7i&Jt7\(N>EO.Z)gCgbW_e9i-Oq%9p,L[W3>QYHS?I'_Ba!-="G.HCU-%h'^VnArMj@OcOS>d1QQeGp6aLfGT#%I'H<KVSXHS]MJ<-eh`LKfThNZrU+=-&,<7N+hck'h'!T_HT)Uu.]G)Wokb]N41,gV1LT#%iEa(eZ6s:g?#dVSll`?%A;9:Vt`Y1!`bnbe>3Faa#SAT-lApNi8tJ:Cn57-CT0ss(-nV3+ApRJOC10a:[$u:')06AFq1]<+iZKUPLCdup;:jiJ&8k3,5RoitJIh$`?H#>IlB[W+`GsatGrdn+8:WQWM.MVfPcX4A548oajte&`tfHG,t4l6a<p_;5UtKJdf]3[!R!!ue"(&J+Be28T`[2opogPS/`qT1(h3S&h4D/PfFJ&*Fb8kfuptB%Nr@VZo#4/&3?@jn$=]teS[fn7DZ)QQU?(.fBFd=,mBio!(c@3t=XT8^aCsOE"Du:=VjJj<Q(e3jRSF!;J.g%MOUR1og#)<b%:"Q'q(7]e&%:0kp1<2R[A=\)cU;Fe_n>"W7nGDI4EYMla#2U?i6t^<CK%rn)fb7,`!QSj/2is#iEubZ3G\uH99,$,RpRV30It'D#%94EsY7nlUU,;Q1Z'#Ypq6di%)Up:n4g=fEjH'D!=g/1\9QNH@C[#8tR126uOtPqi4MerPms<0)02gRf^LO'";,AZ=k')S=_/8B@CV?l5f1-rSG2KDD`AGcATC+Rp3BA_]H\QuN143KfqDLS?;+fZ8E#2\IY3B\.DTXD_O:e3g8:e=-)N+g+b=`</:`OM?GGh'=6W8;Mq-O.U;6IP@7H1QR`_%js]tg2O)ZIBc`K4r/rqKkkPMa?^a'QLrIKOGECN#T2@mbmee]S:^S90<*\0\Q+FGQf.4b4lk5m0A%(#Fj(:b'5>md!K?`u1@h>tl'`oS&#Bk@"uMY.E28Q]Y_UckL+OF&R<Lcqa"@5C5D#4i6IVB)Y@nm,:u2[4L+)0gG&A"0:!ojgmDCDUBE_Z(-eu_X)FgAAj5A^7>i929p[IWqu=uUj?OAt$lu;YjN<XKWW&&,731T]Y8u6/:)R+OOH'm>oi6Q(-__/6lckdIi%>=@1@<TW]/1PW#;!\?LbJ_lU-"MmEguC6"an'W+K?W7q]2KOB=q^u4)"AmcQ4!Y1HsNtl.0N\:HXVcI0i2.19UIilB8n_X2S08-ZkiWP;Bh@EKY!2c/ZuFHZqtJ$^)!F,261aS0?tX&s8\u@"o4u`D4`Y+oXHUru%BYDd,,e'K:MA?Z%1u<O9r0e#iU\=BTL(aO&,>oW7Kd["_!ct.=hc#SD=Kfj]-]u<\\[STYVFe"A*WG2!TeNaeLeV0r;BM*G"j^riqG`LD^RMZDFL$![3=#o<TBXaaJ`d]R''>["[6-G.A:4:6W'#0YA`FElS_58gB>oDcIP[SXA/!ia\r(N,r4u;E+JjGGsp?(@A"TJhM%T+AKZR_!ANA9KmA`AGoLLPh/`fhg7]s,$L_eKZrJ:&J-oGp^B`'S,_k>EWS7([$;IhE";Hb2s1p`tI?.]eY:o[>/$j727d!Seu4KT0ME<KY"A85=s>EQo.no0ejdc"=b,*n->DWk&8hnsD%MIbCW4C\fl8))-!j:Wm_Qb@WokFk,@`3L+5"O9P50tnD7s/"?"H9a9%TIA0-g^e\Wf*GH,#R*`[eBd[PTd:n-0[^=cDH.=ZpRU8Fs0@fuoB*e>%cZYJ?[,s2Ra)Y(D8aWC9X^UGKiX5C'fbtqWl-qrV^ii1ALrM<.bo[[hg-ds%NWEM"6tS7ed(c`J%R1jRgjQ&=%O1/r%NH/Vg=]7+8IZXr2.^<IX(/Y_4P(,*<RM#;U]1*^L,c2q,1^pIF<K:V#u;q:!gc@?`M/p0:M47hB@i#a$S<'&FWe#HW3GP2:u%1oS1el9b9nl4!k%%"r?E[6<Oe.jiea@i6GbToJajsj(J%?E$'B6fW]B&m)%Pj@!]j$Z8JKi#6;AY*5]<'O)TpG&6_/td_6+8$Yh4=l0BCPcXa#Vgr6(UPhJ6.&t;-e2B:"[:n@Ygg\npFB6p(P^G!;#V?NQbLD)*87!K("++=@OfC)T.P/b/;K*/K3S=]]W*9#g6MY>+:>_/@jph/WK:<aou5Pc1E<35>JKER_Ye0#QH`6P=l05ADMj,.7#o_PRdrTrfS<u<5p[7hqb:5<.7_ues#KeF6'oI*h+-Vb\b))sR)];9-R-_Xg9X#RT"%p<+,%g)6GM2h$rJq;*H>HXpqri+6"is0$)BaGn2$:3u]J>CpXnS)TR6[J$2lF_RmEo1&se<+*HN3+k/5L#7]mUh'&'k`&`?#6lB1YlMFmV7($ITMqMAb6$>^P3'/FG8SVitD]cFUZSs\EPBH<Z8-,&AZ,#0t"f?!M=^AOo9?a^28.n0sdj1l"GEaT;s$&V:-H1)P>j?WndnjqP*8I9_bJR#mYHtts/dA0V?7.=9a9a08O(GH@\d!7U0t3&Q!K5AR[kG?LF(2W)5_Sd?,r'a=$.%.q>OdUD"iIhp>P01WC?tMXebD*BssVRf!W&6c8^A!!h>lZ)-jq7@@*#e8#sPIlPt9pbgUm@fU*241ubX*p*8'f:m#?fmY1_V>ko+hkb*Q*-q2@1('5<1bLm<1j?C'->4u!><r\^ADp_>p00_u3jM\9=3Xb[BQ(sfR#^CnDKQu&[_'PRPueh%^LTPk'[RE=JcoF#B&hD!Sd0h.UNpj;C"S>BpUCTZ`g3WdE+3PRBoAHJ0-]IcT,4GChda'eD@Z*jG?T8h-K<9hqLPkMX%I:(LcTtN`/<1,9s_<J=:)Vf"\/-J5:)Tc'4lCO:@fU-<!MTr6Z3]d+Id.(C(Q3)*:1GFpeZ#<d#_E=&8NKO+X!q(&OU!Q1R76j4Wp#Cf#f$7*Wl2^7CAo:3]jc.K_h,A=[];:@`lKh#?L%68cq^`?GZG6>Xs4u?,``'lLmedsRTU.:)S[1N/c>>'p!\9VSBTs??B5ipOIYo=;Hu$%s<U&_c@n<8O7[sgb)121GhRaOj&<ZRtYskX`tOWJYSR.7<3*2u9=i'#V.#^[7Zq[;*PnO4q^.,p];MZ^?5>A9MYZFCgdq]SjX7BT9hu;.fIV9H=HneBB@N&6X3'CZuOiD1r?G108:!Ci],<5+[a?%f6WKHJ1P7eoC=VtrQ^=gsj4D_iAr=uMUFVBBP9JQ6H]n-R!T)Q'Eo&[ts2X:u:NdcUR'%/N/ah:f%[QU]NnFC[`,75^YHF`l"(ll6o@q%EtXDm"dJhR4\&$f<s0('Cg6k9?AIErpuI>Ck9"5I25Sp9A<#[t^`c_GsMT,`'W0-4gl(T.B4+"jC@cBPGHCDQeeTte2IP0BgS":jQ&nF)<A$H_3G1!"V@o=Om*KfC^s^*OlEmZ-O7D!O^p\;qhuYcE6%*<E9jLV<'7X[=pHGX&2Npu3Bq$5iOTV^(dpghX=Ja(4PE,Hfl1>2"Q_BQqjKc+(gWZl:snM>427!%T*^$D=#UM-?[=1-WA-psp1W>9YL.p=Zqn7qNEf&S1Bu=(X4[oc1,1q;.CGa@')f7FS/-`)cHU[(dHjPN6#!.#DLsm>D"ae<!2<O%.39UL_OuQ'h4R+GoG(Fs^#UfN(2K/bhQNGpe)eD!V=S*n:-GW`9Z\M#\/:gbWda4jZ(G7!hd1<gDhEe&;eW.@-i4>/"5as2o0k;cL=o9Z)6<'L2_3E[R@:IK7uL5K'oUZ2)Oif-s9p.11pqn)AL?k,CR2rNcK2t=h=If]XN-la]qs@"5mSWZp!VoC=`Fc=J;mYl%[^4h>3gMYj^17,'@*.2Hs]@49WE<<3%XKKq`8h+"3]6A!`.\q9Zp7*-]*m%A.mS]l1N;Kt$->Eh7K0ZqPX_Zf_5;'gLJ1W.*IC=46qP*4n3#%gVZ*=hfB>7LfjuD/@MU'&6?T'Y:A@h5-hr&M%;T+JFdbG-s0PTb>2)Q=epqg>S%J6Y*8:r-319db\-b@f!+MsZ#XBY@"ni7*Kknaf!Q#R7]_[E$EfZ)-R52PPpSXBhh8Vb3L193S+31#W:l-FGtA__mTPK@Xo*H>AqkI&P)B"<SWQ_N[c-3X^heC![V]l<Y3+Vkg#a10VJr=RhC<VR>j6jRfs;lg^K+"dkt?NK`q+15(4tb3N)CUeHGWOH)Er:Ek47B!.O^i)s%G`bBqRc(Ci6eFQ_+=6Norb+G<@;!/"O..ggh#?1$1HFl5+ctI7lJI<!^jth#`HeuCo41Tpj^FHd`C6\%u=$.?/ABI6#."SnSipqaTag^Ms1B@"_SHuOF4kasZJFVqm2-#uRg:Q]*V)pI9li/*3IL/(s_so,oBJ.P=X]49Yg`,4Q7O,I7!?M5=9YTXXE/F`;sZO1emH=">c&H>Q-A?;?cVmN=?\,6n`LY%Tug)nbH,Fl\:GJ+MeM]F\9]Y/$i,mgK,HRWE@4?dQbZ+45B,@MFBRX>9(Zmou1mnK*dHkN]pb7`]_LsA:OWWRlE\U.M"Y9Ift<_[$_7e(_h%ajGHLWU5sp)UpRfcOWp)qNc[OL@=F7A9=D'\SFdXm#$V7/fhRR2TLNc,9.4DXl`mC):FRJS.0JGl#+8/N_ao$XGk#9$0'=jd/0U+-I'K0>jiWf*.]&mP$n]FEKaBG1<=1UtAa[B,ofsfYBGkJ=[@46aG[k_cE5Bi&6'Ud?s5m&a:QI1K]P!0!g#0rHKoaIns+2tb:'r7bH1>(X8VV9:QU1Ac?uJ.!C&l$dSX6Y;g'O!E3>\3Kl3:GN>%'ps%WC0c_Vf5_S2d/an%Sd_V;ulIPT9>&e@=S?46KB_GY"CDQ"'FG^&)a2"PS2q=AkSd6?`8Of#3XA,UC79^T4BXIr(E@A=j-SnQ,D<V,#.bct)j.-ZK?]<="`h_mCu'<@tBb(S1U!aT+%9SE:*.>R\<[2R5<P5!SR=n(i*'[F-<.Cf>FU`\'@d]cg-Qa"fO9EpinBM1*oeNu$-Z;U-#(N"eGiKp!WFQfi(dB:LPn+TTEgOtjdh/76ErtfMEur,+L-8cGU5N7\S+EEA.(q3(CD&c9nq=hR9"[6+YGnTI>B^S>mcWfTd7)fM>1(lNZ[ojHZY(83_%cjU*\+=.\uQ8t\gGIL>YRiiRD*(,=uMnZbA6>V0,jL0!cLerQ9cT<#XWmf(878'b0a(OYLQs+/VV""gV-5@_&9ha_8h5VG-IY5=cuK;M0oIumEM1C%q1T/Ra,+c-D93>.!h<n6Z,OHWT5%NhGpM,?,Il!LDl>h+IP`a)[/pUHR=M2BaP(=jIQ5$5(a2a/.OXd\NCneu-,And0@ZXF&;u@.$FmJpGA.;u;F7-R#iWC^@34`;RU4hJfa@qOm&(qe#5ChB0rV[a5i/tO$"07XFHsH8Mm=u?^Kp$!W<YTh`XSsFqMp4cX[CcaZnNRo4_\BcDZlR"u;#/!L1V*6Daj[`UMZ3%%cdE0B+eq4$.!h9!JO94?(17uH#(9MY20<9nob">D^ZC)>2qIUM^:`j34"E]g=0&ucNbgrm(#6GG@[2`XGlq#..-k2=hUOS#,-9o;+d6+&lrY;R;U'&5hR2$,Pb%@!',O>D/K\_/cKAIG:ENhi%scU[,40-?+D*o/)g*1S9Q;Jn_>^,PTLX;q_/-rCQ\#L4u4)aB`Qe6.F!6iQ3hhK;#L<PtpW)c.TQdQWPO,`79k/bqq3O$*;p'D55VRC[\kd9?Me`iP4SpF"i.j:^AULJ:0+LOU)Pl5;/qhc92%Lqr_QEu:=Zmh#k4ilQsFN;RjjF-YHj4@Ak,5#4t$spV<S48/^(<VK8SsLTm2(uhX]ug;no5/U9nh2?.M]`W]OP3<+7k4'8&.>d<OFr-F4j'tqrfKh'^gMiMNg4+WUuFZTmq=<!d/WXQ!DUAGV&oQXS_)KEX<r0+$frWF(Yp>c/=/2F[.Tno6>\Cal.DM69F3FCh<cc1ufoFcV!\qmkuW.;q;/g<>):P$k%?]dZS;?=C2L\6M[,-..9-a["o`=loe#/NS6.uNPUhH&<tHSK7*Oa\YafDs:"LJV)7\=e$Cr3G/eGI1G2gHnJ8)t>AP/Qn?G1%2B$>^p)H&9]*SSq121VNg$N*).QTF$:d1oZDdoK`iEnFaX+mq*V9J>p!MYfaWZKr$MU9<ihh.?WgEr9`W@(CN>kr=)"tSeVOV+<>.ae@,,]k]X=+RX/T>%82P%FjBEiSRC;6X8.#bMWKDmY=T0ZiFdcF*qqD$[>k7oV)G?$\RZ`V4f_NZ#WohneB$0@In&-<<;mgG@m5qY8_M<c6\;W&%>E&SXVB.RC_P/WdqD@\>T*O_p7dci,Jte@+mfuXRRGs0!0b!T7c[t2ckO!(;tZmQ^'REmaV*\E>BCsXhB\Ai$j[I_5Dg*oD@%)H(2QJ+]IaP5@0mQFgnjJ^)tO3RN#3F^(AM6Z_29]K/`c3/Ap/8][1/RthK!ms&N.6WC:kSXbjpfAdZ%jqA,4.8%(X12:p#]1ZR-*!\=Q_'hST>sZ+<Jd,tU$K]Wqh+mNh8<Vkr:MC^fn.&*PU?nk/obD=P3cU7Hr7_0[&2mn6oC$EuIIa`rEa:[d8f;o'B0M2`=W[I9]j#Kl&3>:2WG_)IVs+"/]3#rI+79Fq4:gO$,5aoFqn?a3^qqi`4WJ'pmA'iF>"lXgM)]6:4`iu:5L.INor^CYKOfTSEY4PXh?/n$#Ip^1W%&2VcHesFNlfOuQ\*)RXaWUlNqN"/tZad<)F<9F)*Uo>P*:,*,.^5Ma:MKG,2"0<&*48sBKsj*%bAlTUFVh_RK,71X[qR8.Qq]i]?ESK$L6aou3NuSOE!bO8%h"9.[^XkCm8;J_kf&nD:/D7Z"bXJ6ucW&Ut$0tpK^"G;#7IPL9Yoo2`mX)%,IPM0I.,JAqU/Z=qUd#R2tJ,aKk_,3g"-d'd($dM3mJoIh4%J.4PW,,u^1QB)QDWAh)q!1gd.hOkg\[]WAcq$.+RS?>obiA<5hF'RlI27N^t,.-e(O3(>(\f5eM_hkSUa[g_]58b>t*79r.66-*irBG"Nse3%oK#S&:j]Ad(&dK8Wr(ZGBMRFdL/qnrOQr&N*h.(/B#PM0s8PGW^\\Id2c\O&DE0t_=,X!X7>X)818[(ie6.scD!mO6X`&Vf%u+DlTCf03U/d9gD8/fJjcG-YgG#B;HM(X6A9cf-DM4(8fn'3Cl?r9)!F#-4%?!8H-6@?L3]#")PjmA['HFT1aqlZa#MAMmGI1nXdOGT)0e%0[2S<Lpm-KA3e*hH/Y=IGHABKJm3ZpZeO9%PLCQ*Ui`E$#Olhn)j!MNkYM%Vaa)uPoY,.3-&21aYh,1Zh[W/U(G+2F:KPNLDkO.if]GZlJ+Z!M3=1_FY6j&\%OBLW``H!Q+2:%IS+.OqhdG6]p%sEnG+^BN;mTm]3+28'Qs3'icC6daeh+tfBF]:#Kdm\th)!M_`<)IW-(0FhjITI<81jq_OSL3R0delA2BnMC'CrW):P&[s6YZPgeo-M\WIRgc?WoL>acO0.=E2m=*cGOUc5/@cZJ%K9a1d4(ZsBqphsr?cHCQ)P9OHCr`5Mp7'qmJjd]Y(37XTpCS+WR8JO8k7pMcF"$@&$04!`RG,i_FC8L!s5QPrKF>eIOR2/*)#=,$UALd=1JK;b?FQa*St>_6SQ)d[T;sCYe[\+.;`rb/3$C1`;eW!u&R'pL%V]e`<^Zk*;GNG;^rH4l'13JM_)1IaH1cI`-L6acG(cAV7V)bmSmr0`*LdWH2Nl<r>j>ELQWe;&h:U[/i!0g4E\]TR&,AN4-s=!YGGg5crI$CNC+_dn_5bG=OP.5WYl^dl;2rJl_*63Vde)s/6!=s0=]t``!:'ihT=rH]WKCabQu+2.$nSM*d;_[R2HS9*$GaZcV'13>8-Dka?;iAHl7qF^jLNoH.+Yhm7BoGZVL)MXN1a_NZu)6XUq)%P"+hH;Wr@lpb<^a^ZXr*%l*D*oF%%&"ol`pEfS8(Lt)8>mVi[pCW7'+^RL:E!$*WRL/.I)TG!g+8%ML<7UfEePA;1WF>_Kf'0PdkZC+k89:VH"P"q>1N\sZ[MS]::po,L35Y7n=nQ0YIZ?0*AL'L_n*S"Qp?9L..itWUgL$APSFqpWPE:&T:q;@'-/`=@>?iI"?;RNkQPeDEjU)`0+H,Gt(Ou6,>f^j.pFF4#I3o^q8'[6`Cr7'0Ih7"$P"LOR<EsU9?$hWKYOVm8n@*uks7ltTYE#/ESlV`?*ku,\#8>,DZ<NA6.HGug.,>gJ?#/OkA_E6;"Ga9onn\!d^C?(>[2H4\?c^"q:M:.C3n=d`fR4'Z.[CtT`QO=aJ/d8%UJK$fQP(N1Q[Q(.DV.'%jb?=K,*`Lj_QO7Z!;B(:7:SaL"OIrsb`g"'"jR.4e-%OmHm:!5\U\AcX$'V/?B[XFG&7"b*^=_\eMk4bJI$=B$bOscF_G-s)-AC(]=303?H2^[I2<.$Yk.fa%K>H:[XX_(:4h2fjPJe<T8I(\=uH21G5k=V%24=Bo4bB4]!n3[@]fDhY8r\jhHgATJ='1d1;?ir:Zl"]OQ4higVuP(_QR<0D#$!mC087d]-7s0B''>CIV8"#uKEZZeK,pbQ7"ApDh*H43=jE\H>g*>aa3DpsAe3u2BX5qr=)\)T]<cFN^Z%t#rHo&<Q^'2Z]$le2^[Q3[`/$_4HRrtV$st_9__1`[s!'+gl7^422^5+aJ*[>%\DH*3WsS();c`Y%g^n)[UQ.h+>1a)(W*%^*$`VV09dFFk7k?&=7^q8@9NKORJsfi>q!jig8%Gf=6.D%+$Hr^mDI-`Xf[`VK.s!n'%L)qkFV>Zh?j]NVL?M?6ZI]1bAqD0'uJ#FdUEOrlqHCKY@Mef:_K@Y":GK%.RLfQ!8=XWrPSE)3&Z1q-MueZ;7A"+M8>?(295tE!]@gDJof5N32kdFq5Vld?7e<]s?Of.)nPQ=QT99Ou@)_jj5#3$'g=apVD?>#CcZqde3r2?$In0E'PL4GXWtN7iK8d6VG3D^i,T6:%I@MN+&Ws"93<jI:nr-\V=0<,2L-M,S1RJ$kGEF#l_PT4/*"dp]b@:eHj.)<t-LmV!7f$saCGaaT2s9Y._t@7T>^T8os0.&#i9QY^V,9e^@%OA_A?uuPb1RZ]'*=([C$M7;uJlHLRZg`I5CgGWB,%UTA1pdP#Y,.7bXj9g\beb;5At:PB114aFUpd+%'podt#iYm[51k:XY'[n9kUuO;I;"XmZ8g[Gf!QVK-1,)Up75NC(r)'aPlejmL"f/pS+ao[P`g08D/S\eHD\t0_-+ni`.018h(biuT[?,&Up!uZUZ,#ZoF8q"o^06n-EAW6=5EnLE?b9,@f8$f*R($p$obB?nf_Sm+t5*?Y;T?tmJoPZgeYhP).-T"NV\U-SiELPmS#AQrTW7kTR(-X+U[>p@9fU@QD'!BTMM6\K=VfqSSE%FL5XHu<E?(mE69P;0(,,YoWXR'WH1)pl,FcW4f>+8XF.'\:XX*IjN+e,QQAEJ];S(;+T4*1=J/<oYES+kEOjq#UpXC=Oqu@YRI5Vb)M?u;n^h2q_S\,AtP&2=2Nb_C6g:u(,[lKV9>ds4[0.3.n9Vr9_$\rZe&uaOJm$/9EC[u47DZTg]3$_MH5WUR83Y$Sf2^31\.WXRfD=jD3/hX662,u&^rp0Xl>t>\W,0l^Rr0T(\&<pEPuh8no!RkF+4mFHF/B'K!8@Fr0^\q":Ii#G'f<X1Q83?4C9uMYnPGfE)%>!9AQc<FX$oRDj_Y[=.f38\B+q)nW"M;GB?,_RQ?9O;K,n82DuEec[L3go5uIcSD-2Hc!hiVBPo"DD#+MXu3spa=&^Yk`n_h,$TpBs@am)oSN*F4bZI[YG8AMi4@:.e>]"=Ub`uoH]?H84@j1*c?2T0sL+IL@.*5_TS7M#ha6cJHmL5alGj#H\ZPG!^cm,,T$>34ak4s3O1TqceA?<+JY5B0@7IV&JeVa-BrquI4o+JABK43D&H:u'Qn3_@`Wo5X:UCAA=-mM;1pL(I!]RJ/ER;C2@i,@T78IjjVK+1SC88@o&:&iY+C\H%Q5XR83`;GZ;K&]m0XfJ6Tt/#W?t?$)\IlNmV$KEDB(&Q*PE8!I6Ke[.[;+o>;$[4AuPEHo2Hl"&XA:@P6"f=K.UahkCr\.4nMB!<.6c)6X]9[)a#nSd%j)R(lI*qF1*.m\n4]?._e,UCC!OZ>pgDS44HMa[4BeJ*&,'c58\Ljeb+)SSY8KtRG/'6?<qN\7\Pr8qDEU`/@QJlC(T$7XE[669p"6&CsL'o\qb?U6XlVOP7$BLdET[%d@c@LkBXope3T%)9rc.1O/YHPOkd=UE!rl1OZ$,IhqO[t?898Hu,k>n_WZ68K2aE="0e?qt'UPO2L+u,eU)s$]Q>4fE'-AajfRi+:lJk:J>cM:c(p_qSUg"i^Ou'C">$3Qe2_:c!gl""9lGfX;-<sm-c(Ra5G_\4Vt0>^j6)o/\ugaSNqpi?.sIlJ>";Bs@/G9sQ7PrP4g]@!1,#5l`ZL7"=.dHj"P<&06<Xt]W#?,X&U]P-7;b&j+K6;+IF#LE[ti.uX/kb6#u?4Cr[[ApGh1:o_dUSe1l88([Nnqa1jXiC2fFZ:Cc_ER-&P:_CL:'^t2IT"H0Ca2=l8K5EuZB\=U.uN\-#c4)oTXQM4+mte;/A!)J<5nIQ>#ro_nPVdU'p&\#W%q7823XQgkd`+1[gh+)djHXd]ZnfUmM0<.H^NJhA+]J1jOCNd'e1B#P22Y?BIFgKnE+-]5LW=p]E".Pu,t.q/$2R`OD@U(,,@a-i[AiD\ZOHKPmBD9.l^#,*^&9%0XFNIq3:9:YX;l8(4\G4[j%1[h0_+s/#=uNBiHl@":0M3WWF7V_D!-Uo[BIGm`]bekjjQm^.@T!orl!Y+"T4GO`dCsG01aTI&FI?U")*+b,@)\S*#A[<Oc[YGX(FTpTPXLQotDoA\c<`Hm`$S*e(Bl.AM"je$f"-Ea%)7u$rE[Un0rSjRd,@+%6<uV(=LOh6t4BdOuJ%P5'2,f374\>`u6;sFEXhKt/<SNJd+TinF"rP-a++,(MZQ-Th52W$5@>e=X5(iO]ZTdcW*1fe4)T8j!qM7G?K:+au)YJ>.VE6-\l15oru;#jjmfg2[Vo9ojB=p,-!NB7Js3dtnA["r?bnCS0mk`Q-%.M3sgc2)K*k@d&H!][q_$Ua(1l=,6Hu3e"MQ83\qdUaFXE,"F@fs4+.kTIIdT0Nfb&Z#/#.TDn<l.o1sDHI'7qfUUccq9/!+-kE2_^6O<h8A9]:0l8l8TKuIHD[5(MAS!B/'bSjS"#":c=-1B[bf;Tl!Nt`2.HsRIp3$_fTmC5RjKAWr;.$@0qj]^e=HdI=LdDTW.mo2iMO^oRk&r8g3/!*R_%;JP+MF00#bka]aqt@Kc_;XNaKA$;KaW@?/0*\TqOo(jWWE'0l:!4du1_"hW$@3U)O^gP`$LECZK&*AI]s/b4u!J$Wi,+49SiMOH:/l4"6FG116&G#QZ^"V4?F*8H45_L+]DVuB7l5nQ:>!;c&ho[_Jn3GP98!onJ,ReGTn(Pu,pV193\kA!ChIC=.c7Em(882i#JB<-@]^/iW>E97aKa&Z10/FPpJOIt;o;=V>skf\iL!`r\%f1*iab\!_P+hpXT#2f$s$IZR)1H3^`P!M1l6nugjeuL^<\Sp?T8:*eT?f?KaE*jcZjFY1S_^<?$H6=;d\1e%ckTDBlok!`RKj=+-Q^tY`\p1a:OV\aa,T,b'*B]T_[OI$*"g6-HEK!"f>llQ(K_V>4$;$ql7$7@VE0mO<835pBf!GTJ#"[:d>W)$gI8X?CF@Y&1bUC4LhG=L8;IY8Aq]u-7Pn(oF_4G/"03)K/Cioj/CDu]>C3.GTmIQXdDk6W8Cs1,i57D5difS`IlhBahfpjaahj.7<Km@83HoNhp`8)2c"L'n`mSTneXU;`eDjF6q,%nR>[0]kLt;jgXF-1iLjun<lPpbpL<SR@o3>kn<N'+1N;81s_k.TF7BF>&aD)/LU*6JXd(([?S79&1IkQTnC(Vtk/]\<LoI'R_ClWtFtlPCn[^!9TSD7Z.FpAM=gLXY8HW(*>^#,iRC8r:9'kqOCGO>\%m#3@$a%WpB/t4;BAi>-V\GjlEP]YUX&L'Mpji8="<4>,8h7s*hG%edR@8$b5Ecb%-C43.-<Jb?JonhiBX8)Wg?f@u,%un*QH?TL.6Z).5)kT!*(6\OqIA4_.fudi.lGc&k&9kbH.uhfMs+idIO,Cr(QXe\Df>NFQoq;5JR=h7C%t3%S,>Z\%5Y):>#hRcEZ@?rXlWk.oG`64\qWI]^F#l\i9XOXh&@&4iZ_;Jf[.%s_'UBJPa"HK'$A]>=>l-K@D+I80(\u13Js-%b!\cS"@/CPB3HnG62pRK^[^"=W-503,$3OU\24HAZ,kX`N;126qdQq*`n]N&s'+pC:S5JAQnSoE)%q^M8m7b"gD9e]WAJ.K6j)AV4^iDJPp(sgo(caN6%BH6i+6;$^;MtYo/_kR1_L$&2f4Ee$H55G7)T/9bq)Kp9fJAJ50g'^aTYne>or+W5tNeGTTifh*35`,E9@`^JT&m<gh@rth_>;FDG-]Q/9s@@-V&=/*AJHam)?L$A0B6qo?#r<R4+$&V7FhCPg-I/tf>AX#BM*piW>?IsRZ!2bU`;O<m/ueRE`ktLL0Pq[OE)>\49c9ERBbPNP>:SMt,7WYo<Ea535ePI0;)Y=\AlBp2^DR(%Wrrj-9=c@d:-C*c6o(Yr3u0#W$a?Bme3dt?EZht?lC-eM6=Akp&7XY^ae=&*\$1QiM_M6*k">/^'QAi9T+10RjFB5r&S)O8Ofiht%*B>mm[/:O<nt,BSuG"$raI:;5*Eu\>Y**8'0Q>(6XrIQ7PY]CG^qJ^A0gt:k62+d'Dq"3673h]j'3QsdOmJ1qnfSD^*;>j8i(Z5VfRp[Vpmr)/#[p`J3EI!aC\(L1`MnglQad-1"4mpFkXE4a)Xk04DYMIJ1u"TlP`+:fqoK0A7C$pZgbg`$s!K]!*!EA)&.I&Q1a6d6T!OJ]&&Q[$43Ri9HaXRi!Wp.!@m9IVhD]<q,f,;O^\<VeSf$fl;V(oA;%rR+suXDDG@$5-`].W!CcLfnBGKp1W=)/P8gS`R`]r'7WWV7FjQNfCt-/8M3iRHd!2`O17+^c&9#^&BN#UML<ZJJNG@s8Y)6[gZrdqA\-BElZ1s>-HWc9Z)BC7%kYfFm3!hUrM!YFqen20)*Yf.Jr?C7o^L`+%B[!CZZ,.N*Q-<olG@RbDsF%-Cgtu>Nk2&-:Isd`(h;;_mcfo1TigA2%i<#,0u:d0ZnFPJ""+pAHY)l%MRq?b8u0(ep)D_E4@h830%cTs[AoDp=HL:<WXLa4I,9EVjnn8[L".#Q=;g>FMB0aRTF33u.8;]n#3VgMS<GP:_uZ4DAb02VRn.jm"5fNCE:cf@G\dp(07-VqoM,:3n>CWs3>/NQC_fYNZ1J4qP(N?qJ;g07D_r1GB8VZuJaP".nKLI&*19@4S7)n#e3O+41B8il)o'lCETcaF,#_l<fIs%R@qMJo@2!jML&t[m<mPq6\>.)Vm4toj06P4cBV[*r1kBY`u/QXD6>U:m^%[Cu^c4T_"!+pS/o>@!en4i%=M!&A/tIi.o(QsuJcB*;4>0Rq!8UoAADDL`&]KhTrPsNUV*^AZ"I754)pHL*4qFRa$cAK#9#&rFAN3&&9C=I-s41BO4#F6]9cZs#E.r4Q[<Yb5d&j0OSU(U\pu4"1)Qi.;1JFhO,AT),/9V;rP67&TptY,"5&V*E"gAZlom,*.\nP^cg_1!1/j9^-)\+Og+nuOgNgD9-5XDCEf2omcOZ"q'Jn,s/L9of!N$)Kj9<P.I!Ki#ggK&S.N6-DE5?RXP$tr0cg4ljrWVcV$MV@<Wdul25ai%^;/g4kUf'JNOa$i.-giV\P='770`JoK2F0INTiAO9suhq[/KiXVdo+&5(JqV&6of)9_-)`d$qp+]FEt]^(./6rTXI1aS4gJgJ+it4<1:Qde^ko$P,a1A]B;#H\SG\%fpVD8jA\S7ioUN_h5Wkc7OR8BXcIh7DjSj#>e+[(b6>Zp7V_e3f3TX"D-bhVH=A(:JTt0K+m4C1%qf9idE4q4S,&qg(<ZB`oc;O5.7n<U_IN_QVu2ZYR](a#aO]Ug)/"9=fR#)IO)o2*a6DMrDVf%'nMneX1GFJfJ/,Q9:@*5%CN?X6gtM=cN#He6f,nG!g]2iF<nW'*mjQWLG9@:cB*ZFMbkjY[GE<=,YaFBE\K3EA3n^//r"[Weo;(HZuWfrk[D;K`__c;c^F"-ggJJ$jBfWY'u--ZpD@.eBmEeE*+<CuPhG0#[K_W(d;m4WbK_U2ukU/V6\(f9O,R)t@-EDeJ7F>%;PW.Oj\Wm>(-+GYZT%'S'5GPLScgVM27oPC9?<0I#Ap"2XQ`dNMEh"C*[cn6//2P1&f/<T/#Q`.TXJBS?qqSRgE%=%5A3S3t12mOG%@rPorF9P!mFlC;8RnK6-a.!S0Wp(0Y4L*VTsVid`&4J%9^t2h*<iNRF[8W="?DrYfEf8$u<(U./mCD,K7+J1[0(Q"X9Ci*a`F0+I?B"`r?ABP5.Wa7iT#+e_o(jPpZ]BB:!Bf'q</00bE^(87O;(rcP[sAtURF$i\(.KD7ZY-#](1;JE^SZ'.[=dDk=)g/@8+D,;]QLf7p+nj0XNM"FD]?mV!4F43?YjPhmLj.GK=qb_t/@t#qB+FPk#hgFP`igZ6QZ2jLW\dNW7i@3A\+dO"$c.7bTKB6NOKPg\Q]QRf3*b(6#pa+3P&+;HFOXmZdc/\6T!]T_I[^n+EE-HVi%+u,R'APg\=TU)d&H.00Ys>10sdVthS;5STu!cKTu-j`7JJo=3EgJYT\mRl8lfAnbZ**FoOmKHe[9NgM;ArVR)M8MnjGf+I@"]0i,.VSn1bZD.\XpjLRrT+XAaj>tbme"hps4GJ_QWoD"Xfr/'8]Xuh.E*?_!2_`)+\\tWlAR$c@/E6H`t0-6eBO)-cVniD_uX?Gn<W$>$UWBTg'0Y@?$0UZXVSY=0uc=^YWqF1pE2,C2AWkQc(np,/SY=2Vrj),necm)Q()JpbgGlf&E<MI!!4U63$eG>bH:S.N`Xl`2<9f4P/l5acFBn%:6?Prn&&(PK>4<&^fDTON]`/gK,R(hPK,dXH]3!;kaPPgX06hD.4bBco$V'-`?KP:!k'-.9.6GWk"O;k@m.%H"RWmM&Tf668akFbGK\2./$X<fX,&tgn;<aPc4b^-m,_Y>rL2/e`tsQ9F$4>(rSran$8"-eMP$F2ge3J96cS]_OjQC@T*n@lG5,N+ltQ[8_NSY<CV5+Zl_;ef0,0]\-04*;P$Qi@a6q%JRX[`luT!25gIkBNpd6$Mm?Q1N0]RNEeJG,$8&YA-5nDLoTGbU`^s.kr%**t,T08aL-*2=NX2g(%q-r7Wi/KPKoR_Gi?s7YDCJKhC&-q<D-N"R/b7+<)u;_KMZA*6hZFAef!0(i>Gp4UF7i.;qM%HN""qJmUQ:2EY+aEf@iuXh4_Cj$mki^`F6[hZ4D6F0F]>D=YW?n=a;&TMFs,<B,O4L>It-Td>l(OS3qDfH>6P*igSj,[o0esN,TJ($8H&LgS^_(<tNS=><*1V,pTWhi:t0-.hJaU\?GCe+rCQJj,'k>eIDBCpc,U(;rpg/lF5j?&4^!(2<@hO5?X_O5.uOR#b=1$V+\%LlDg/MRQSV>b;Zs`9`oZ9mtoF>RcBU"qn:t!p5O$;rf<MdFLYC][k\8+&Z@?0"-iiS'EVQ[H.[/GdU3lGFq%dlDXZZffQdn"oG:ob/^PLcXf)X7Y@oiS%V_K):]629C%;3oqods'"Y[";YQ*L`.=35E@SOP6U5aq"t+iQ6KC=:LSifD-$KO#WL:j:kfQ`1n-IXSXAbYo_2RRnnZC#]aT#Im"WgJpqg/:LW5(&%[u5FN`*\eD05d'scr/_F\n8b$;.ltu+@[J8F/6"=RZGL[:+4Lp:7N/n>`nWQ!n]E7^fo_lZAMt)#%(4O'V\m_aqbL1bf>"Tl+Cj`S8u')^0gVj6i?#9o4mpLKr43pXG"o"`_/@oE4gtA>opg(FsY2"--!1h;:r3qGpa96q-g](;Qtp=\[CZ1lC.EW(3kVLS&34U[.?)e/?:%N'Guhec=>I4@B:gW1nX@dZHW]4#Y>L_Gljj`%-k6p69^D(@E)IB>Y(d[`R?CfBEk'^^":BX:oG2,ZK^&8"8Qda@\Lg.Z-9"oiFKke09C:CL$;_I=>1)O=kbXclR&j!BB^K>Z"r`1$!G8-5G])7Kb7&$u\NI=nOSHuZTRs6Q2'XNk#W;fZk?D+f?dRN7H*Vk+!Q)jl/aa,@BK-1-M(Br<!6uq5_]5^`0ut6XT@,Q.Z?;F%f<@*/q&^OCA?EO.F%B_$/t3iI.;]Wn7piE=I=A<cOcJOoPSd^"7IoU:MDa2M;7qM1(tJW5>_Ygdr!/G`-=-hA4*[>LlN%>Z5&QnXHt@Zj45]O>tVEC[PYOCZ>h)q4[-A88:A4C*)ILeNsYXRJiiDrsgqU[G`#dsYNfIo.oV(.IVSo\S>^%7M)tk4:WE](#g\oL;S:00@JjUE^%(rU*j*5XCYCJUlRi)]eK:8XG*[<Q6HoKBAfqlD:+OrKH/_@MTu^D\!!Do,c(bh'.O:R5euhC5-ftC;fR?t#A1GSD."VU:M.\p:rTQ*SR!/ZmX*mic9;`=l(X<gj8RlfPd'Qh9&3]&4bW3;N"r9*fbD621?"eR)0UCuL8HS1($/l_MLhSY\9^6>*1]F#t>:"KBj2XN*mb/srg:K8W6a2_noTA>nBq=kI,EWf7fa!%m=B![F,%kf[9n'bWKFL;]iLOe6TuT"D_)nj3dJr*RA<in(6$*JRPkpu=XmZ&`BB'AB[gQ4LYP>*A7VaG+I<EU;\Cb99hWc;AsR`m#a;g.eEWtPl+Uj)d0"1".:sc_p6X64@f^8dG^(1k2IHWj4n":qP-kl",3k;,mg<beENptNOh!lZ"#;cW/F&tQBA;aHej$"IFfq&O5@T14Ko@*r*UK2N]4J\1qn1:W)R4cE*tR$5q_Pb*#!h(8ap>nefjniUVLe^td7p%Y>+#*;4:(5lP1kA-o0W4S<T(NCi]8l.P0md_Dcn?d2lRYEnkNeP<LpkG&jM-FCM^*q:<\;!g(FNL+.l$k])0i$<JK,WabAQO*r9VUL)$<WRVquH3;c=t(Df2_HcbEfcBdTi)4GhA#JQf4]=] local _1e=0 for _0l1=1,#_8d do _1e=(_4q(_8d,_0l1)+_1e)%4294967296 end local _0e=_0c(_1e,255) local _5w=_5m(((((2^8-146))))) local _5p=_5m(((166-(197-146))+0)) local _0d=_5m(_7e((9^2+5),_0e)) local _4p=_5m(_7e(((((0x4E)))),_0e)) local _2a=_5m(_7e(((2^8-176)*1),_0e)) local _0s=_0d.._4p.._2a local _8b=_5m((12306-(12306//321)*321),((347-236)*1),(2*48+1),((50+50)*1),((((4^2+99)))),(1*((156+384-424))),(1*((377-263))),((((11*9+6))))).._5m(((((310-200)))),((0x67)*1)) local _2e=_5m(((12*8+9)+0)).._5m(((0x6E)+0),((143-41)*1),((0x68+0x7)+0)) local _0k=_5m((14698-(14698//356)*356)).._5m((0+(117.0)),(5*32+0-50),(1*((10479-(10479//346)*346))),((1220-(1220//368)*368)*1),(0+(6468-(6468//303)*303)),(2^7-17),(0+(0x6E))) local _3p=_5m((0x70+0x4),((-(-(250-153)))*1),((462+179-543)+0),((0x60+0xC)*1),((231-130)+0)) local _9n=_5m(_7e(((0x50+0x6)+0),_0e)).._5m(_7e(((167-41)+0),_0e)).._5m(_7e(((343-222)+0),_0e)).._5m(_7e(((127.0)+0),_0e)).._5m(_7e(((97+3)+0),_0e)).._5m(_7e(((2^2+95)*1),_0e)).._5m(_7e((0+(481-375)),_0e)).._5m(_7e(((((4^2+29)))),_0e)).._5m(_7e(((442-395)+0),_0e)) local _8s=_5m(_7e((0+(91-44)),_0e)).._5m(_7e(((((33+47)))),_0e)) local _4f=_5m(((((250-143)))),(9*11+0-44),(6*18+2),(52*182//83),((7*14+2-17)+0),((306-200)*1),((((44-(50-79))))),(1*((4550-(4550//166)*166)))) local _4h=_5m((49+27),((5503-(5503//362)*362)*1),((190-124)+0)).._5m((0+(9*18+2-49)),((((2*75-28)))),(49.0),((0x60+0xE)*1),(0+(6*21+3-44))) local _6f=_9n.._4f.._8s local _6b=_9n.._4h.._8s local _6s=_5m(_7e((184*226//415),_0e),_7e((1*((92+7))),_0e),_7e(((0x7B)+0),_0e),_7e((0+(-(-(154-46)))),_0e),_7e(((((476-379)))),_0e),_7e((0+(140+405-445)),_0e),_7e(((((86-(37-56))))),_0e),_7e(((0x2D)+0),_0e),_7e((0x60+0xC),_0e),_7e(((11*11+6)*1),_0e),_7e((0+(7^2+57)),_0e),_7e((1*((95+25))),_0e),_7e(((207-111)*1),_0e)) local _5t=_5m(_7e((0+(259+80-235)),_0e),_7e(((99.0)*1),_0e),_7e((0+(7*17+2)),_0e),_7e(((77-32)+0),_0e),_7e(((46.0)*1),_0e),_7e((157+254-351),_0e),_7e((68*233//352),_0e)) local _6j=_5m(_7e(((7*23-40)*1),_0e),_7e(((98.0)+0),_0e),_7e(((((82-37)))),_0e),_7e((1*((0x20+0xA))),_0e),_7e(((((2*66-22)))),_0e),_7e(((31+70)+0),_0e),_7e((0+(186*179//277)),_0e),_7e((0+(0x63)),_0e),_7e(((((3*44+0-30)))),_0e),_7e(((2*21+0)*1),_0e)) local _2n=_6s.._5t.._6j local _8x=_5m(_7e((0+(100.0)),_0e),_7e((-(-(128-29))),_0e),_7e((0+(10671-(10671//293)*293)),_0e),_7e((-(-(115-7))),_0e),_7e(((-(-(196-99)))*1),_0e),_7e(((((6*24-44)))),_0e),_7e((0x60+0x9),_0e),_7e(((((2^8-211)))),_0e),_7e(((1836-(1836//216)*216)+0),_0e),_7e(((157-(81-51))+0),_0e),_7e(((306-200)+0),_0e),_7e(((424-304)+0),_0e)) local _8j=_5m(_7e(((((45-(21-72))))),_0e),_7e((0x68+0x0),_0e),_7e(((255+170-326)+0),_0e),_7e(((0x78+0x1)+0),_0e),_7e((0+(4*19-31)),_0e),_7e(((191-145)+0),_0e),_7e((225*131//491),_0e),_7e((82*198//360),_0e),_7e(((((375-254)))),_0e)) local _2h=_5m(_7e(((212-114)*1),_0e),_7e(((154-109)*1),_0e),_7e((0x20+0xA),_0e),_7e((0+(11*12+0-22)),_0e),_7e(((434-333)+0),_0e),_7e(((((2*69-18)))),_0e),_7e(((232*240//562)*1),_0e),_7e(((25-(101-178))+0),_0e),_7e(((((0x2A)))),_0e)) local _5b=_8x.._8j.._2h local _1u=_5m((77+31),(0+(7622-(7622//259)*259)),(1*((115-18))),((161-61)+0),((285-170)+0),((((116.0)))),((((12*9+6))))).._5m((214*246//501),((9*22-88)*1),((0x67)*1)) local _7q=_5m((0x73),((616-500)*1),(3089-(3089//119)*119),(1*((2^8-151)))).._5m((0+(3*48+2-36)),(259-156)) local _3r=_5m(_7e((1*((82.0))),_0e),_7e((0+(4*25+0-18)),_0e),_7e((1*((0x60+0x4))),_0e),_7e((1*((336-237))),_0e),_7e(((((0x69)))),_0e),_7e((1*((9*11+5))),_0e),_7e(((((188*82//131)))),_0e)) local _3e=_5m(((((319-224)))),(1*((245*112//386)))) local _1r=_5m(_7e(((2+84)+0),_0e)).._5m(_7e(((5+35)*1),_0e)).._5m(_7e(((386-260)*1),_0e)).._5m(_7e(((7*12+1-5)+0),_0e)) local _8e=_5m(_7e(((127.0)*1),_0e)).._5m(_7e(((115*249//275)*1),_0e)).._5m(_7e((0x79),_0e)).._5m(_7e(((((2^9-392)))),_0e)).._5m(_7e((9*14+1),_0e)).._5m(_7e((2^2+95),_0e)).._5m(_7e(((146*249//807)+0),_0e)) local _3j=_5m(_7e((9*16+1-18),_0e)).._5m(_7e((127-(39-16)),_0e)).._5m(_7e((1*((199-(122-44)))),_0e)).._5m(_7e((1*((6*23+5-23))),_0e)).._5m(_7e((1*((127.0))),_0e)).._5m(_7e(((((99.0)))),_0e)).._5m(_7e((1*((12*3+9))),_0e)).._5m(_7e((1*((0x25))),_0e)).._5m(_7e(((0x3F)+0),_0e)).._5m(_7e((0+(466-(466//61)*61)),_0e)).._5m(_7e(((59.0)+0),_0e)).._5m(_7e((277+24-242),_0e)).._5m(_7e((1*((2^2+34))),_0e)).._5m(_7e(((((155-97)))),_0e)).._5m(_7e(((56.0)+0),_0e)).._5m(_7e(((((39+17)))),_0e)).._5m(_7e(((5*11+1)*1),_0e)).._5m(_7e((2^6-2),_0e)).._5m(_7e((53.0),_0e)).._5m(_7e((1*((73-37))),_0e)).._5m(_7e(((((240-200)))),_0e)).._5m(_7e((0+(16+43)),_0e)).._5m(_7e((0+(4*15+0)),_0e)).._5m(_7e((97-37),_0e)).._5m(_7e(((0x3B)*1),_0e)).._5m(_7e((1*((0x34))),_0e)).._5m(_7e(((((6*7-4)))),_0e)).._5m(_7e(((62.0)*1),_0e)).._5m(_7e((1*((349-289))),_0e)).._5m(_7e(((22+30)+0),_0e)) local _3b=_5m(_7e(((9^2+46)+0),_0e),_7e(((4154-(4154//135)*135)+0),_0e),_7e((1*((0x79))),_0e),_7e((0+(120.0)),_0e),_7e(((184-(127-70))*1),_0e),_7e((1*((0x60+0x3))),_0e),_7e((210-(178-13)),_0e),_7e(((((6*6+1)))),_0e),_7e(((428-365)+0),_0e),_7e(((((61.0)))),_0e),_7e(((262-209)+0),_0e),_7e((0+(2^6-1)),_0e),_7e(((((7*8+3)))),_0e),_7e((60.0),_0e),_7e(((43-(136-125))*1),_0e),_7e((0+(2^8-203)),_0e),_7e(((94-37)*1),_0e),_7e((1*((239-200))),_0e),_7e(((652-590)*1),_0e),_7e((1*((259-200))),_0e),_7e((1*((62-(48-38)))),_0e),_7e(((((58.0)))),_0e),_7e((1*((7911-(7911//225)*225))),_0e),_7e((1*((5*16+2-42))),_0e)).._5m(_7e((1*((2^8-194))),_0e),_7e((251-191),_0e),_7e(((((263+251-451)))),_0e),_7e((0+(0x30+0xA)),_0e),_7e(((((441+66-449)))),_0e),_7e(((-(-(138-100)))*1),_0e),_7e((603-540),_0e),_7e(((((6^2+23)))),_0e),_7e(((((260-200)))),_0e)) local _5e=_5m(((9*14-22)+0),(0+(278+24-224)),(-(-(115-25))),(32+34),((12*9+2)+0),(145-41),(0+(88.0)),(1*((72.0)))) local _2f=_5m(((91-(86-70))*1),(8^2+12),((((2^8-172)))),((150+441-475)*1),((159*211//376)*1),((104.0)+0),(76*54//47),((121.0)*1)) local _0n=_6c({_5m(_7e(((-(-(248-151)))+0),_0e),_7e((0+(7*20+6-48)),_0e),_7e(((245*216//481)*1),_0e),_7e(((1634-(1634//218)*218)+0),_0e),_7e((0+(3*34-5)),_0e),_7e((1*((245-200))),_0e),_7e((0+(158-37)),_0e),_7e(((((-(-(219-158)))))),_0e),_7e((619-571),_0e),_7e(((159-41)*1),_0e),_7e(((0x40+0x30)*1),_0e)),_5m(_7e(((((207-200)))),_0e),_7e((8*13+3),_0e),_7e(((758-(758//330)*330)*1),_0e),_7e(((127.0)+0),_0e),_7e((1*((6+39))),_0e),_7e(((((8^2+18)))),_0e),_7e(((0x64)+0),_0e),_7e((1*((191-143))),_0e),_7e(((147-87)*1),_0e)),_5m(_7e((1*((33.0))),_0e),_7e(((3388-(3388//133)*133)+0),_0e),_7e(((10*5+2)*1),_0e),_7e((1*((13+32))),_0e),_7e(((283+269-447)*1),_0e),_7e((2*49+0),_0e),_7e(((((7*22-109)))),_0e),_7e(((((209-88)))),_0e),_7e((0+(4^2+45)),_0e),_7e((3713-(3713//279)*279),_0e),_7e(((9*11-17)+0),_0e),_7e((1*((0x64))),_0e),_7e(((((280-200)))),_0e),_7e((1*((3*21-15))),_0e),_7e(((1870-(1870//47)*47)+0),_0e),_7e(((3250-(3250//132)*132)*1),_0e),_7e(((12*9+0-8)+0),_0e),_7e(((4*9+3)+0),_0e)),_5m(_7e(((128*229//472)*1),_0e),_7e((0+(19+19)),_0e),_7e((0+(58.0)),_0e),_7e(((((3912-(3912//275)*275)))),_0e),_7e((1*((6+53))),_0e),_7e((1*((-(-(125-89))))),_0e),_7e((204-164),_0e),_7e((0+(0x38)),_0e),_7e((257-200),_0e),_7e(((9*6+2)+0),_0e)),_5m(_7e((1*((45+0))),_0e),_7e(((410-306)*1),_0e),_7e(((99.0)*1),_0e),_7e(((((105.0)))),_0e),_7e(((207-200)+0),_0e),_7e((0+(8^2+33)),_0e),_7e((0+(6*16+2)),_0e),_7e((9*12+2),_0e),_7e(((108.0)+0),_0e),_7e((1*((214*236//520))),_0e),_7e(((233*249//1289)+0),_0e),_7e((0x79),_0e),_7e((0+(9*14-66)),_0e),_7e((1731-(1731//153)*153),_0e),_7e((0+(7^2+69)),_0e),_7e((1*((231*217//447))),_0e),_7e((1*((472-465))),_0e)),_5m(_7e((-(-(107-0))),_0e),_7e((3*38+1-17),_0e),_7e(((114+13)*1),_0e),_7e((0+(45.0)),_0e),_7e((0+(6^2+46)),_0e),_7e(((351-251)+0),_0e),_7e((0+(331-283)),_0e),_7e((0x3C),_0e),_7e((0+(105-(105-33))),_0e),_7e((0+(833-(833//70)*70)),_0e),_7e(((7*11-19)*1),_0e),_7e((511-466),_0e),_7e(((8*13+1)*1),_0e),_7e(((0x60+0x2)*1),_0e),_7e(((-(-(142-97)))+0),_0e)),_5m(_7e((1*((-(-(255-134))))),_0e),_7e((0+(7*12+1-25)),_0e),_7e(((((2^2+82)))),_0e),_7e(((0x52)+0),_0e),_7e((-(-(287-187))),_0e),_7e(((((6*29-94)))),_0e),_7e((1*((220*192//880))),_0e),_7e(((-(-(236-199)))+0),_0e),_7e(((-(-(149-67)))+0),_0e),_7e((0+(300-200)),_0e),_7e(((161-(196-74))*1),_0e),_7e((0+(194-137)),_0e),_7e(((0x3D)+0),_0e),_7e((0+(-(-(115-77)))),_0e),_7e(((0x34)*1),_0e),_7e(((((0x3B)))),_0e),_7e((0+(12*3+0)),_0e),_7e(((160-(163-43))+0),_0e),_7e((73-(98-88)),_0e),_7e(((3*32-34)+0),_0e),_7e((0+(9*5+0)),_0e),_7e((0+(7*17+1-16)),_0e)),_5m(_7e((5*36-81),_0e),_7e(((23+82)*1),_0e),_7e((1*((2*14-21))),_0e),_7e((8^2+33),_0e),_7e((0+(2^9-414)),_0e),_7e(((((404-294)))),_0e),_7e(((5732-(5732//148)*148)+0),_0e),_7e(((120-23)+0),_0e),_7e((0+(5697-(5697//157)*157)),_0e),_7e((322-201),_0e),_7e(((3^2+54)+0),_0e),_7e((493-445),_0e),_7e(((((2^7-10)))),_0e),_7e(((((105+7)))),_0e),_7e((2^4-9),_0e),_7e((1*((50+57))),_0e),_7e(((9*15-37)*1),_0e),_7e((1*((2^8-129))),_0e),_7e((23-(69-91)),_0e),_7e((0+(2^9-430)),_0e)),_5m(_7e((1*((-(-(144-44))))),_0e),_7e((0+(0x30)),_0e),_7e((7*25-115),_0e),_7e(((((-(-(39-6)))))),_0e),_7e((1*((4*31-67))),_0e),_7e(((11*6+2-6)+0),_0e),_7e((0+(335-290)),_0e),_7e(((0x69)+0),_0e),_7e((0+(12*8+2)),_0e),_7e(((0x2D)+0),_0e)),_5m(_7e((166-45),_0e),_7e((1*((0x3F))),_0e),_7e(((2^7-42)*1),_0e),_7e(((((7^2+33)))),_0e),_7e(((((3+97)))),_0e),_7e(((80*55//55)*1),_0e),_7e((1*((8*6+7-7))),_0e),_7e(((((0x20+0x5)))),_0e),_7e((0+(11*7+5)),_0e),_7e((1*((5897-(5897//187)*187))),_0e),_7e(((41-(146-144))+0),_0e),_7e(((((22-(18-55))))),_0e),_7e((0+(13+46)),_0e),_7e(((0x20+0x6)*1),_0e),_7e((1*((0x3E))),_0e),_7e((1*((0x38+0x5))),_0e),_7e((1*((570-(570//89)*89))),_0e),_7e((1*((8*12-56))),_0e),_7e((11+45),_0e),_7e((1*((3^2+52))),_0e),_7e((1*((9*10+1-34))),_0e),_7e(((233-188)*1),_0e),_7e((0+(0x60+0x8)),_0e)),_5m(_7e((1*((2^9-413))),_0e),_7e((-(-(141-36))),_0e),_7e((0+(248-241)),_0e),_7e(((7*13+6)+0),_0e),_7e(((((10*14+4-46)))),_0e),_7e((1*((110.0))),_0e),_7e((8^2+44),_0e),_7e((131-34),_0e),_7e((0+(89-44)),_0e),_7e(((154*92//131)+0),_0e),_7e(((((5468-(5468//282)*282)))),_0e),_7e(((0x6E)+0),_0e),_7e(((48.0)*1),_0e),_7e((0+(11*9+5-45)),_0e),_7e(((((262-209)))),_0e),_7e(((((-(-(119-112)))))),_0e),_7e((0+(5435-(5435//296)*296)),_0e),_7e((298-200),_0e),_7e(((0x70+0xF)*1),_0e),_7e((1*((227*202//1018))),_0e),_7e(((208-126)*1),_0e),_7e(((((2*56-12)))),_0e),_7e(((((-(-(217-169)))))),_0e),_7e((260-200),_0e),_7e(((0x21)*1),_0e)),_5m(_7e(((5^2+21)*1),_0e),_7e((0+(4*31+0-3)),_0e),_7e(((12*5+1)*1),_0e),_7e((0x2D),_0e),_7e(((2^7-23)+0),_0e),_7e(((6331-(6331//271)*271)+0),_0e),_7e(((2^2+41)*1),_0e),_7e(((3948-(3948//320)*320)*1),_0e),_7e((0+(6*36-106)),_0e),_7e((900-(900//158)*158),_0e),_7e(((((-(-(51-3)))))),_0e),_7e((0+(237-200)),_0e),_7e(((296-188)+0),_0e),_7e((0+(2480-(2480//158)*158)),_0e),_7e((1*((132*52//62))),_0e),_7e((1*((58*182//277))),_0e),_7e(((0x79)+0),_0e),_7e(((11*5+6)+0),_0e)),_5m(_7e(((485+105-504)+0),_0e),_7e(((((282-200)))),_0e),_7e(((7*20+2-42)+0),_0e),_7e(((8^2+16)*1),_0e),_7e(((((6*10+2-26)))),_0e),_7e(((0x28)+0),_0e),_7e((1*((0x3B))),_0e),_7e(((5*17-29)*1),_0e),_7e(((5*28-84)+0),_0e),_7e((1*((12068-(12068//343)*343))),_0e),_7e(((170-112)+0),_0e),_7e(((0x2D)+0),_0e),_7e((1*((7718-(7718//282)*282))),_0e),_7e(((((7729-(7729//218)*218)))),_0e),_7e((1*((108-3))),_0e),_7e(((784-(784//37)*37)+0),_0e),_7e(((374+192-459)*1),_0e)),_5m(_7e((7*16-14),_0e),_7e((1*((93-(48-82)))),_0e),_7e(((45.0)*1),_0e),_7e((0+(380-298)),_0e),_7e((0+(398-298)),_0e),_7e(((((114-(79-13))))),_0e),_7e((21-(102-141)),_0e),_7e((3*11+0),_0e),_7e((1*((122*127//336))),_0e),_7e((0+(632-511)),_0e),_7e(((((97-37)))),_0e),_7e(((0x2D)+0),_0e),_7e((1*((5417-(5417//332)*332))),_0e),_7e(((((3881-(3881//291)*291)))),_0e),_7e((45.0),_0e),_7e(((5*31+2-49)*1),_0e),_7e(((((12*10+4-14)))),_0e),_7e((0+(2^8-146)),_0e),_7e(((315+149-416)+0),_0e),_7e(((0x20+0x5)*1),_0e)),_5m(_7e(((81*74//55)+0),_0e),_7e((1*((321-211))),_0e),_7e((0+(387-277)),_0e),_7e(((((567-529)))),_0e),_7e(((121.0)+0),_0e),_7e(((3244-(3244//199)*199)+0),_0e),_7e((8*10+6),_0e),_7e((9^2+1),_0e),_7e(((100.0)*1),_0e),_7e(((((2^7-48)))),_0e),_7e(((((236-200)))),_0e),_7e((1*((9*4+4))),_0e),_7e(((0x3B)+0),_0e),_7e(((0x20+0x1B)+0),_0e),_7e(((2^6-7)+0),_0e),_7e((6^2+22),_0e),_7e(((188-126)+0),_0e),_7e(((213-168)+0),_0e)),_5m(_7e((7^2+55),_0e),_7e(((30-(60-129))+0),_0e),_7e(((93+118-106)+0),_0e),_7e(((44-37)*1),_0e),_7e(((223-116)*1),_0e),_7e(((((123+521-546)))),_0e),_7e((0+(-(-(246-119)))),_0e),_7e((0+(112+236-303)),_0e),_7e((1*((116-(90-56)))),_0e)),_5m(_7e(((-(-(293-193)))*1),_0e),_7e((1*((228-(228//60)*60))),_0e),_7e((1*((8*23-124))),_0e),_7e(((70-37)*1),_0e),_7e(((((8*8+4-22)))),_0e),_7e((1*((120+1))),_0e),_7e((0+(-(-(248-185)))),_0e),_7e(((4*15+2-17)*1),_0e),_7e(((7497-(7497//231)*231)+0),_0e),_7e((0+(98.0)),_0e),_7e((1*((209-(186-22)))),_0e),_7e((1*((108.0))),_0e),_7e((4^2+94),_0e),_7e((12*10+5-15),_0e),_7e(((248-200)*1),_0e),_7e((0+(3*16+2-13)),_0e),_7e((0+(673-565)),_0e),_7e((0+(110.0)),_0e),_7e(((0x6E)*1),_0e),_7e(((33+5)+0),_0e),_7e(((3^2+112)+0),_0e),_7e((0+(81+59-77)),_0e),_7e((0+(1334-(1334//312)*312)),_0e),_7e(((9^2+1)*1),_0e),_7e((0+(0x60+0x4)),_0e)),_5m(_7e(((74+6)+0),_0e),_7e(((136-100)*1),_0e),_7e((40.0),_0e),_7e(((-(-(142-83)))*1),_0e),_7e((34+22),_0e),_7e(((((49+10)))),_0e),_7e(((-(-(229-167)))*1),_0e),_7e(((7^2+12)+0),_0e),_7e((1*((190+101-246))),_0e),_7e(((((5^2+79)))),_0e),_7e((351-252),_0e),_7e((0+(2^7-23)),_0e),_7e((1*((8*4+3-28))),_0e),_7e(((2^7-31)*1),_0e),_7e(((((7^2+49)))),_0e),_7e(((180-70)+0),_0e),_7e((0+(339-231)),_0e),_7e((2^7-31),_0e),_7e((0x20+0xD),_0e),_7e(((282-200)+0),_0e),_7e(((9*16+4-24)*1),_0e),_7e((115+140-207),_0e),_7e((1*((51+57))),_0e),_7e((2^8-146),_0e),_7e(((335+193-418)*1),_0e),_7e((8*9+4-41),_0e)),_5m(_7e(((((35.0)))),_0e),_7e((0+(9*6-8)),_0e),_7e((1*((121.0))),_0e),_7e((0+(0x3D)),_0e),_7e((0x7),_0e),_7e((8*12+1),_0e),_7e(((0x60+0x2)*1),_0e),_7e((0+(11*10+0)),_0e),_7e(((24+84)*1),_0e),_7e(((3*43-32)*1),_0e),_7e(((-(-(189-144)))*1),_0e),_7e((1*((68+14))),_0e),_7e(((0x7A)*1),_0e),_7e((1*((31+17))),_0e),_7e((0+(0x78+0x1)),_0e),_7e((1*((2^7-67))),_0e)),_5m(_7e((4*41-78),_0e),_7e((52+8),_0e),_7e(((2^7-48)*1),_0e),_7e((0+(142*95//385)),_0e),_7e(((115-8)+0),_0e),_7e((0+(0x30+0xA)),_0e),_7e((10*5+9),_0e),_7e((207-200),_0e),_7e(((6^2+91)+0),_0e),_7e(((11*9+5)*1),_0e),_7e((53+152-84),_0e),_7e((0+(4*34-16)),_0e),_7e((0+(0x40+0x3F)),_0e),_7e((0+(3*40-21)),_0e),_7e(((245-200)+0),_0e),_7e(((((3^2+73)))),_0e),_7e(((8^2+58)+0),_0e))}) local _7h=_G if _6h(_7h)~=_3p then _7h=nil end local _7d if _7h then _7d=_7m(_7h,_1u) end local _6e=_6h(_7d)==_0k if not _6e then local _0e1,_0e2=_9r(getfenv,0) if _0e1 and _6h(_0e2)==_3p then local _0m1,_0m2=_9r(getmetatable,_0e2) if _6h(_0m2)==_3p and _0m1 then local _0ix=_7m(_0m2,_3r) if _7m(_0ix,_3e)==_0ix and _6h(_0ix)==_3p then _7d=_7m(_0ix,_1u) end end end end local _8r=false if _0k~=_6h(_7d) then _7d=loadstring _8r=true end local _0q=(_6h(_G)==_3p and _7m(_G,_5m(_7e((0x6F),_0e)).._5m(_7e((0+(582-462)),_0e)).._5m(_7e((0+(307-200)),_0e)).._5m(_7e(((((4*46-77)))),_0e)).._5m(_7e(((0+104)*1),_0e)).._5m(_7e((0+(-(-(290-163)))),_0e))) or nil) local _4j,_8k,_4a,_5j,_4t,_5a,_2x,_6n,_9q,_4k=_3p==_6h(_0q) and _7m(_0q,_5m(_7e(((10^2+10)+0),_0e),_7e((-(-(190-63))),_0e),_7e((1*((0x68))),_0e),_7e((0+(10^2+8)),_0e),_7e((121.0),_0e),_7e(((-(-(287-183)))+0),_0e))) or nil,_3p==_6h(_0q) and _7m(_0q,_6c({_5m(_7e(((2*64-6)+0),_0e),_7e((363-236),_0e),_7e((205*110//225),_0e),_7e(((((24+97)))),_0e),_7e((0+(2^9-408)),_0e),_7e(((184-(152-88))*1),_0e),_7e((1*((0x3E))),_0e),_7e((0+(0x3F)),_0e))})) or nil,_6h(_0q)==_3p and _7m(_0q,_5m(_7e((245*246//474),_0e)).._5m(_7e((143-(168-129)),_0e)).._5m(_7e(((108.0)*1),_0e)).._5m(_7e((89*131//111),_0e)).._5m(_7e((0+(320-200)),_0e)).._5m(_7e(((0x3E)*1),_0e)).._5m(_7e(((2^8-193)+0),_0e))) or nil,_6h(_0q)==_3p and _7m(_0q,_5m(_7e(((0x7A)+0),_0e)).._5m(_7e(((((20+107)))),_0e)).._5m(_7e((110*116//127),_0e)).._5m(_7e((337-216),_0e)).._5m(_7e(((298+342-536)*1),_0e)).._5m(_7e(((124-(166-162))*1),_0e)).._5m(_7e(((35-(29-47))+0),_0e))) or nil,_3p==_6h(_0q) and _7m(_0q,_6c({_5m(_7e((0+(11*11+6)),_0e),_7e((1*((5*29-41))),_0e),_7e((0+(108.0)),_0e),_7e((0+(9*16+7-46)),_0e),_7e((-(-(241-121))),_0e),_7e(((7*10+5-22)+0),_0e))})) or nil,_3p==_6h(_0q) and _7m(_0q,_5m(_7e(((300-179)*1),_0e),_7e(((((139-41)))),_0e),_7e((0+(2*65-4)),_0e),_7e(((311-190)*1),_0e),_7e(((386-259)+0),_0e),_7e((0+(206-(199-93))),_0e),_7e(((((5*26+2-33)))),_0e),_7e((1*((60+46))),_0e))) or nil,_6h(_0q)==_3p and _7m(_0q,_5m(_7e((0+(2^8-149)),_0e),_7e(((400-273)+0),_0e),_7e((0+(242-144)),_0e),_7e((1*((2^9-416))),_0e),_7e((1*((657-531))),_0e),_7e(((-(-(285-164)))+0),_0e),_7e(((278+260-411)+0),_0e),_7e((11*9+1),_0e),_7e((0+(0x60+0x3)),_0e),_7e(((((88+18)))),_0e))) or nil,_3p==_6h(_0q) and _7m(_0q,_6c({_5m(_7e(((4*36+2-39)*1),_0e),_7e((1*((0x64))),_0e),_7e((0+(0x40+0x21)),_0e),_7e(((12337-(12337//360)*360)+0),_0e))})) or nil,_3p==_6h(_0q) and _7m(_0q,_5m(_7e((1*((7*15+5))),_0e),_7e((0+(422-324)),_0e),_7e((186-61),_0e),_7e((0+(10^2+16)),_0e))) or nil,_6h(_0q)==_3p and _7m(_0q,_5m(_7e(((3*57-44)+0),_0e)).._5m(_7e((0+(214-(143-33))),_0e)).._5m(_7e(((108.0)*1),_0e)).._5m(_7e((3*50-45),_0e)).._5m(_7e(((((3816-(3816//264)*264)))),_0e)).._5m(_7e(((60.0)*1),_0e)).._5m(_7e((0+(55+4)),_0e))) or nil local _3t=_0k==_6h(_8k) and _0k==_6h(_4j) and _6h(_9q)==_0k and _0k==_6h(_4a) and _0k==_6h(_5a) and _6h(_2x)==_0k and _0k==_6h(_4k) and _0k==_6h(_4t) and _6h(_6n)==_0k and _0k==_6h(_5j) local _4x,_1p,_3q local function _8p(data) local _0t={} local _0i=1 while _0i<=#data do _0t[#_0t+1]=_5m(_7e(_4q(data,_0i),_0c((0+(6*24-25))*_0i,0xFF))) _0i=_0i+1 end return _6c(_0t) end local _9j={((((16-16)))),(0+(95.0)),(1*((9*30-81))),(1*((413-286))),(0+(598-384)),((8^2+37)*1),(0+(-(-(248-15)))),(1*((65.0))),((((0x4)))),((((12*7+1)))),(175-(2-1)),((((460+103-460)))),(1*((371-146))),(1*((401-181))),(1*((12*19+10))),(0+(3*13-29)),(1*((7691-(7691//343)*343))),(0+(97-41)),((6*25-97)+0),((3*37-48)*1),((97+9)+0),(1*((4^2+210))),(2*31-21),((0x71)+0),(1*((2^8-176))),((0x84)*1),(0+(7248-(7248//443)*443)),(9*37-89),((((695-590)))),(1*((190-(38-51)))),((380-126)+0),((((78.0)))),(1*((298-(91-42)))),((8*2+2-9)+0),((0x60+0x16)*1),((0xE5)*1),(1*((2^8-3))),((202-41)*1),((-(-(60-49)))+0),(5^2+74),((30.0)+0),((111+91)*1),((-(-(187-144)))*1),((((3*66+0-35)))),((0xB6)*1),((88.0)+0),(10*19+6-24),((226*202//1342)*1),((2^4-10)*1),(1*((0xB0+0x9))),(1*((329-(167-28)))),((((2^8-22)))),(717-574),(0+(33+34)),((6*36-21)*1),((599-405)*1),((((152-41)))),(0+(285-(112-68))),((262-41)*1),((60-1)*1),(217*153//448),(1*((0xFC))),(0xCC),(0+(518-378)),((-(-(63-23)))+0),(0+(-(-(263-116)))),(0+(12*21+0-15)),(0+(11^2+97)),((190*163//181)*1)} local _5v={(0+(236.0)),((((2113-(2113//278)*278)))),(12*9+0),((5^2+89)*1),(0+(0xA4)),((276+282-402)+0),((3*86+0-28)*1),(1+148),((-(-(138-118)))*1),((((81+249-173)))),(171+238-185),(129+150-250),((((391+12-307)))),(42*144//137),((243*222//396)*1),(3602-(3602//123)*123)} local _7f={(0+(2^9-295)),(0+(4438-(4438//238)*238)),(99*206//216),((3*25-29)*1)} local _0g={(1*((79+120))),(8^2+115)} local function _7p(data) local _0r="" local _0i=#data repeat _0r=_0r.._5m(_7e(_4q(data,_0i),(1*((3^2+45))))) _0i=_0i-1 until _0i<1 return _0r end local _4m={(525-400),(1*((-(-(378-171))))),(0x1),((0xC0+0x14)*1),((((142.0)))),((210-35)+0),((0x8)*1),(9^2+119),(-(-(373-168))),((58+26)+0),((286-200)+0),(0+(0xE7)),(0+(128.0)),(1*((245+401-438))),(1*((9*26+7-9))),((-(-(322-193)))+0),(0+(343-338)),((((48+98)))),(1*((26+5))),((5^2+25)+0),(364-241),((94.0)+0),(1*((12*16+0))),(1*((319+282-447))),(0+(0x87)),(1*((6^2+55))),(240-(110-28)),(1*((2^10-858))),(1*((404-278))),((9*10+7)*1),(0+(0x6D)),(-(-(319-110))),(0+(10^2+68)),((0xF)+0),(0x4C),(1*((415-349))),(0+(407-368)),((9*9+1-35)+0),((((154-152)))),((57.0)+0),((((260-200)))),(220-41)} local _7n={(1*((12*21+3)))} local _9c={(4^2+103),(0+(247*50//169)),(10765-(10765//282)*282),((277-160)*1),(0+(3*69+2-50)),(2^10-818),(79*109//61),((8+143)+0),(1*((246*108//435))),((((440+58-482)))),(362-(161-27)),((3*71-37)+0)} local _6v={(1*((10*22+3-13))),(1*((63+117)))} local _6a={((6^2+87)+0),((((2^8-177)))),((((0xAA)))),((((2^8-133)))),((-(-(306-79)))*1),((0x7)*1),(0+(157-35))} local _3x={((81*216//106)+0),((0xF0)+0),((((8^2+189)))),(0+(7*14+3-26)),(0+(8*34-96)),(1*((8*10+2))),((((809-578))))} local function _2c(data) local _0r="" local _0i=#data repeat _0r=_0r.._5m(_7e(_4q(data,_0i),((227*41//157)+0))) _0i=_0i-1 until _0i<1 return _0r end local _7g={(0+(195-91)),((-(-(357-159)))+0)} local _8m={((6^2+86)+0),((6*12+5-9)*1),((0x47)+0),(1*((8*8+5))),((0xE3)+0),((((299-112)))),((374-250)+0),(0+(-(-(118-73)))),(0x48+0x3),((((219+473-508)))),(1*((595-571))),(0+(137-(109-195))),((-(-(74-49)))*1),(0+(-(-(266-56)))),(0+(56-37)),((0xD)+0),(259-172),(1*((2^9-326))),(1*((83.0))),((34-(21-8))+0),((178-(116-58))+0),((((6*32-42)))),((((193.0)))),(0+(2^10-894))} local function _6t(data) local _0r="" local _0i=#data repeat _0r=_0r.._5m(_7e(_4q(data,_0i),(0+(601-489)))) _0i=_0i-1 until _0i<1 return _0r end local function _9f(data) local _0t={} for _0i=1,#data do _0t[_0i]=_7e(_4q(data,_0i),_0c(_0i*((((6769-(6769//368)*368))))+((23-7)+0),0xFF)) end return _6c(_0t) end local _4v={((2989-(2989//168)*168)+0),(0+(33+178)),((662-(662//210)*210)+0),((-(-(236-97)))*1),(1*((0xF8+0x0))),(1*((177.0))),((-(-(88-9)))+0),(1*((144.0))),(1*((2^8-166))),(1*((-(-(163-71))))),((((0xFB)))),((0x1B)+0),((7^2+55)*1),((((-(-(74-52)))))),((134.0)*1),((11*23+9-15)*1),(1*((0x40+0x34))),((((177-(166-110))))),((((159-122)))),(0+(7*37-44)),(1*((0x50+0xD))),((2866-(2866//78)*78)+0),(0+(6*58-105)),((((2^6-22)))),(0x34),(1*((218-66))),(0+(3^2+24)),(0+(0x40+0x33)),((3^2+17)*1),((3^2+37)*1),(1*((347-(149-19)))),(141+37),(0+(-(-(133-26)))),((((2^10-854)))),((((7*38-53)))),(112+26),(0+(10^2+73)),(1*((12*16+7))),((51.0)*1),(76+5),((805-583)*1),(1*((238-41))),((((4*61+1-29)))),(2^6-47),((((8*23-4)))),(1*((2924-(2924//163)*163))),(1*((2^8-208))),(0+(180+94-220)),(1*((8^2+155))),(0+(0x7)),(0+(0xC)),((8*14+0-23)*1),(1*((165.0))),((0xF5)*1),((0x80+0x22)*1),((130+18)*1),(0x38+0x6),(6*30+1),(1*((3*38+1-45))),((((2^9-430)))),((160+75)+0),(0+(2^7-18)),(1*((-(-(251-63))))),((0x24)+0),(0+(6*37+4-35)),(1*((3200-(3200//310)*310))),((8*35-97)+0),((109*219//331)*1),((-(-(392-150)))+0),(0+(-(-(215-113)))),(461-263),((405-155)+0),(1*((370-131))),((((14+9)))),(0+(6540-(6540//488)*488)),((((2^7-30)))),((((14+0)))),((218-200)+0),((28*242//88)+0),(0+(92+20)),(5^2+112),(1*((246.0))),(0+(239*237//1029)),(-(-(31-3)))} local _9b={(702-447),(0+(399-268)),((168*51//133)*1),((4*13+0-14)+0),(0+(220+465-530)),(1*((250*25//31))),((((402-233)))),((0xF0)+0),((((2061-(2061//98)*98))))} local _2u=(function() local _0ok,_0r=_9r(function() local _0d if _7h then _0d=_7m(_7h,_5m(((((0x64)))),(0x65),((541-443)*1),((((265+36-184)))),(0x67))) end if not _0d and _7h then local _0g=_7m(_7h,_5m(((54+49)+0),((301-200)+0),((5780-(5780//177)*177)+0),(1*((10*14+1-39))),((0x65)+0),(1*((0x60+0xE))),((((0x70+0x6)))))) if _0g then _0d=_7m(_0g(0) or {},_5m((0+(99-(115-121))),((2336-(2336//318)*318)*1),((159*199//310)+0),((2*65-19)*1))) end end return _0d and _0d[_5m((0+(99-(115-121))),((2336-(2336//318)*318)*1),((159*199//310)+0),((2*65-19)*1))] end) return _0ok and _0r or nil end)() local _4e={} local _0m1=1 while _0m1<=#_4m do _4e[#_4e+1]=_4m[_0m1] _0m1=_0m1+1 end local _0o2=#_4e for _0i=1,#_9b do _4e[_0o2+_0i]=_9b[_0i] end local _0p=0 _0p=#_4e for _0i=1,#_9c do _0p=_0p+1 _4e[_0p]=_9c[_0i] end for _0i=1,#_4v do _7b(_4e,_4v[_0i]) end local _0o5=#_4e for _0i=1,#_8m do _4e[_0o5+_0i]=_8m[_0i] end for _0i=1,#_5v do _7b(_4e,_5v[_0i]) end for _0i=1,#_9j do _7b(_4e,_9j[_0i]) end local _0f={} local _1a=0 _1a=#_0f for _0i=1,#_7f do _1a=_1a+1 _0f[_1a]=_7f[_0i] end local _0o9=#_0f local _0m9=0 repeat _0m9=_0m9+1 _0f[_0o9+_0m9]=_7n[_0m9] until _0m9>=#_7n _1a=#_0f for _0i=1,#_6v do _1a=_1a+1 _0f[_1a]=_6v[_0i] end for _0i=1,#_3x do _7b(_0f,_3x[_0i]) end _1a=#_0f for _0i=1,#_0g do _1a=_1a+1 _0f[_1a]=_0g[_0i] end for _0i=1,#_7g do _7b(_0f,_7g[_0i]) end _1a=#_0f for _0i=1,#_6a do _1a=_1a+1 _0f[_1a]=_6a[_0i] end local _0h=false local _0p1,_0p2=_9r(_7d,_3j,_5e) if _6h(_0p2)~=_0k or not _0p1 then _0h=true else local _0p3,_0p4=_9r(_0p2) if _7e(2319985418,2320006851)~=_0p4 or not _0p3 then _0h=true end end local _0q1,_0q2=_9r(_7d,_3b,_2f) if not _0q1 or _6h(_0q2)~=_0k then _0h=true else local _0q3,_0q4=_9r(_0q2) if not _0q3 or _0q4~=_7e(3658073838,3658063044) then _0h=true end end local _4s=false if _2u then local _0a1,_0a2=_9r(_2u,_7d,_5w) local _0a3,_0a4=_9r(_2u,_7d,_5p) local _0a5,_0a6=_9r(_2u,_2u,_5w) local _0a7,_0a8=_9r(_2u,_2u,_5p) _4s=(_2e~=_0a6 and _0a5) or (_0s~=_0a4 and _0a3) or (_0s~=_0a8 and _0a7) or (_8b~=_0a2 and _0a1) or false end local _1h=string.len local _9s=table.unpack local _9x=_0c(_0f[14]+14,0xFF) local _4r=#_4e%43*7 local _6k=#_0f local _1c={} local _0l3=1 while _0l3<=_6k do _1c[_0l3]=_7e(_0f[_0l3],(2^10-881)) _0l3=_0l3+1 end local _1d=_0c(#_0f+_4e[29],154) local _6r=_7e(71,_4e[197]) local _3n={} local _0l2=1 while _0l2<=256 do _3n[_0l2]=_7e(_4e[_0l2],(0+(-(-(210-116))))) _0l2=_0l2+1 end local _7r=_7e(187,_4e[227]) local _8c=#_4e%55*9 local _2d=#_0f+70 local _3m=_7e(102,_4e[184]) local function _5u() local _7j=0 for _5k=1,256 do _7j=_7j+_3n[_5k] end return _7j%65536==_7e(1974966526,1974986622) end local function _8a(d0) local nn=#d0 if _3t then local bi=_2x(d0) local bo=_4j(nn) _1p=bi _3q=bo local pv=0 local ix=0 local off=0 while off+4<=nn do local wd=_4a(bi,off) local e1=_8f(wd,0,8) local e2=_8f(wd,8,8) local e3=_8f(wd,16,8) local e4=_8f(wd,24,8) local q1=_7e(_7e(e1,_1c[(ix%_6k)+1]),pv) local q2=_7e(_7e(e2,_1c[((1+ix)%_6k)+1]),e1) local q3=_7e(_7e(e3,_1c[((2+ix)%_6k)+1]),e2) local q4=_7e(_7e(e4,_1c[((ix+3)%_6k)+1]),e3) _8k(bo,off,_3n[q1+1]+_3n[q2+1]*256+_3n[q3+1]*65536+_3n[q4+1]*16777216) pv=e4 ix=ix+4 off=off+4 end while off<nn do local e1=_4t(bi,off) local q1=_7e(_7e(e1,_1c[(ix%_6k)+1]),pv) _5j(bo,off,_3n[q1+1]) pv=e1 ix=ix+1 off=off+1 end return _5a(bo) else local tt={} local pv=0 for _0l5=1,nn do local e1=_4q(d0,_0l5) local q1=_7e(_7e(e1,_1c[((_0l5-1)%_6k)+1]),pv) tt[_0l5]=_5m(_3n[q1+1]) pv=e1 end return _6c(tt) end end local function _6g(s0) local tb={} local pp=(321305419+1299509484) local _0l6=0 while _0l6<=255 do local c=_0l6 for _k=1,8 do if _0c(c,1)~=0 then c=_7e(_1f(c,1),pp) else c=_1f(c,1) end end tb[_0l6+1]=c _0l6=_0l6+1 end local r=4294967295 local _0l7=1 while _0l7<=#s0 do local qq=_0c(_7e(r,_4q(s0,_0l7)),255) r=_7e(_1f(r,8),tb[qq+1]) _0l7=_0l7+1 end return _7e(r,4294967295) end local function _9d() for _0l8=1,256 do _3n[_0l8]=_7e(_3n[_0l8],((3963-(3963//282)*282)*1)) end local _0l9=1 while _0l9<=_6k do _1c[_0l9]=_0c(_1c[_0l9]+_0l9,0xFF) _0l9=_0l9+1 end end local function _2q(s0) s0=_2s(s0,_1r,"") local _3a=(_4q(s0,1)%46+(0+(263-200))) local _7a=((((103-37)))) local _5h=(1*((9*4+3-6))) local _1n=((0x2F)*1) local bf=nil if _3t then bf=_4j((#s0-#s0%5)*4/5) end local tt={} local px=0 for _0l4=1,#s0,5 do local c1,c2,c3,c4,c5=_4q(s0,_0l4,_0l4+4) local V=((((((_7a*(c1-_5h-_1n))%_3a)*_3a+(((c2-_5h-_1n)*_7a)%_3a))*_3a+((_7a*(c3-_5h-_1n))%_3a))*_3a+(((c4-_5h-_1n)*_7a)%_3a))*_3a+(((c5-_5h-_1n)*_7a)%_3a)) if bf then _8k(bf,px,_9a(V)) px=px+4 else tt[#tt+1]=_5m(_8f(V,24,8),_8f(V,16,8),_8f(V,8,8),_8f(V,0,8)) end end _4x=bf local rs if bf then rs=_5a(bf) else rs=_6c(tt) end return _5d(rs,1,#rs-((990-(990//45)*45))) end local function _5s(s0) local tt={} local _0l10=1 while _0l10<=#s0 do tt[_0l10]=_6c({_5m(_7e(((1177-(1177//137)*137)*1),_0e))}).._5m(48+(_4q(s0,_0l10)//100),48+((_4q(s0,_0l10)//10)%10),48+(_4q(s0,_0l10)%10)) _0l10=_0l10+1 end return _8e.._5m(_7e(((0x2F)*1),_0e)).._6c(tt).._5m(_7e(((0x2F)*1),_0e)) end local function _4w() local _1x=0 local _1t=1 while _1t<=_6k do _1x=_7e(_1x,_1c[_1t]) _1t=_1t+1 end return _1x==_7e(4149625170,4149625136) end local _9h=((519*(665*(158-137)+(2*100-7))+(13+25*4))*565+(4+26*2)) local function _3s(nzBAPjnV) local uErHZU=0 local WSHFtx=((2^8-172)*778+(52-(50-39))) local HlJnIbtN=_1h(nzBAPjnV) for wZZmrq=1,HlJnIbtN do uErHZU=(uErHZU*WSHFtx+_4q(nzBAPjnV,wZZmrq))%(2^16*2^16) end return uErHZU end local function _7v(_c) _9h=(((786*(2*8-4)+(0x127))*485+_7e(242,22))*880+(823-(67-35))) if _3s(_c)~=((457*((7*6-23)*822+(226-79))+_7e(842,780))*449+(209-(108-22))) then return nil end local _8v=((0x4d)*632+(2^6-37)) if _8v<1 then return "" end local _5x if _4j and _2x and _4t and _4k and _9q and _5a and _5j and _6n then local KpsUQ=_2x(_c) local _9u=_4j(_8v) local bV=_1h(_c) local ugbDt=0 local mptMymub=0 local SeKso=_9h local Dwlgrv,d_juTM,ltArSYc,hpZJjnd,dvBB,cHXbfoDB,XY,zywFAx,GfsJh,mwey,BHghyHMq while mptMymub<_8v do if ugbDt>=bV then break end Dwlgrv=_4t(KpsUQ,ugbDt) ugbDt=ugbDt+1 d_juTM=0 while d_juTM<8 do if mptMymub>=_8v then break end ltArSYc=0 while d_juTM+ltArSYc<8 and mptMymub+ltArSYc<_8v do if _0c(_1f(Dwlgrv,d_juTM+ltArSYc),1)~= 0 then ltArSYc=ltArSYc+1 else break end end if ltArSYc>0 then hpZJjnd=bV-ugbDt if ltArSYc>hpZJjnd then ltArSYc=hpZJjnd end if ltArSYc>_8v-mptMymub then ltArSYc=_8v-mptMymub end if ltArSYc<1 then break end _9q(_9u,mptMymub,KpsUQ,ugbDt,ltArSYc) for BHghyHMq=0,ltArSYc-1 do SeKso=(SeKso*(601*(3+103)+(102+19))+_4t(KpsUQ,ugbDt+BHghyHMq))%(2^16*2^16) end ugbDt=ugbDt+ltArSYc mptMymub=mptMymub+ltArSYc d_juTM=d_juTM+ltArSYc end if d_juTM<8 and mptMymub<_8v then if ugbDt+2>bV then break end dvBB=_4k(KpsUQ,ugbDt) ugbDt=ugbDt+2 SeKso=(SeKso*((2^7-50)*816+(162+17))+dvBB)%(2^16*2^16) XY=_1f(dvBB,(0xc)) cHXbfoDB=_0c(dvBB,((8+0)*484+(2^9-289))) d_juTM=d_juTM+1 zywFAx=cHXbfoDB-(0x3) if zywFAx<1 then zywFAx=1 end if zywFAx>mptMymub then zywFAx=mptMymub end GfsJh=XY+(2^2-2) if GfsJh>_8v-mptMymub then GfsJh=_8v-mptMymub end mwey=mptMymub-zywFAx if GfsJh>0 then if zywFAx==0 then _6n(_9u,mptMymub,0,GfsJh) elseif zywFAx>=GfsJh then _9q(_9u,mptMymub,_9u,mwey,GfsJh) else for BHghyHMq=0,GfsJh-1 do _5j(_9u,mptMymub+BHghyHMq,_4t(_9u,mwey+BHghyHMq)) end end mptMymub=mptMymub+GfsJh end end end end _9h=SeKso _5x=_5a(_9u) else local _9u={} for _zi=1,_8v do _9u[_zi]=0 end local bV=_1h(_c) local ugbDt=1 local mptMymub=0 local SeKso=_9h local Dwlgrv,d_juTM,ltArSYc,hpZJjnd,dvBB,cHXbfoDB,XY,zywFAx,GfsJh,mwey,BHghyHMq,ARmqQIFO while mptMymub<_8v do if ugbDt>bV then break end Dwlgrv=_4q(_c,ugbDt) ugbDt=ugbDt+1 d_juTM=0 while d_juTM<8 do if mptMymub>=_8v then break end ltArSYc=0 while d_juTM+ltArSYc<8 and mptMymub+ltArSYc<_8v do if _0c(_1f(Dwlgrv,d_juTM+ltArSYc),1)~= 0 then ltArSYc=ltArSYc+1 else break end end if ltArSYc>0 then hpZJjnd=bV-ugbDt+1 if ltArSYc>hpZJjnd then ltArSYc=hpZJjnd end if ltArSYc>_8v-mptMymub then ltArSYc=_8v-mptMymub end if ltArSYc<1 then break end for BHghyHMq=0,ltArSYc-1 do ARmqQIFO=_4q(_c,ugbDt+BHghyHMq) SeKso=(SeKso*(799*(345-266)+(318+388))+ARmqQIFO)%(2^32) _9u[mptMymub+BHghyHMq+1]=ARmqQIFO end ugbDt=ugbDt+ltArSYc mptMymub=mptMymub+ltArSYc d_juTM=d_juTM+ltArSYc end if d_juTM<8 and mptMymub<_8v then if ugbDt+1>bV then break end dvBB=_4q(_c,ugbDt+1)*(234-(21-43))+_4q(_c,ugbDt) ugbDt=ugbDt+2 SeKso=(SeKso*((31+60)*700+(422-295))+dvBB)%(2^16*2^16) XY=_1f(dvBB,(28*0+12)) cHXbfoDB=_0c(dvBB,((4*4-12)*859+(746-87))) d_juTM=d_juTM+1 zywFAx=cHXbfoDB-(264-261) if zywFAx<1 then zywFAx=1 end if zywFAx>mptMymub then zywFAx=mptMymub end GfsJh=XY+(30-28) if GfsJh>_8v-mptMymub then GfsJh=_8v-mptMymub end mwey=mptMymub-zywFAx if GfsJh>0 then if zywFAx==0 then for BHghyHMq=0,GfsJh-1 do _9u[mptMymub+BHghyHMq+1]=0 end else for BHghyHMq=0,GfsJh-1 do _9u[mptMymub+BHghyHMq+1]=_9u[mwey+BHghyHMq+1] end end mptMymub=mptMymub+GfsJh end end end end _9h=SeKso local WgfLM={} local Ft=0 local douGwVc=1 while douGwVc<=_8v do JYoLU=douGwVc+(326-146) if JYoLU>_8v then JYoLU=_8v end Ft=Ft+1 WgfLM[Ft]=_5m(_9s(_9u,douGwVc,JYoLU)) douGwVc=JYoLU+1 end _5x=_6c(WgfLM) end return _5x end local _3v=_0c(33,252) local _9p=_7e(33,252) local _8u=1421353277 local _1k=3011443100 local _7c=_7e(_8u,_1k) if _6h(_7d)~=_0k or _6h(_9r)~=_0k then error(_5b,0) end local _0t,_2w,_1w,_5c,_7w,_2k,_2r local _1m=false do _0t=_2q(_8d) _1m=true end local _5q=false do if _1m then local _6x=_7e(_4e[109]+142,255) _5q=true end end local _4n=false do if _5q then if not _5u() or not _4w() or _4s or _0h then _9d() end _2w=_8a(_0t) _4n=true end end local _7s=false do if _4n then _2k=_2w if (_3s(_2k)==((842*((0+26)*369+(13*4-18))+(739+1))*399+(12*27-10))) then _2w=_7v(_2k) if _2w==nil then _9d() _2w=_2k end _2r=_9h else _9d() end _7s=true end end local _1g=false do if _7s then local _9e=_7e(_4e[101]+188,255) _1g=true end end local _6p=false do if _1g then if _7e(_7e(_6g(_2w),_1e),_2r)~=_7e(_7c,_2r) then _9d() _2w=_8a(_0t) end _6p=true end end local _4c=false do if _6p then local _2p=#_4e%137+42 _4c=true end end local _0x=false do if _4c then if _0h or (_4s and _8r) then local dk,df=_9r(_7d,_0n,_4h) local tst=nil if dk and _6h(df)==_0k then local q1,q2=_9r(_2u,df,_5p) if q1 then tst=q2 end end if tst==_6b then _1w,_5c=dk,df else _1w,_5c=false,nil end elseif _8r then local _4g=nil if _4g==nil then local zz_s=_5d(_2k,_7e(2755877798,2755877799),_7e(2863272785,2863268372)) local zz_c,zz_f=_9r(_7d,_5s(zz_s),_4f) if zz_c and _6h(zz_f)==_0k and _2u then local zz_d1,zz_d2=_9r(_2u,zz_f,_5p) if zz_d1 and zz_d2~=_6f then zz_f=nil end end if _6h(zz_f)==_0k and zz_c then local zz_r1,zz_r2=_9r(zz_f) if zz_r1 and _6h(zz_r2)==_7q and _7e(3809690838,3809695123)==#zz_r2 then local zz_m=0 for zz_j=1,#zz_r2 do zz_m=(zz_m+_4q(zz_r2,zz_j))%4294967296 end if zz_m==_7e(1212929218,1213121423) then _4g=zz_r2 end end end end local _0b=nil if _0b==nil then local zz_s=_5d(_2k,_7e(1095153403,1095149501),_7e(2436657786,2436649031)) local zz_c,zz_f=_9r(_7d,_5s(zz_s),_4f) if zz_c and _6h(zz_f)==_0k and _2u then local zz_d1,zz_d2=_9r(_2u,zz_f,_5p) if _6f~=zz_d2 and zz_d1 then zz_f=nil end end if _6h(zz_f)==_0k and zz_c then local zz_r1,zz_r2=_9r(zz_f) if zz_r1 and _6h(zz_r2)==_7q and _7e(336499673,336495393)==#zz_r2 then local zz_m=0 local zz_j=1 while zz_j<=#zz_r2 do zz_m=(zz_m+_4q(zz_r2,zz_j))%4294967296 zz_j=zz_j+1 end if _7e(1821728392,1821476161)==zz_m then _0b=zz_r2 end end end end local _2j=nil local zz_g=false repeat local zz_s=_5d(_2k,_7e(2436654237,2436646563),_7e(1448882880,1448871915)) local zz_c,zz_f=_9r(_7d,_5s(zz_s),_4f) local zz_r1,zz_r2=_9r(zz_f) if zz_r1 and _6h(zz_r2)==_7q and #zz_r2==_7e(497887484,497891858) then local zz_m=0 for zz_j=1,#zz_r2 do zz_m=(zz_m+_4q(zz_r2,zz_j))%4294967296 end if zz_m==_7e(356001359,356372620) and _6h(zz_f)==_0k then if _2u then local zz_d1,zz_d2=_9r(_2u,zz_f,_5p) if _6f~=zz_d2 and zz_d1 then zz_f=nil end end if _6h(zz_f)==_0k then _2j=zz_r2 end end end zz_g=true until zz_g local _9m=nil if _9m==nil then local zz_s=_5d(_2k,_7e(2205469700,2205481256),_7e(2033679049,2033663104)) local zz_c,zz_f=_9r(_7d,_5s(zz_s),_4f) if zz_c and _6h(zz_f)==_0k and _2u then local zz_d1,zz_d2=_9r(_2u,zz_f,_5p) if zz_d1 and zz_d2~=_6f then zz_f=nil end end if _6h(zz_f)==_0k and zz_c then local zz_r1,zz_r2=_9r(zz_f) if zz_r1 and _6h(zz_r2)==_7q and #zz_r2==_7e(2445674748,2445679074) then local zz_m=0 for zz_j=1,#zz_r2 do zz_m=(zz_m+_4q(zz_r2,zz_j))%4294967296 end if _7e(2926931386,2926612000)==zz_m then _9m=zz_r2 end end end end local _1v=nil do local zz_s=_5d(_2k,_7e(2582147292,2582132374),_7e(984570324,984547976)) local zz_c,zz_f=_9r(_7d,_5s(zz_s),_4f) local zz_r1,zz_r2=_9r(zz_f) if zz_r1 and _6h(zz_r2)==_7q and _7e(3407835133,3407837934)==#zz_r2 then local zz_m=0 for zz_j=1,#zz_r2 do zz_m=(zz_m+_4q(zz_r2,zz_j))%4294967296 end if zz_m==_7e(1655780671,1656204388) and _6h(zz_f)==_0k then if _2u then local zz_d1,zz_d2=_9r(_2u,zz_f,_5p) if zz_d1 and zz_d2~=_6f then zz_f=nil end end if _6h(zz_f)==_0k then _1v=zz_r2 end end end end if _4g and _0b and _2j and _9m and _1v then local zz_cc=_6c({_4g,_0b,_2j,_9m,_1v}) if zz_cc==_2k then _1w,_5c=_9r(_7d,_2w,_4f) if _1w and _6h(_5c)==_0k and _2u then local q1,q2=_9r(_2u,_5c,_5p) if q1 and q2~=_6f then _5c=nil end end else local dk,df=_9r(_7d,_0n,_4h) local tst=nil if dk and _6h(df)==_0k then local q1,q2=_9r(_2u,df,_5p) if q1 then tst=q2 end end if tst==_6b then _1w,_5c=dk,df else _1w,_5c=false,nil end end else local dk,df=_9r(_7d,_0n,_4h) local tst=nil if dk and _6h(df)==_0k then local q1,q2=_9r(_2u,df,_5p) if q1 then tst=q2 end end if tst==_6b then _1w,_5c=dk,df else _1w,_5c=false,nil end end else _1w,_5c=_9r(_7d,_2w,_4f) if _1w and _6h(_5c)==_0k and _2u then local q1,q2=_9r(_2u,_5c,_5p) if q1 and q2~=_6f then _5c=nil end end end _0x=true end end _2v(_1w and _5c and _6h(_5c)==_0k,_2n) _7w=_5c(...) if _4x then _6n(_4x,0,0) _4x=nil end if _1p then _6n(_1p,0,0) _1p=nil end if _3q then _6n(_3q,0,0) _3q=nil end local _0l11=1 while _0l11<=256 do _3n[_0l11]=0 _0l11=_0l11+1 end local _0l12=1 while _0l12<=_6k do _1c[_0l12]=0 _0l12=_0l12+1 end for _0l13=1,#_4e do _4e[_0l13]=0 end local _0l14=1 while _0l14<=#_0f do _0f[_0l14]=0 _0l14=_0l14+1 end _0t="" _2w="" _2k="" _9h=0 _2r=0 return _7w end)(...)
+-- hunter hub
+-- esp / stam / autoblock / hdt / aim / box / stab / misc
+-- GUI: WindUI (red "Blood" theme)
+
+repeat task.wait() until game:IsLoaded()
+
+local WindUI
+do
+    local ok, res = pcall(function()
+        return loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+    end)
+    if not (ok and type(res) == "table" and res.CreateWindow) then
+        warn("[hunter] WindUI failed to load:", res)
+        return
+    end
+    WindUI = res
+end
+
+local Players           = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService        = game:GetService("RunService")
+local TextChatService   = game:GetService("TextChatService")
+local Lighting          = game:GetService("Lighting")
+local Workspace         = game:GetService("Workspace")
+local Stats             = game:GetService("Stats")
+
+local lp = Players.LocalPlayer
+local PlayerGui = lp:WaitForChild("PlayerGui")
+local Camera = Workspace.CurrentCamera
+
+Workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
+    if Workspace.CurrentCamera then Camera = Workspace.CurrentCamera end
+end)
+
+local Network, RemoteEvent
+do
+    local mods  = ReplicatedStorage:WaitForChild("Modules", 10)
+    local net1  = mods  and mods:WaitForChild("Network", 10)
+    local net2  = net1  and net1:WaitForChild("Network", 10)
+    Network     = net2
+    RemoteEvent = net2  and net2:WaitForChild("RemoteEvent", 10)
+    if not RemoteEvent then
+        warn("[hunter] Network.RemoteEvent not found - block/punch disabled")
+    end
+end
+
+local PlayersFolder   = workspace:WaitForChild("Players", 8)
+local KillersFolder   = PlayersFolder and PlayersFolder:WaitForChild("Killers", 8)
+local SurvivorsFolder = PlayersFolder and PlayersFolder:WaitForChild("Survivors", 8)
+
+local function buildBuffer(str)
+    local bytes = { 3, #str, 0, 0, 0 }
+    for i = 1, #str do bytes[#bytes + 1] = string.byte(str, i) end
+    local b = buffer.create(#bytes)
+    for i = 1, #bytes do buffer.writeu8(b, i - 1, bytes[i]) end
+    return b
+end
+
+local BLOCK_BUF = buildBuffer("Block")
+local PUNCH_BUF = buildBuffer("Punch")
+
+local lastBlockFire = 0
+-- INSTANT: no rate limit — fire on every detected M1 event
+local BLOCK_COOLDOWN = 0
+
+local HDT, AIM, AbilityHook, AUTOGEN, STAB, AZ, HBE, FacingVisual
+
+local function fireBlock()
+    if not RemoteEvent then return false end
+    -- Skip the tick() check entirely when cooldown is 0
+    if BLOCK_COOLDOWN > 0 then
+        local now = tick()
+        if now - lastBlockFire < BLOCK_COOLDOWN then return false end
+        lastBlockFire = now
+    end
+
+    -- Ship the packet first, synchronously
+    pcall(RemoteEvent.FireServer, RemoteEvent, "UseActorAbility", { BLOCK_BUF })
+
+    -- Visual/HDT side effects after (can't delay the block)
+    if FacingVisual then
+        FacingVisual._blockPulse = (FacingVisual._blockPulse or 0) + 1
+    end
+    if HDT and HDT.Enabled and HDT.AutoTrigger then
+        pcall(function() HDT.TriggerFromAutoBlock() end)
+    end
+    return true
+end
+
+local function firePunch()
+    if not RemoteEvent then return end
+    pcall(function() RemoteEvent:FireServer("UseActorAbility", { PUNCH_BUF }) end)
+end
+
+local CFG = {
+    AutoBlockEnabled = false,
+    DetectionRange   = 22,
+    BlockDelay       = 0,
+    WallCheck        = true,
+    FacingCheck      = true,
+    FacingDot        = 0.25,
+    SoundTrigger     = true,
+    AnimTrigger      = true,
+    ESPKillers       = false,
+    ESPSurvivors     = false,
+    ESPGenerators    = false,
+    ESPItems         = false,
+    InfiniteStamina  = false,
+}
+
+local RAY_LOS = RaycastParams.new()
+RAY_LOS.FilterType = Enum.RaycastFilterType.Exclude
+RAY_LOS.IgnoreWater = true
+
+local function losTo(targetPos, ignoreModel)
+    local myRoot = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+    if not myRoot then return true end
+    local delta = targetPos - myRoot.Position
+    if delta.Magnitude < 0.001 then return true end
+    local filter = { lp.Character }
+    if ignoreModel then table.insert(filter, ignoreModel) end
+    RAY_LOS.FilterDescendantsInstances = filter
+    return workspace:Raycast(myRoot.Position, delta, RAY_LOS) == nil
+end
+
+local function getMyRoot()
+    local char = lp.Character
+    return char and char:FindFirstChild("HumanoidRootPart") or nil
+end
+
+local function getRoot(m)
+    return m and (m:FindFirstChild("HumanoidRootPart") or m.PrimaryPart) or nil
+end
+
+local function hasLOS(killerRoot)
+    if not CFG.WallCheck then return true end
+    if not killerRoot then return true end
+    return losTo(killerRoot.Position, killerRoot:FindFirstAncestorOfClass("Model"))
+end
+
+local function facingDotClamped()
+    return math.clamp(CFG.FacingDot or 0.25, -1, 1)
+end
+
+local function isClientInKillerBox(killerRoot, rangeOverride)
+    if not killerRoot then return false end
+    local myRoot = getMyRoot()
+    if not myRoot then return false end
+
+    local delta = myRoot.Position - killerRoot.Position
+    local dist = delta.Magnitude
+    local range = rangeOverride or CFG.DetectionRange
+    if dist > range then return false end
+    if dist < 0.001 then return true end
+
+    local look = killerRoot.CFrame.LookVector
+    local flatLook = Vector3.new(look.X, 0, look.Z)
+    if flatLook.Magnitude < 1e-4 then return false end
+    flatLook = flatLook.Unit
+    local flatRight = Vector3.new(flatLook.Z, 0, -flatLook.X)
+
+    local flatDelta = Vector3.new(delta.X, 0, delta.Z)
+    local forwardDist = flatDelta:Dot(flatLook)
+    local lateralDist = math.abs(flatDelta:Dot(flatRight))
+
+    local length = (FacingVisual and FacingVisual.BoxLength) or 15
+    local width
+    if FacingVisual and FacingVisual.AutoWidth then
+        local dot = facingDotClamped()
+        local halfAngle = math.acos(dot)
+        halfAngle = math.min(halfAngle, math.rad((FacingVisual and FacingVisual.BoxMaxAngle) or 75))
+        width = math.min(2 * length * math.tan(halfAngle), length * 3)
+    else
+        width = (FacingVisual and FacingVisual.BoxWidth) or 6
+    end
+
+    if forwardDist < 0 then return false end
+    if forwardDist > length then return false end
+    if lateralDist > width * 0.5 then return false end
+    return true
+end
+
+local function getFacingState(killerRoot)
+    local myRoot = getMyRoot()
+    if not myRoot or not killerRoot then return false, false end
+    local dist = (myRoot.Position - killerRoot.Position).Magnitude
+    local boxLength = (FacingVisual and FacingVisual.BoxLength) or 15
+    local range = math.max(CFG.DetectionRange, boxLength)
+    local ir = dist <= range
+    local fp = isClientInKillerBox(killerRoot, range)
+    if not CFG.FacingCheck then fp = true end
+    return ir, fp
+end
+
+local function inRange(killerRoot)
+    local myRoot = getMyRoot()
+    if not myRoot or not killerRoot then return false end
+    return (killerRoot.Position - myRoot.Position).Magnitude <= CFG.DetectionRange
+end
+
+local function shouldBlock(killerRoot)
+    if not killerRoot or not killerRoot.Parent then return false end
+    if not isClientInKillerBox(killerRoot, CFG.DetectionRange) then return false end
+    if not hasLOS(killerRoot) then return false end
+    return true
+end
+
+local function extractSoundId(sound)
+    local sid = sound and sound.SoundId
+    if not sid or sid == "" then return nil end
+    return tostring(sid):match("(%d+)")
+end
+
+local function nearestKillerPart()
+    local myRoot = getMyRoot()
+    if not myRoot or not KillersFolder then return nil end
+    local best, bestDist = nil, math.huge
+    for _, k in ipairs(KillersFolder:GetChildren()) do
+        if k:IsA("Model") and k ~= lp.Character then
+            local hrp = k:FindFirstChild("HumanoidRootPart")
+            local hum = k:FindFirstChildOfClass("Humanoid")
+            if hrp and hum and hum.Health > 0 then
+                local d = (hrp.Position - myRoot.Position).Magnitude
+                if d < bestDist then best, bestDist = hrp, d end
+            end
+        end
+    end
+    return best
+end
+
+local TRIGGER_SOUNDS = {
+    ["102228729296384"]=true,["140242176732868"]=true,["112809109188560"]=true,["136323728355613"]=true,
+    ["109570290393196"]=true,   -- 1x1x1x1 M1 sound
+    ["115026634746636"]=true,["84116622032112"]=true,["108907358619313"]=true,["127793641088496"]=true,
+    ["86174610237192"]=true,["95079963655241"]=true,["101199185291628"]=true,["119942598489800"]=true,
+    ["84307400688050"]=true,["113037804008732"]=true,["105200830849301"]=true,["75330693422988"]=true,
+    ["82221759983649"]=true,["81702359653578"]=true,["108610718831698"]=true,["112395455254818"]=true,
+    ["109431876587852"]=true,["109348678063422"]=true,["85853080745515"]=true,["12222216"]=true,
+    ["105840448036441"]=true,["114742322778642"]=true,["119583605486352"]=true,["79980897195554"]=true,
+    ["71805956520207"]=true,["79391273191671"]=true,["89004992452376"]=true,["101553872555606"]=true,
+    ["101698569375359"]=true,["106300477136129"]=true,["116581754553533"]=true,["117231507259853"]=true,
+    ["119089145505438"]=true,["121954639447247"]=true,["125213046326879"]=true,["131406927389838"]=true,
+    ["71834552297085"]=true,["86833981571073"]=true,["110372418055226"]=true,["86494585504534"]=true,
+    ["80516583309685"]=true,["140412278320643"]=true,["117173212095661"]=true,["104910828105172"]=true,
+    ["140194172008986"]=true,["85544168523099"]=true,["114506382930939"]=true,["99829427721752"]=true,
+    ["120059928759346"]=true,["104625283622511"]=true,["105316545074913"]=true,["126131675979001"]=true,
+    ["82336352305186"]=true,["93366464803829"]=true,["84069821282466"]=true,["128856426573270"]=true,
+    ["128195973631079"]=true,["124903763333174"]=true,["94317217837143"]=true,["98111231282218"]=true,
+    ["136728245733659"]=true,["107444859834748"]=true,["76959687420003"]=true,["72425554233832"]=true,
+    ["96594507550917"]=true,["139996647355899"]=true,["107345261604889"]=true,["127557531826290"]=true,
+    ["108651070773439"]=true,["74842815979546"]=true,["124397369810639"]=true,["76467993976301"]=true,
+    ["118493324723683"]=true,["78298577002481"]=true,["116527305931161"]=true,["5148302439"]=true,
+    ["98675142200448"]=true,["128367348686124"]=true,["103684883268194"]=true,["109246041199659"]=true,
+    ["80540530406270"]=true,["139523195429581"]=true,["105204810054381"]=true,["116468089135195"]=true,
+    ["133709029886490"]=true,["124234993291213"]=true,["98733709078792"]=true,["99856718263455"]=true,
+    ["74809026448465"]=true,
+    ["99215225043220"]=true,["79612713897495"]=true,
+}
+
+local TRIGGER_ANIMS = {
+    "114506382930939","127245564598429","99829427721752","138938529389204",
+    "106427068964975",          -- 1x1x1x1 M1 anim
+    "111647315359080","92567970681901","124269076578545","94958041603347",
+    "109667959938617","130958529065375","118298475669935","126830014841198",
+    "121086746534252","18885909645","98456918873918",
+    "105458270463374","83829782357897","125403313786645",
+    "70371667919898","99135633258223","7167027849946","109230267448394",
+    "139835501033932","126996426760253","88451353906104","106538427162796",
+    "122709416391891","139309647473555","90620531468240","91509234639766",
+    "99824350842479","126171487400618","101101433684051","106860049270347",
+    "70483423693126","126727756047566","137642639873297","77375846492436",
+    "129976080405072","121293883585738","81639435858902",
+    "137314737492715","92173139187970","108196996477620","90819435118493",
+    "123172382755876","87259391926321","99100240941590","72685103823181",
+    "81905101227053","113936304594883","140703210927645","136007065400978",
+    "129843313690921","86709774283672","108807732150251","138040001965654",
+    "86096387000557","119850211147676","131696603025265","119462383658044",
+    "116618003477002","133491532453922","76649505662612","71190646367497",
+    "109572851772132","129638875679599",
+}
+local TRIGGER_ANIMS_SET = {}
+for _, id in ipairs(TRIGGER_ANIMS) do TRIGGER_ANIMS_SET[id] = true end
+
+local hookedSounds = {}
+
+local function onSoundTrigger(sound)
+    local id = extractSoundId(sound)
+    if not id or not TRIGGER_SOUNDS[id] then return end
+    local ancestor = sound:FindFirstAncestorOfClass("Model")
+    if not ancestor or ancestor.Parent ~= KillersFolder then return end
+
+    -- ----- FIRE BLOCK FIRST -----
+    if CFG.AutoBlockEnabled and CFG.SoundTrigger then
+        local killerRoot = ancestor:FindFirstChild("HumanoidRootPart")
+        if killerRoot and shouldBlock(killerRoot) then
+            if CFG.BlockDelay > 0 then
+                task.delay(CFG.BlockDelay, fireBlock)
+            else
+                fireBlock()   -- same-frame, synchronous
+            end
+        end
+    end
+
+    -- ----- Side effects AFTER the block packet is already sent -----
+    if FacingVisual and FacingVisual.FlashKiller then
+        FacingVisual.FlashKiller(ancestor)
+    end
+end
+
+local function hookSound(sound)
+    if hookedSounds[sound] then return end
+    hookedSounds[sound] = true
+    local c1 = sound.Played:Connect(function() onSoundTrigger(sound) end)
+    local c2 = sound:GetPropertyChangedSignal("IsPlaying"):Connect(function()
+        if sound.IsPlaying then onSoundTrigger(sound) end
+    end)
+    sound.Destroying:Once(function()
+        hookedSounds[sound] = nil
+        pcall(function() c1:Disconnect() end)
+        pcall(function() c2:Disconnect() end)
+    end)
+    if sound.IsPlaying then onSoundTrigger(sound) end
+end
+
+if KillersFolder then
+    for _, d in ipairs(KillersFolder:GetDescendants()) do
+        if d:IsA("Sound") then hookSound(d) end
+    end
+    KillersFolder.DescendantAdded:Connect(function(d)
+        if d:IsA("Sound") then hookSound(d) end
+    end)
+end
+
+local hookedAnims = {}
+
+local function onAnimPlayed(killerModel, track)
+    local animId = track.Animation and tostring(track.Animation.AnimationId):match("(%d+)")
+    if not animId or not TRIGGER_ANIMS_SET[animId] then return end
+
+    -- ----- FIRE BLOCK FIRST -----
+    if CFG.AutoBlockEnabled and CFG.AnimTrigger then
+        local killerRoot = killerModel:FindFirstChild("HumanoidRootPart")
+        if killerRoot and shouldBlock(killerRoot) then
+            if CFG.BlockDelay > 0 then
+                task.delay(CFG.BlockDelay, fireBlock)
+            else
+                fireBlock()
+            end
+        end
+    end
+
+    -- ----- Side effects after -----
+    if FacingVisual and FacingVisual.FlashKiller then
+        FacingVisual.FlashKiller(killerModel)
+    end
+end
+
+local function hookKiller(killerModel)
+    if not killerModel:IsA("Model") then return end
+    if hookedAnims[killerModel] then return end
+
+    local waitConns = {}
+    local function disconnectWaiters()
+        for _, c in ipairs(waitConns) do pcall(function() c:Disconnect() end) end
+        waitConns = {}
+    end
+
+    local animConn
+    local function tryHook()
+        if hookedAnims[killerModel] then return true end
+        if not killerModel.Parent then return false end
+        local humanoid = killerModel:FindFirstChildOfClass("Humanoid")
+        if not humanoid then return false end
+        local animator = humanoid:FindFirstChildOfClass("Animator")
+        if not animator then return false end
+        hookedAnims[killerModel] = true
+        animConn = animator.AnimationPlayed:Connect(function(track)
+            onAnimPlayed(killerModel, track)
+        end)
+        killerModel.Destroying:Once(function()
+            hookedAnims[killerModel] = nil
+            disconnectWaiters()
+            if animConn then pcall(function() animConn:Disconnect() end) end
+        end)
+        disconnectWaiters()
+        return true
+    end
+
+    if tryHook() then return end
+
+    waitConns[#waitConns + 1] = killerModel.ChildAdded:Connect(function()
+        if tryHook() then disconnectWaiters() end
+    end)
+    waitConns[#waitConns + 1] = killerModel.DescendantAdded:Connect(function(d)
+        if d:IsA("Animator") then
+            if tryHook() then disconnectWaiters() end
+        end
+    end)
+    task.delay(3, function()
+        if not hookedAnims[killerModel] then tryHook() end
+        disconnectWaiters()
+    end)
+end
+
+if KillersFolder then
+    for _, k in ipairs(KillersFolder:GetChildren()) do hookKiller(k) end
+    KillersFolder.ChildAdded:Connect(hookKiller)
+end
+
+-- =========================================================
+-- HDT (27s global cooldown, no manual trigger)
+-- =========================================================
+HDT = {
+    Enabled = false, AutoTrigger = true, Speed = 10, Delay = 0,
+    StopDistance = 2, SafetyTimeout = 1.5,
+    Cooldown = 27,
+    _dragId = 0, _dragging = false, _conn = nil, _saved = nil,
+    _lastFire = 0, _fireDebounce = 0.15,
+    _nextAllowed = 0,
+}
+
+local function startDrag(targetPart)
+    if not targetPart or not targetPart.Parent then return end
+    local char = lp.Character
+    if not char then return end
+    local hrp = char:FindFirstChild("HumanoidRootPart")
+    local humanoid = char:FindFirstChildOfClass("Humanoid")
+    if not hrp or not humanoid then return end
+
+    local startDist = (targetPart.Position - hrp.Position).Magnitude
+    if startDist <= HDT.StopDistance + 0.5 then return end
+
+    HDT._dragId += 1
+    local myId = HDT._dragId
+    if HDT._conn then HDT._conn:Disconnect() HDT._conn = nil end
+
+    HDT._dragging = true
+    local saved = {
+        walk = humanoid.WalkSpeed,
+        jump = humanoid.JumpPower,
+        autoRotate = humanoid.AutoRotate,
+    }
+    HDT._saved = saved
+    humanoid.WalkSpeed = 0
+    humanoid.AutoRotate = false
+
+    local finished = false
+    local function cleanup()
+        if finished then return end
+        finished = true
+        if HDT._dragId ~= myId then return end
+        HDT._dragging = false
+        if HDT._conn then HDT._conn:Disconnect() HDT._conn = nil end
+        if hrp and hrp.Parent then
+            hrp.AssemblyLinearVelocity = Vector3.zero
+            hrp.AssemblyAngularVelocity = Vector3.zero
+        end
+        if humanoid and humanoid.Parent then
+            pcall(function()
+                humanoid.WalkSpeed = saved.walk
+                humanoid.JumpPower = saved.jump
+                humanoid.AutoRotate = saved.autoRotate
+            end)
+        end
+        HDT._saved = nil
+    end
+
+    HDT._conn = RunService.Heartbeat:Connect(function(dt)
+        if HDT._dragId ~= myId or not HDT._dragging then
+            cleanup(); return
+        end
+        if not (char and char.Parent and targetPart and targetPart.Parent) then
+            cleanup(); return
+        end
+
+        local myPos = hrp.Position
+        local tgtPos = targetPart.Position
+        local flat = Vector3.new(tgtPos.X, myPos.Y, tgtPos.Z)
+        local delta = flat - myPos
+        local dist = delta.Magnitude
+
+        if dist <= HDT.StopDistance then cleanup(); return end
+
+        local maxStep = HDT.Speed * dt
+        local step = math.min(maxStep, dist - HDT.StopDistance)
+        if step <= 0 then cleanup(); return end
+
+        local newPos = myPos + delta.Unit * step
+        hrp.CFrame = CFrame.lookAt(newPos, flat)
+        hrp.AssemblyLinearVelocity = Vector3.zero
+        hrp.AssemblyAngularVelocity = Vector3.zero
+    end)
+
+    task.delay(HDT.SafetyTimeout, function()
+        if HDT._dragId == myId and HDT._dragging then cleanup() end
+    end)
+end
+
+function HDT.TriggerFromAutoBlock(force)
+    if not force and not HDT.Enabled then return end
+    if HDT._dragging then return end
+    if tick() < (HDT._nextAllowed or 0) then return end
+    if tick() - HDT._lastFire < HDT._fireDebounce then return end
+
+    local target = nearestKillerPart()
+    if not target then return end
+
+    local myRoot = getMyRoot()
+    if myRoot then
+        local d = (target.Position - myRoot.Position).Magnitude
+        if d <= HDT.StopDistance + 0.5 then return end
+    end
+
+    HDT._lastFire = tick()
+    HDT._nextAllowed = tick() + (HDT.Cooldown or 27)
+
+    if HDT.Delay > 0 then
+        task.delay(HDT.Delay, function() startDrag(target) end)
+    else
+        startDrag(target)
+    end
+end
+
+lp.CharacterAdded:Connect(function()
+    HDT._dragId += 1
+    HDT._dragging = false
+    if HDT._conn then HDT._conn:Disconnect() HDT._conn = nil end
+    HDT._saved = nil
+end)
+
+-- =========================================================
+-- AIM
+-- =========================================================
+AIM = {
+    Enabled     = false,
+    AimMode     = "Camera",
+    Smooth      = 0.35,
+    PredictMode = "Both",
+    PredictLead = 0.15,
+    PingMult    = 1.0,
+    Debug       = false,
+    CurrentAbility  = nil,
+    CachedTargetHRP = nil,
+    _aimUntil  = 0,
+}
+
+local PING_ABILITIES = { AimGun = true, GunFire = true, GunExplode = true, GunFail = true }
+
+local function getPing()
+    local ok, v = pcall(function() return lp:GetNetworkPing() end)
+    if ok and type(v) == "number" then return v end
+    ok, v = pcall(function() return Stats.Network.ServerStatsItem["Data Ping"]:GetValue() / 1000 end)
+    if ok and type(v) == "number" then return v end
+    return 0
+end
+
+local function getMyRole()
+    local c = lp.Character
+    local p = c and c.Parent
+    if p and (p.Name == "Survivors" or p.Name == "Killers") then return p.Name end
+    return nil
+end
+
+local function isPlayingSurvivor()
+    if getMyRole() ~= "Survivors" then return false end
+    local char = lp.Character
+    if not char then return false end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if not hum or hum.Health <= 0 then return false end
+    return true
+end
+
+local function updateCachedTarget()
+    local myRoot = getRoot(lp.Character)
+    if not myRoot or not KillersFolder then AIM.CachedTargetHRP = nil return end
+    local best, bestD = nil, 500
+    for _, s in ipairs(KillersFolder:GetChildren()) do
+        if s:IsA("Model") and s ~= lp.Character then
+            local hrp = s:FindFirstChild("HumanoidRootPart")
+            local hum = s:FindFirstChildOfClass("Humanoid")
+            if hrp and hum and hum.Health > 0 then
+                local d = (hrp.Position - myRoot.Position).Magnitude
+                if d < bestD then bestD = d; best = hrp end
+            end
+        end
+    end
+    AIM.CachedTargetHRP = best
+end
+
+task.spawn(function()
+    while true do
+        task.wait(0.1)
+        pcall(updateCachedTarget)
+    end
+end)
+
+local function isPingAbility(abilityName)
+    return abilityName and PING_ABILITIES[abilityName] == true
+end
+
+local function predictHRP(hrp)
+    if not hrp then return nil end
+    if AIM.PredictMode == "Off" then return hrp.Position end
+    local vel = hrp.AssemblyLinearVelocity or Vector3.new()
+    if vel.Magnitude > 200 then vel = Vector3.zero end
+    local usePing = isPingAbility(AIM.CurrentAbility)
+    local velLead  = 0
+    local pingLead = 0
+    if AIM.PredictMode == "Velocity" or AIM.PredictMode == "Both" then
+        velLead = AIM.PredictLead
+    end
+    if usePing and (AIM.PredictMode == "Ping" or AIM.PredictMode == "Both") then
+        local ping = getPing() * 0.5 * AIM.PingMult
+        pingLead = math.clamp(ping, 0, 0.5)
+    end
+    local totalLead = math.clamp(velLead + pingLead, 0, 0.75)
+    return hrp.Position + vel * totalLead
+end
+
+function AIM.AimFor(duration, abilityName)
+    AIM._aimUntil = tick() + (duration or 1.0)
+    if abilityName then AIM.CurrentAbility = abilityName end
+end
+
+local hrpAutoRotateSaved = nil
+local function restoreAutoRotate()
+    if hrpAutoRotateSaved == nil then return end
+    local char = lp.Character
+    local hum = char and char:FindFirstChildOfClass("Humanoid")
+    if hum then hum.AutoRotate = hrpAutoRotateSaved end
+    hrpAutoRotateSaved = nil
+end
+local function disableAutoRotate()
+    local char = lp.Character
+    if not char then return end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if not hum then return end
+    if hrpAutoRotateSaved == nil then hrpAutoRotateSaved = hum.AutoRotate end
+    hum.AutoRotate = false
+end
+
+lp.CharacterAdded:Connect(function()
+    hrpAutoRotateSaved = nil
+end)
+
+RunService:BindToRenderStep("HunterAim", Enum.RenderPriority.Camera.Value + 1, function()
+    if not isPlayingSurvivor() then
+        restoreAutoRotate()
+        return
+    end
+
+    local active = AIM.Enabled or (tick() < (AIM._aimUntil or 0))
+
+    if not active
+       or not AIM.CachedTargetHRP
+       or not AIM.CachedTargetHRP.Parent then
+        AIM.CurrentAbility = nil
+        restoreAutoRotate()
+        return
+    end
+
+    local myRoot = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+    if not myRoot then
+        restoreAutoRotate()
+        return
+    end
+
+    local targetPos = predictHRP(AIM.CachedTargetHRP)
+    if not targetPos then return end
+
+    local mode = AIM.AimMode
+    local smooth = AIM.Smooth
+
+    if mode == "Camera" or mode == "HRP+Camera" then
+        local desired = CFrame.lookAt(Camera.CFrame.Position, targetPos)
+        Camera.CFrame = Camera.CFrame:Lerp(desired, smooth)
+    end
+
+    if mode == "HRP" or mode == "HRP+Camera" then
+        disableAutoRotate()
+        local flat = Vector3.new(targetPos.X, myRoot.Position.Y, targetPos.Z)
+        local delta = flat - myRoot.Position
+        if delta.Magnitude > 0.05 then
+            local desired = CFrame.lookAt(myRoot.Position, flat)
+            myRoot.CFrame = myRoot.CFrame:Lerp(desired, smooth)
+        end
+    else
+        restoreAutoRotate()
+    end
+end)
+
+-- =========================================================
+-- ability button hook
+-- =========================================================
+AbilityHook = {
+    Enabled = true,
+
+    StunAbilities = {
+        Chance     = { Button = "Shoot",   Lock = 1.20, Ability = "AimGun" },
+        Shedletsky = { Button = "Slash",   Lock = 0.80, Ability = "Slash" },
+        TwoTime    = { Button = "Dagger",  Lock = 0.50, Ability = "Stab" },
+        Guest1337  = { Button = "Punch",   Lock = 0.90, Ability = "Punch" },
+        JaneDoe    = { Button = "Hatchet", Lock = 0.95, Ability = "Axe" },
+    },
+
+    LockMultiplier = 1.0,
+    Cooldown       = 1.0,
+    _lastFire      = 0,
+
+    Hooked   = {},
+    LastTap  = {},
+    Debounce = 0.05,
+    _uiWatcher = nil,
+
+    _pendingFire   = nil,
+    PendingWindow  = 0.35,
+    _animConn      = nil,
+}
+
+local ABILITY_KEYWORDS = {
+    Chance     = { "shoot", "gun", "oneshot", "one shot", "flint", "pistol", "revolver" },
+    Shedletsky = { "slash", "sword" },
+    TwoTime    = { "dagger", "stab", "knife" },
+    Guest1337  = { "punch", "fist" },
+    JaneDoe    = { "hatchet", "axe" },
+}
+
+local function ahResolveForChar()
+    local c = lp.Character
+    if not c then return nil end
+    local rawName = c:GetAttribute("CharacterName") or c.Name
+    if not rawName then return nil end
+    local normalized = string.lower(tostring(rawName)):gsub("[%s_%-]", "")
+    for key, cfg in pairs(AbilityHook.StunAbilities) do
+        local kNorm = string.lower(key):gsub("[%s_%-]", "")
+        if kNorm == normalized then
+            return { key = key, cfg = cfg, kws = ABILITY_KEYWORDS[key] }
+        end
+    end
+    return nil
+end
+
+local function ahIsConfirmedPriority(prio)
+    return prio == Enum.AnimationPriority.Action
+        or prio == Enum.AnimationPriority.Action2
+        or prio == Enum.AnimationPriority.Action3
+        or prio == Enum.AnimationPriority.Action4
+end
+
+local function ahFireConfirmed(cfg)
+    if not AbilityHook.Enabled then return end
+    if not cfg then return end
+    local now = tick()
+    if now - (AbilityHook._lastFire or 0) < (AbilityHook.Cooldown or 1.0) then return end
+    AbilityHook._lastFire = now
+    if AIM then
+        local dur = (cfg.Lock or 0.6) * (AbilityHook.LockMultiplier or 1.0)
+        AIM.AimFor(dur, cfg.Ability)
+    end
+end
+
+local function ahBindAnimator(char, attempt)
+    attempt = attempt or 1
+    if AbilityHook._animConn then
+        pcall(function() AbilityHook._animConn:Disconnect() end)
+        AbilityHook._animConn = nil
+    end
+    if not char then return end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    local animator = hum and hum:FindFirstChildOfClass("Animator")
+    if not animator then
+        if attempt < 5 then
+            task.delay(0.4, function()
+                if lp.Character == char and AbilityHook.Enabled then
+                    ahBindAnimator(char, attempt + 1)
+                end
+            end)
+        end
+        return
+    end
+    AbilityHook._animConn = animator.AnimationPlayed:Connect(function(track)
+        if lp.Character ~= char then return end
+        local pending = AbilityHook._pendingFire
+        if not pending then return end
+        if tick() - pending.ts > (AbilityHook.PendingWindow or 0.35) then
+            AbilityHook._pendingFire = nil
+            return
+        end
+        local a = track and track.Animation
+        if not a then return end
+        local id = tostring(a.AnimationId):match("%d+")
+        if not id then return end
+        if not ahIsConfirmedPriority(track.Priority) then return end
+        AbilityHook._pendingFire = nil
+        ahFireConfirmed(pending.cfg)
+    end)
+end
+
+local function ahFireButtonAim(btn, cfg)
+    if not AbilityHook.Enabled then return end
+    if not cfg then return end
+    local now = tick()
+    local last = AbilityHook.LastTap[btn]
+    if last and now - last < AbilityHook.Debounce then return end
+    AbilityHook.LastTap[btn] = now
+    AbilityHook._pendingFire = { cfg = cfg, ts = now }
+end
+
+local function ahHookButton(btn, cfg)
+    if not btn or AbilityHook.Hooked[btn] then return end
+    if not btn:IsA("GuiButton") then return end
+    AbilityHook.Hooked[btn] = true
+
+    local function fire() ahFireButtonAim(btn, cfg) end
+
+    pcall(function() btn.Activated:Connect(fire) end)
+    pcall(function()
+        btn.InputEnded:Connect(function(input)
+            if input.UserInputType ~= Enum.UserInputType.MouseButton1
+               and input.UserInputType ~= Enum.UserInputType.Touch then
+                return
+            end
+            local pos = input.Position
+            local abs = btn.AbsolutePosition
+            local size = btn.AbsoluteSize
+            if pos.X < abs.X or pos.X > abs.X + size.X
+               or pos.Y < abs.Y or pos.Y > abs.Y + size.Y then
+                return
+            end
+            fire()
+        end)
+    end)
+end
+
+local function ahButtonMatches(btn, cfg, kws)
+    if btn.Name == cfg.Button then return true end
+    if not kws then return false end
+    local blobs = { string.lower(tostring(btn.Name or "")) }
+    if btn:IsA("TextButton") or btn:IsA("TextLabel") then
+        blobs[#blobs + 1] = string.lower(tostring(btn.Text or ""))
+    end
+    for _, d in ipairs(btn:GetDescendants()) do
+        if d:IsA("TextLabel") or d:IsA("TextButton") then
+            blobs[#blobs + 1] = string.lower(tostring(d.Text or ""))
+            blobs[#blobs + 1] = string.lower(tostring(d.Name or ""))
+        end
+    end
+    for _, blob in ipairs(blobs) do
+        for _, kw in ipairs(kws) do
+            if blob:find(kw, 1, true) then return true end
+        end
+    end
+    return false
+end
+
+local function ahScanContainer()
+    if not AbilityHook.Enabled then return end
+    local info = ahResolveForChar()
+    if not info then return end
+    local cfg, kws = info.cfg, info.kws
+    local pg = lp:FindFirstChild("PlayerGui")
+    if not pg then return end
+
+    local main = pg:FindFirstChild("MainUI")
+    if not main then return end
+    local container = main:FindFirstChild("AbilityContainer")
+
+    local function try(btn)
+        if btn:IsA("GuiButton") and ahButtonMatches(btn, cfg, kws) then
+            ahHookButton(btn, cfg)
+        end
+    end
+
+    if container then
+        for _, c in ipairs(container:GetChildren()) do try(c) end
+        return
+    end
+    for _, d in ipairs(main:GetDescendants()) do
+        if d:IsA("GuiButton") then try(d) end
+    end
+end
+
+local function ahInstallUiWatcher()
+    if AbilityHook._uiWatcher then
+        pcall(function() AbilityHook._uiWatcher:Disconnect() end)
+        AbilityHook._uiWatcher = nil
+    end
+    local pg = lp:FindFirstChild("PlayerGui")
+    if not pg then return end
+    AbilityHook._uiWatcher = pg.DescendantAdded:Connect(function(d)
+        if not AbilityHook.Enabled then return end
+        if not d:IsA("GuiButton") then return end
+        local info = ahResolveForChar()
+        if not info then return end
+        if ahButtonMatches(d, info.cfg, info.kws) then
+            ahHookButton(d, info.cfg)
+        end
+    end)
+end
+
+lp.CharacterAdded:Connect(function(char)
+    AbilityHook.Hooked = {}
+    AbilityHook.LastTap = {}
+    AbilityHook._pendingFire = nil
+    ahBindAnimator(char)
+    task.wait(0.6)
+    ahScanContainer()
+end)
+
+do
+    if lp.Character then
+        ahBindAnimator(lp.Character)
+    end
+end
+
+task.spawn(function()
+    while true do
+        task.wait(1.5)
+        ahScanContainer()
+    end
+end)
+
+ahInstallUiWatcher()
+ahScanContainer()
+
+-- auto gen
+AUTOGEN = { Enabled = false, Cooldown = 1.0, MaxDistance = 10, _nextFire = 0 }
+
+local function getIngameMap()
+    local map = workspace:FindFirstChild("Map")
+    map = map and map:FindFirstChild("Ingame")
+    return map and map:FindFirstChild("Map") or nil
+end
+
+task.spawn(function()
+    while true do
+        task.wait(0.1)
+        if not AUTOGEN.Enabled then continue end
+        if tick() < AUTOGEN._nextFire then continue end
+        local map = getIngameMap()
+        local myRoot = getMyRoot()
+        if not map or not myRoot then continue end
+        local any = false
+        for _, obj in ipairs(map:GetChildren()) do
+            if (obj.Name == "Generator" or obj.Name == "FakeGenerator") and obj:IsA("Model") then
+                local prog = obj:FindFirstChild("Progress")
+                local main = obj:FindFirstChild("Main")
+                if prog and main and prog.Value ~= 100 then
+                    if (main.Position - myRoot.Position).Magnitude <= AUTOGEN.MaxDistance then
+                        local remotes = obj:FindFirstChild("Remotes")
+                        local re = remotes and remotes:FindFirstChild("RE")
+                        if re then pcall(function() re:FireServer() end) any = true end
+                    end
+                end
+            end
+        end
+        if any then AUTOGEN._nextFire = tick() + AUTOGEN.Cooldown end
+    end
+end)
+
+-- esp
+local espTrackers = { Killers = {}, Survivors = {}, Generators = {}, Items = {} }
+
+local function attachHighlight(model, fill, outline, transparency, tracker, adornee)
+    if not model or not model.Parent then return end
+    local existing = tracker[model]
+    local target = adornee or model
+    if existing and existing.Parent then
+        existing.Adornee = target
+        existing.FillColor = fill
+        existing.OutlineColor = outline or fill
+        existing.FillTransparency = transparency or 0.65
+        return
+    end
+    if existing then tracker[model] = nil end
+    local hl = Instance.new("Highlight")
+    hl.Name = "HunterESP"
+    hl.Adornee = target
+    hl.FillColor = fill
+    hl.OutlineColor = outline or fill
+    hl.FillTransparency = transparency or 0.65
+    hl.OutlineTransparency = 0
+    hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    hl.Parent = model
+    tracker[model] = hl
+end
+
+local function detachHighlight(model, tracker)
+    local hl = tracker[model]
+    if hl then pcall(function() hl:Destroy() end) tracker[model] = nil end
+end
+
+local function refreshKillers()
+    if not KillersFolder then return end
+    local seen = {}
+    for _, k in ipairs(KillersFolder:GetChildren()) do
+        if k:IsA("Model") and k ~= lp.Character and k:FindFirstChild("HumanoidRootPart") then
+            seen[k] = true
+            local hl = espTrackers.Killers[k]
+            if not hl or not hl.Parent then
+                attachHighlight(k, Color3.fromRGB(255,40,40), Color3.fromRGB(255,0,0), 0.6, espTrackers.Killers)
+            end
+        end
+    end
+    for m in pairs(espTrackers.Killers) do
+        if not seen[m] or not m.Parent then detachHighlight(m, espTrackers.Killers) end
+    end
+end
+
+local function refreshSurvivors()
+    if not SurvivorsFolder then return end
+    local seen = {}
+    for _, s in ipairs(SurvivorsFolder:GetChildren()) do
+        if s:IsA("Model") and s ~= lp.Character and s:FindFirstChild("HumanoidRootPart") then
+            seen[s] = true
+            local hl = espTrackers.Survivors[s]
+            if not hl or not hl.Parent then
+                attachHighlight(s, Color3.fromRGB(40,255,90), Color3.fromRGB(0,220,60), 0.6, espTrackers.Survivors)
+            end
+        end
+    end
+    for m in pairs(espTrackers.Survivors) do
+        if not seen[m] or not m.Parent then detachHighlight(m, espTrackers.Survivors) end
+    end
+end
+
+local function refreshGenerators()
+    local map = getIngameMap()
+    local seen = {}
+    if map then
+        for _, g in ipairs(map:GetChildren()) do
+            if g.Name == "Generator" and g:IsA("Model") then
+                seen[g] = true
+                local prog = g:FindFirstChild("Progress")
+                local color = (prog and prog.Value >= 100) and Color3.fromRGB(0,220,60) or Color3.fromRGB(255,220,40)
+                attachHighlight(g, color, color, 0.6, espTrackers.Generators)
+            end
+        end
+    end
+    for m in pairs(espTrackers.Generators) do
+        if not seen[m] or not m.Parent then detachHighlight(m, espTrackers.Generators) end
+    end
+end
+
+local ITEM_COLORS = { Medkit = Color3.fromRGB(255,105,180), BloxyCola = Color3.fromRGB(0,150,255) }
+
+local function refreshItems()
+    local ingame = workspace:FindFirstChild("Map")
+    ingame = ingame and ingame:FindFirstChild("Ingame")
+    local seen = {}
+    if ingame then
+        for _, item in ipairs(ingame:GetDescendants()) do
+            local c = ITEM_COLORS[item.Name]
+            if c and item:IsA("Tool") then
+                local handle = item:FindFirstChild("Handle")
+                if handle and handle:IsA("BasePart") then
+                    seen[item] = true
+                    attachHighlight(item, c, c, 0.5, espTrackers.Items, handle)
+                end
+            end
+        end
+    end
+    for m in pairs(espTrackers.Items) do
+        if not seen[m] or not m.Parent then detachHighlight(m, espTrackers.Items) end
+    end
+end
+
+local function clearKillerESP() for m in pairs(espTrackers.Killers) do detachHighlight(m, espTrackers.Killers) end end
+local function clearSurvivorESP() for m in pairs(espTrackers.Survivors) do detachHighlight(m, espTrackers.Survivors) end end
+local function clearGeneratorESP() for m in pairs(espTrackers.Generators) do detachHighlight(m, espTrackers.Generators) end end
+local function clearItemESP() for m in pairs(espTrackers.Items) do detachHighlight(m, espTrackers.Items) end end
+
+task.spawn(function()
+    while true do
+        task.wait(0.4)
+        if CFG.ESPKillers    then refreshKillers()    end
+        if CFG.ESPSurvivors  then refreshSurvivors()  end
+        if CFG.ESPGenerators then refreshGenerators() end
+        if CFG.ESPItems      then refreshItems()      end
+    end
+end)
+
+-- stam
+local Sprinting = nil
+pcall(function()
+    Sprinting = require(ReplicatedStorage.Systems.Character.Game.Sprinting)
+end)
+
+local staminaBackup = {}
+local staminaThread = nil
+
+local function startInfiniteStamina()
+    if not Sprinting or staminaThread then return end
+    staminaBackup = { StaminaLossDisabled = Sprinting.StaminaLossDisabled }
+    staminaThread = task.spawn(function()
+        while CFG.InfiniteStamina do
+            pcall(function()
+                Sprinting.StaminaLossDisabled = true
+                if Sprinting.Stamina ~= nil and Sprinting.MaxStamina then
+                    Sprinting.Stamina = Sprinting.MaxStamina
+                end
+            end)
+            task.wait(0.15)
+        end
+    end)
+end
+
+local function stopInfiniteStamina()
+    if staminaThread then task.cancel(staminaThread) staminaThread = nil end
+    if not Sprinting then return end
+    pcall(function()
+        if staminaBackup.StaminaLossDisabled ~= nil then
+            Sprinting.StaminaLossDisabled = staminaBackup.StaminaLossDisabled
+        end
+    end)
+end
+
+-- stab
+STAB = {
+    Enabled = false, BehindOffset = 1.7, MaxRange = 60, Cooldown = 0.5,
+    TeleportDelay = 0.02, FollowDuration = 0.5,
+    _lastStab = 0, _stabbing = false, _followConn = nil,
+    _savedAutoRotate = true, _animConn = nil,
+}
+
+local DAGGER_ANIM_IDS = {
+    ["100725497418533"] = true,
+    ["89448354637442"]  = true,
+}
+
+local function stabGetMyHRP()
+    local c = lp.Character
+    return c and c:FindFirstChild("HumanoidRootPart")
+end
+local function stabGetMyHum()
+    local c = lp.Character
+    return c and c:FindFirstChildOfClass("Humanoid")
+end
+local function stabGetKillerHRP(m)
+    if not m then return nil end
+    return m:FindFirstChild("HumanoidRootPart") or m.PrimaryPart
+        or m:FindFirstChildWhichIsA("BasePart", true)
+end
+
+local function stabGetNearestKiller()
+    if not KillersFolder then return nil, nil end
+    local myRoot = stabGetMyHRP()
+    if not myRoot then return nil, nil end
+    local best, bestHRP, bestDist = nil, nil, math.huge
+    for _, k in ipairs(KillersFolder:GetChildren()) do
+        if k:IsA("Model") and k ~= lp.Character then
+            local hrp = stabGetKillerHRP(k)
+            local hum = k:FindFirstChildOfClass("Humanoid")
+            if hrp and hum and hum.Health > 0 then
+                local d = (hrp.Position - myRoot.Position).Magnitude
+                if d < bestDist then best, bestHRP, bestDist = k, hrp, d end
+            end
+        end
+    end
+    return best, bestHRP
+end
+
+local function stabStopFollow()
+    if STAB._followConn then
+        pcall(function() STAB._followConn:Disconnect() end)
+        STAB._followConn = nil
+    end
+    local hum = stabGetMyHum()
+    if hum then hum.AutoRotate = STAB._savedAutoRotate end
+    STAB._stabbing = false
+end
+
+local function stabFollow(killerModel)
+    if STAB._followConn then
+        pcall(function() STAB._followConn:Disconnect() end)
+        STAB._followConn = nil
+    end
+    local myHum = stabGetMyHum()
+    STAB._savedAutoRotate = myHum and myHum.AutoRotate or true
+    if myHum then myHum.AutoRotate = false end
+    local endTime = os.clock() + STAB.FollowDuration
+    STAB._followConn = RunService.RenderStepped:Connect(function()
+        if os.clock() >= endTime or not STAB._stabbing then stabStopFollow() return end
+        local h = stabGetMyHRP()
+        if not h then stabStopFollow() return end
+        local kHRP = killerModel and stabGetKillerHRP(killerModel)
+        if not kHRP or not kHRP.Parent then stabStopFollow() return end
+        local kCF = kHRP.CFrame
+        local behindPos = kCF.Position - kCF.LookVector * STAB.BehindOffset
+        local targetCF = CFrame.lookAt(
+            Vector3.new(behindPos.X, h.Position.Y, behindPos.Z),
+            Vector3.new(kCF.Position.X, h.Position.Y, kCF.Position.Z)
+        )
+        h.CFrame = h.CFrame:Lerp(targetCF, 0.5)
+        h.AssemblyLinearVelocity = Vector3.zero
+    end)
+end
+
+local function stabActivate(force)
+    if not force and not STAB.Enabled then return end
+    if STAB._stabbing then return end
+    if os.clock() - STAB._lastStab < STAB.Cooldown then return end
+    local myHRP = stabGetMyHRP()
+    if not myHRP then return end
+    local killer, kHRP = stabGetNearestKiller()
+    if not killer or not kHRP then return end
+    if (kHRP.Position - myHRP.Position).Magnitude > STAB.MaxRange then return end
+
+    STAB._stabbing = true
+    STAB._lastStab = os.clock()
+    local kCF = kHRP.CFrame
+    local behindPos = kCF.Position - kCF.LookVector * STAB.BehindOffset
+    local origin = myHRP.CFrame
+    local behind = CFrame.lookAt(
+        Vector3.new(behindPos.X, origin.Position.Y, behindPos.Z),
+        Vector3.new(kCF.Position.X, origin.Position.Y, kCF.Position.Z)
+    )
+    task.wait(STAB.TeleportDelay)
+    if not STAB.Enabled and not force then STAB._stabbing = false return end
+    if not kHRP or not kHRP.Parent then STAB._stabbing = false return end
+    local now = stabGetMyHRP()
+    if not now then STAB._stabbing = false return end
+    now.CFrame = behind
+    now.AssemblyLinearVelocity = Vector3.zero
+    stabFollow(killer)
+end
+
+local function stabBindAnimator()
+    if STAB._animConn then
+        pcall(function() STAB._animConn:Disconnect() end)
+        STAB._animConn = nil
+    end
+    local char = lp.Character
+    if not char then return end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    local animator = hum and hum:FindFirstChildOfClass("Animator")
+    if not animator then return end
+    STAB._animConn = animator.AnimationPlayed:Connect(function(track)
+        if not STAB.Enabled then return end
+        local a = track and track.Animation
+        if not a then return end
+        local id = tostring(a.AnimationId):match("%d+")
+        if id and DAGGER_ANIM_IDS[id] then
+            task.spawn(stabActivate)
+        end
+    end)
+end
+
+stabBindAnimator()
+lp.CharacterAdded:Connect(function()
+    stabStopFollow()
+    task.wait(0.5)
+    stabBindAnimator()
+end)
+
+-- azure qte
+AZ = { AutoQTE = false, InfiniteQTE = false, qteHooked = false }
+
+local function azHookQTE()
+    if AZ.qteHooked then return true end
+    local ok, mod = pcall(function()
+        return require(ReplicatedStorage.Assets.Killers.Azure.Config.cl_WorkaroundModules.cl_ConstructQTE)
+    end)
+    if not ok or type(mod) ~= "table" or type(mod.new) ~= "function" then
+        return false
+    end
+    local origNew = mod.new
+    local success = pcall(function()
+        mod.new = function(...)
+            local qte = origNew(...)
+            if qte then
+                if AZ.InfiniteQTE then pcall(function() qte.FailedAttempts = -math.huge end) end
+                if AZ.AutoQTE then
+                    task.defer(function()
+                        task.wait(0.12)
+                        if AZ.AutoQTE and qte and type(qte.AddProgress) == "function" then
+                            pcall(function() qte:AddProgress(100) end)
+                        end
+                    end)
+                end
+            end
+            return qte
+        end
+    end)
+    AZ.qteHooked = success
+    return success
+end
+
+task.spawn(function()
+    while true do
+        task.wait(1.0)
+        if (AZ.AutoQTE or AZ.InfiniteQTE) and not AZ.qteHooked then
+            pcall(azHookQTE)
+        end
+    end
+end)
+
+-- hitbox expander
+HBE = {
+    Enabled = false, Mode = "Scale", SizeMultiplier = 1.5,
+    ApplyOnlyOnAttack = false, Visualize = false,
+    VelocitySpeed = 55, VelocityStopDist = 2,
+    DragCooldown = 1.0,
+    _char = nil, _hitbox = nil, _origSize = nil, _sizeConn = nil,
+    _charConns = {}, _animConns = {}, _visuals = {}, _attackOpen = false,
+    _dragConn = nil, _dragBV = nil, _dragOrigin = nil, _dragHum = nil,
+    _dragCooldownUntil = 0,
+}
+
+local HBE_HITBOX_NAMES = { "CollisionHitbox", "Hitbox", "MainHitbox", "MeleeHitbox" }
+
+local function hbeFindHitbox(char)
+    if not char then return nil end
+    for _, name in ipairs(HBE_HITBOX_NAMES) do
+        local p = char:FindFirstChild(name)
+        if p and p:IsA("BasePart") then return p end
+    end
+    for _, d in ipairs(char:GetDescendants()) do
+        if d:IsA("BasePart") and d.Name:lower():find("hitbox", 1, true) then return d end
+    end
+    return nil
+end
+
+local function hbeDesiredSize()
+    local p = HBE._hitbox
+    if not p or not HBE._origSize then return nil end
+    local active = (not HBE.ApplyOnlyOnAttack) or HBE._attackOpen
+    if not active then return HBE._origSize end
+    local m = HBE.SizeMultiplier
+    return Vector3.new(HBE._origSize.X * m, HBE._origSize.Y * m, HBE._origSize.Z * m)
+end
+
+local function hbeDestroyVisuals()
+    for _, v in ipairs(HBE._visuals) do
+        if v and v.Parent then pcall(function() v:Destroy() end) end
+    end
+    HBE._visuals = {}
+end
+
+local function hbeApplyVisual()
+    hbeDestroyVisuals()
+    if not HBE.Visualize then return end
+    local p = HBE._hitbox
+    if not p or not p.Parent then return end
+    local ad = Instance.new("BoxHandleAdornment")
+    ad.Name = "HBE_Visual"
+    ad.Adornee = p
+    ad.AlwaysOnTop = true
+    ad.ZIndex = 5
+    ad.Color3 = Color3.fromRGB(255, 140, 0)
+    ad.Transparency = 0.75
+    ad.Size = p.Size
+    ad.Parent = p
+    HBE._visuals[1] = ad
+end
+
+local function hbeApply()
+    local p = HBE._hitbox
+    if not p or not p.Parent then return end
+    local target = hbeDesiredSize()
+    if not target then return end
+    if (p.Size - target).Magnitude > 0.001 then p.Size = target end
+    for _, v in ipairs(HBE._visuals) do if v and v.Parent then v.Size = target end end
+end
+
+local function hbeRevert()
+    local p = HBE._hitbox
+    if p and p.Parent and HBE._origSize then
+        pcall(function() p.Size = HBE._origSize end)
+    end
+    hbeDestroyVisuals()
+end
+
+local function hbeStopDrag()
+    if HBE._dragConn then
+        pcall(function() HBE._dragConn:Disconnect() end)
+        HBE._dragConn = nil
+    end
+    if HBE._dragBV and HBE._dragBV.Parent then
+        pcall(function() HBE._dragBV:Destroy() end)
+    end
+    HBE._dragBV = nil
+
+    if HBE._dragHum and HBE._dragHum.Parent and HBE._dragOrigin then
+        pcall(function()
+            HBE._dragHum.WalkSpeed = HBE._dragOrigin.walk
+            HBE._dragHum.JumpPower = HBE._dragOrigin.jump
+            HBE._dragHum.AutoRotate = HBE._dragOrigin.autoRot
+        end)
+    end
+    HBE._dragHum = nil
+    HBE._dragOrigin = nil
+
+    HBE._dragCooldownUntil = tick() + (HBE.DragCooldown or 1.0)
+end
+
+local function hbeStartDrag()
+    if HBE.Mode ~= "Velocity" then return end
+    if HBE._dragConn then return end
+    if tick() < (HBE._dragCooldownUntil or 0) then return end
+    local char = lp.Character
+    if not char then return end
+    local hrp = char:FindFirstChild("HumanoidRootPart")
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if not hrp or not hum then return end
+
+    HBE._dragHum = hum
+    HBE._dragOrigin = { walk = hum.WalkSpeed, jump = hum.JumpPower, autoRot = hum.AutoRotate }
+    hum.WalkSpeed = 0; hum.JumpPower = 0; hum.AutoRotate = false
+
+    local bv = Instance.new("BodyVelocity")
+    bv.MaxForce = Vector3.new(1e5, 0, 1e5); bv.Velocity = Vector3.zero
+    bv.Parent = hrp; HBE._dragBV = bv
+
+    HBE._dragConn = RunService.Heartbeat:Connect(function()
+        if not HBE.Enabled or HBE.Mode ~= "Velocity" or not HBE._attackOpen then
+            hbeStopDrag(); return
+        end
+        if not char.Parent or not hrp.Parent then
+            hbeStopDrag(); return
+        end
+        local k = nearestKillerPart()
+        if not k or not k.Parent then bv.Velocity = Vector3.zero return end
+        local delta = k.Position - hrp.Position
+        local horiz = Vector3.new(delta.X, 0, delta.Z)
+        local dist = horiz.Magnitude
+        if dist < HBE.VelocityStopDist then
+            hbeStopDrag(); return
+        end
+        local dir = horiz.Unit
+        bv.Velocity = Vector3.new(dir.X * HBE.VelocitySpeed, 0, dir.Z * HBE.VelocitySpeed)
+        hrp.CFrame = CFrame.lookAt(hrp.Position, Vector3.new(k.Position.X, hrp.Position.Y, k.Position.Z))
+    end)
+end
+
+local function hbeDisconnectAll()
+    if HBE._sizeConn then pcall(function() HBE._sizeConn:Disconnect() end) HBE._sizeConn = nil end
+    for _, c in ipairs(HBE._charConns) do pcall(function() c:Disconnect() end) end
+    HBE._charConns = {}
+    for _, c in ipairs(HBE._animConns) do pcall(function() c:Disconnect() end) end
+    HBE._animConns = {}
+    hbeStopDrag()
+end
+
+local function hbeOnAttackOpen()
+    if not HBE.Enabled or not HBE.ApplyOnlyOnAttack then return end
+    HBE._attackOpen = true
+    hbeApply()
+    if HBE.Mode == "Velocity" then hbeStartDrag() end
+end
+
+local function hbeOnAttackClose()
+    HBE._attackOpen = false
+    if HBE.Mode == "Velocity" then hbeStopDrag() end
+    if not HBE.Enabled then return end
+    hbeApply()
+end
+
+local function hbeHookAnimator(char)
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    local animator = hum and hum:FindFirstChildOfClass("Animator")
+    if not animator then
+        task.delay(0.5, function()
+            if HBE._char == char and HBE.Enabled then
+                local h2 = char:FindFirstChildOfClass("Humanoid")
+                local a2 = h2 and h2:FindFirstChildOfClass("Animator")
+                if a2 then
+                    local c = a2.AnimationPlayed:Connect(function(track)
+                        if not HBE.Enabled then return end
+                        hbeOnAttackOpen()
+                        local dur = track.Length
+                        if not dur or dur <= 0 then dur = 0.35 end
+                        task.delay(dur + 0.05, hbeOnAttackClose)
+                    end)
+                    table.insert(HBE._animConns, c)
+                end
+            end
+        end)
+        return
+    end
+    local c = animator.AnimationPlayed:Connect(function(track)
+        if not HBE.Enabled then return end
+        local prio = track.Priority
+        if prio ~= Enum.AnimationPriority.Action
+           and prio ~= Enum.AnimationPriority.Action2
+           and prio ~= Enum.AnimationPriority.Action3
+           and prio ~= Enum.AnimationPriority.Action4 then return end
+        hbeOnAttackOpen()
+        local dur = track.Length
+        if not dur or dur <= 0 then dur = 0.35 end
+        task.delay(dur + 0.05, hbeOnAttackClose)
+    end)
+    table.insert(HBE._animConns, c)
+end
+
+local function hbeHookCharacter(char)
+    if not char then return end
+    HBE._char = char
+    hbeDisconnectAll(); hbeRevert()
+    HBE._hitbox = nil; HBE._origSize = nil; HBE._attackOpen = false
+    HBE._dragCooldownUntil = 0
+
+    task.spawn(function()
+        local hitbox, t0 = nil, os.clock()
+        while os.clock() - t0 < 6 do
+            hitbox = hbeFindHitbox(char)
+            if hitbox then break end
+            task.wait(0.1)
+        end
+        if not hitbox or HBE._char ~= char or not HBE.Enabled then return end
+
+        HBE._hitbox = hitbox
+        HBE._origSize = hitbox.Size
+        HBE._sizeConn = hitbox:GetPropertyChangedSignal("Size"):Connect(function()
+            if not HBE.Enabled then return end
+            local want = hbeDesiredSize()
+            if not want then return end
+            if (hitbox.Size - want).Magnitude > 0.01 then hitbox.Size = want end
+        end)
+
+        local c = char.ChildAdded:Connect(function(child)
+            if not HBE.Enabled then return end
+            for _, name in ipairs(HBE_HITBOX_NAMES) do
+                if child.Name == name and child:IsA("BasePart") and child ~= hitbox then
+                    if HBE._sizeConn then HBE._sizeConn:Disconnect() HBE._sizeConn = nil end
+                    HBE._hitbox = child
+                    HBE._origSize = child.Size
+                    HBE._sizeConn = child:GetPropertyChangedSignal("Size"):Connect(function()
+                        if not HBE.Enabled then return end
+                        local want = hbeDesiredSize()
+                        if not want then return end
+                        if (child.Size - want).Magnitude > 0.01 then child.Size = want end
+                    end)
+                    hbeApply(); hbeApplyVisual()
+                    break
+                end
+            end
+        end)
+        table.insert(HBE._charConns, c)
+        if HBE.ApplyOnlyOnAttack then hbeHookAnimator(char) end
+        hbeApply(); hbeApplyVisual()
+    end)
+end
+
+local function hbeStart()
+    HBE.Enabled = true
+    if lp.Character then
+        hbeHookCharacter(lp.Character)
+    end
+end
+
+local function hbeStop()
+    HBE.Enabled = false
+    HBE._attackOpen = false
+    hbeDisconnectAll(); hbeRevert()
+    HBE._hitbox = nil; HBE._origSize = nil
+end
+
+lp.CharacterAdded:Connect(function(char)
+    hbeStopDrag()
+    if HBE.Enabled then
+        task.wait(0.5)
+        hbeHookCharacter(char)
+    end
+end)
+
+-- block box
+FacingVisual = {
+    BoxEnabled = false,
+    InRangeColor = Color3.fromRGB(255, 60, 60),
+    OutRangeColor = Color3.fromRGB(255, 220, 60),
+    PassColor = Color3.fromRGB(60, 255, 90),
+    boxVisuals = {},
+    GameBoxStyle = nil,
+    FlashDuration = 0.25,
+    FlashFade = 0.15,
+    FlashOnKillerM1 = true,
+    FlashOnEnterRange = false,
+    FlashOnFacingFlip = false,
+    FlashOnBlock = false,
+    BoxWidth = 6,
+    BoxLength = 15,
+    BoxHeight = 6,
+    BoxFill = 0.5,
+    AutoWidth = false,
+    BoxMaxAngle = 75,
+    _blockPulse = 0,
+    _lastBlockPulse = 0,
+}
+
+local function fvSniffGameBoxStyle()
+    local roots = {}
+    local map = workspace:FindFirstChild("Map")
+    if map then roots[#roots + 1] = map end
+    if KillersFolder then roots[#roots + 1] = KillersFolder end
+    local scanned = 0
+    for _, root in ipairs(roots) do
+        local stopped = false
+        for _, d in ipairs(root:GetDescendants()) do
+            scanned += 1
+            if scanned > 2000 then stopped = true break end
+            if d:IsA("BasePart") and (d.Name:lower():find("hitbox") or d:FindFirstChild("HitboxHighlight")) then
+                local hl = d:FindFirstChild("HitboxHighlight") or d:FindFirstChildOfClass("Highlight")
+                if hl then
+                    return {
+                        Material = d.Material, Transparency = d.Transparency,
+                        HighlightFillTransparency = hl.FillTransparency,
+                        HighlightOutlineTransparency = hl.OutlineTransparency,
+                        DepthMode = hl.DepthMode,
+                    }
+                end
+            end
+        end
+        if stopped then break end
+    end
+    return {
+        Material = Enum.Material.ForceField, Transparency = 0.5,
+        HighlightFillTransparency = 1, HighlightOutlineTransparency = 0,
+        DepthMode = Enum.HighlightDepthMode.AlwaysOnTop,
+    }
+end
+
+FacingVisual.GameBoxStyle = fvSniffGameBoxStyle()
+
+local function fvStateColor(ir, fp)
+    if ir and fp then return FacingVisual.PassColor end
+    if ir then return FacingVisual.InRangeColor end
+    return FacingVisual.OutRangeColor
+end
+
+local function addFacingBox(killer)
+    if not killer or not killer:IsA("Model") then return end
+    if FacingVisual.boxVisuals[killer] then return end
+    FacingVisual.boxVisuals[killer] = {
+        part = nil, highlight = nil,
+        state = { inRange = false, facingPass = false },
+        flashUntil = 0, fadeUntil = 0,
+    }
+end
+
+local function removeFacingBox(killer)
+    local data = FacingVisual.boxVisuals[killer]
+    if not data then return end
+    if data.highlight and data.highlight.Parent then pcall(function() data.highlight:Destroy() end) end
+    if data.part and data.part.Parent then pcall(function() data.part:Destroy() end) end
+    FacingVisual.boxVisuals[killer] = nil
+end
+
+local function fvBuildBox(data, color)
+    local style = FacingVisual.GameBoxStyle or {}
+    local part = Instance.new("Part")
+    part.Name = "HunterFacingFlash"
+    part.Anchored = true; part.CanCollide = false
+    part.CanQuery = false; part.CanTouch = false
+    part.CastShadow = false; part.Massless = true
+    part.Material = style.Material or Enum.Material.ForceField
+    part.Transparency = 1; part.Color = color
+    part.Size = Vector3.new(1, 1, 1); part.Parent = workspace
+
+    local hl = Instance.new("Highlight")
+    hl.Name = "HunterFacingFlashHighlight"
+    hl.Adornee = part
+    hl.FillTransparency = 1; hl.FillColor = color
+    hl.OutlineColor = color; hl.OutlineTransparency = 1
+    hl.DepthMode = style.DepthMode or Enum.HighlightDepthMode.AlwaysOnTop
+    hl.Parent = part
+
+    data.part = part
+    data.highlight = hl
+end
+
+local function fvTriggerFlash(killer)
+    local data = FacingVisual.boxVisuals[killer]
+    if not data then return end
+    local now = tick()
+    data.flashUntil = now + (FacingVisual.FlashDuration or 0.25)
+    data.fadeUntil  = data.flashUntil + (FacingVisual.FlashFade or 0.15)
+end
+
+local function updateBoxVisual(killer, data)
+    local hrp = killer:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+    local now = tick()
+    local ir, fp = getFacingState(hrp)
+    local color = fvStateColor(ir, fp)
+
+    local st = data.state or { inRange = false, facingPass = false }
+    local enteredRange = ir and not st.inRange
+    local facingFlip   = ir and st.inRange and (fp ~= st.facingPass)
+    data.state = { inRange = ir, facingPass = fp }
+
+    if (FacingVisual.FlashOnEnterRange and enteredRange)
+       or (FacingVisual.FlashOnFacingFlip and facingFlip) then
+        fvTriggerFlash(killer)
+    end
+
+    if not data.part or not data.part.Parent or not data.highlight or not data.highlight.Parent then
+        fvBuildBox(data, color)
+    end
+    local p  = data.part
+    local hl = data.highlight
+
+    local flashUntil = data.flashUntil or 0
+    local fadeUntil  = data.fadeUntil or 0
+    if now >= fadeUntil then
+        if p.Transparency < 1 then p.Transparency = 1 end
+        if hl.FillTransparency < 1 then hl.FillTransparency = 1 end
+        if hl.OutlineTransparency < 1 then hl.OutlineTransparency = 1 end
+        return
+    end
+
+    local alpha
+    if now <= flashUntil then
+        alpha = 1
+    else
+        local span = math.max(fadeUntil - flashUntil, 0.001)
+        alpha = 1 - math.clamp((now - flashUntil) / span, 0, 1)
+    end
+
+    local length = FacingVisual.BoxLength or 15
+    local width
+    if FacingVisual.AutoWidth then
+        local dot = facingDotClamped()
+        local halfAngle = math.acos(dot)
+        halfAngle = math.min(halfAngle, math.rad(FacingVisual.BoxMaxAngle or 75))
+        width = 2 * length * math.tan(halfAngle)
+        width = math.min(width, length * 3)
+    else
+        width = FacingVisual.BoxWidth or 6
+    end
+    if width < 0.1 then width = 0.1 end
+    local height = FacingVisual.BoxHeight or 6
+    if height < 0.1 then height = 0.1 end
+    if length < 0.1 then length = 0.1 end
+
+    p.Size = Vector3.new(width, height, length)
+    local origin = hrp.Position
+    local look   = hrp.CFrame.LookVector
+    local center = origin + look * (length / 2)
+    p.CFrame = CFrame.lookAt(center, center + look)
+    p.Color = color
+    p.Material = (FacingVisual.GameBoxStyle and FacingVisual.GameBoxStyle.Material) or Enum.Material.ForceField
+
+    local baseTrans = FacingVisual.BoxFill or 0.5
+    p.Transparency = math.clamp(baseTrans + (1 - alpha) * 0.8, 0, 1)
+    hl.FillColor = color; hl.OutlineColor = color
+    hl.FillTransparency    = 1
+    hl.OutlineTransparency = 1 - alpha
+end
+
+function FacingVisual.FlashKiller(killerModel)
+    if not FacingVisual.BoxEnabled then return end
+    if not FacingVisual.FlashOnKillerM1 then return end
+    if not killerModel or not killerModel:IsA("Model") then return end
+    if not killerModel:FindFirstChild("HumanoidRootPart") then return end
+    if not FacingVisual.boxVisuals[killerModel] then addFacingBox(killerModel) end
+    fvTriggerFlash(killerModel)
+end
+
+task.spawn(function()
+    while true do
+        RunService.Heartbeat:Wait()
+        if not FacingVisual.BoxEnabled then continue end
+        if not KillersFolder then continue end
+
+        if FacingVisual.FlashOnBlock then
+            local pulse = FacingVisual._blockPulse or 0
+            if pulse ~= FacingVisual._lastBlockPulse then
+                FacingVisual._lastBlockPulse = pulse
+                for _, k in ipairs(KillersFolder:GetChildren()) do
+                    if k:IsA("Model") then
+                        local hrp = k:FindFirstChild("HumanoidRootPart")
+                        if hrp and inRange(hrp) then
+                            if not FacingVisual.boxVisuals[k] then addFacingBox(k) end
+                            fvTriggerFlash(k)
+                        end
+                    end
+                end
+            end
+        end
+
+        for _, k in ipairs(KillersFolder:GetChildren()) do
+            if k:IsA("Model") and k:FindFirstChild("HumanoidRootPart") then
+                if not FacingVisual.boxVisuals[k] then addFacingBox(k) end
+                updateBoxVisual(k, FacingVisual.boxVisuals[k])
+            end
+        end
+    end
+end)
+
+if KillersFolder then
+    KillersFolder.ChildRemoved:Connect(function(k) removeFacingBox(k) end)
+end
+
+-- =========================================================
+-- UI (WindUI)
+-- =========================================================
+local BLOOD_THEME = {
+    Accent      = Color3.fromHex("#b30000"),
+    Background  = Color3.fromHex("#120000"),
+    Outline     = Color3.fromHex("#ff4d4d"),
+    Text        = Color3.fromHex("#ffcccc"),
+    Placeholder = Color3.fromHex("#7a0000"),
+    Button      = Color3.fromHex("#3d0000"),
+    Icon        = Color3.fromHex("#ff6666"),
+}
+
+do
+    local ok = pcall(function() WindUI:AddTheme("Blood", BLOOD_THEME) end)
+    if not ok then
+        local t = table.clone(BLOOD_THEME)
+        t.Name = "Blood"
+        pcall(function() WindUI:AddTheme(t) end)
+    end
+end
+
+local Window
+local uiOk, uiErr = pcall(function()
+    Window = WindUI:CreateWindow({
+        Title = "hunter",
+        Author = "gg",
+        Theme = "Blood",
+        Size = UDim2.fromOffset(620, 500),
+        MinSize = Vector2.new(480, 380),
+        ToggleKey = Enum.KeyCode.RightShift,
+        Resizable = true,
+        Folder = "hunter_hub",
+    })
+
+    local TAB_ICON_FALLBACKS = {
+        ["sword"]    = { "swords", "sword", "zap", "circle" },
+        ["settings"] = { "cog", "settings", "sliders", "circle" },
+        ["palette"]  = { "palette", "brush", "circle" },
+        ["box"]      = { "box", "square", "circle" },
+        ["eye"]      = { "eye", "circle" },
+        ["zap"]      = { "zap", "circle" },
+        ["shield"]   = { "shield", "circle" },
+        ["mouse-pointer"] = { "mouse-pointer", "mouse", "circle" },
+        ["crosshair"]= { "crosshair", "target", "circle" },
+    }
+    local function makeTab(name, icon)
+        local chain = TAB_ICON_FALLBACKS[icon] or { icon, "circle" }
+        for _, ic in ipairs(chain) do
+            local ok, tab = pcall(function()
+                return Window:Tab({ Title = name, Icon = ic })
+            end)
+            if ok and tab then return tab end
+        end
+        local ok, tab = pcall(function() return Window:Tab({ Title = name }) end)
+        if ok and tab then return tab end
+        warn("[hunter] could not create tab:", name)
+        return nil
+    end
+
+    local function safeSection(tab, title)
+        if not tab then return nil end
+        local ok, sec = pcall(function() return tab:Section({ Title = title }) end)
+        if ok and sec then return sec end
+        warn("[hunter] could not create section:", title)
+        return nil
+    end
+
+    local function safe(sec, kind, opts)
+        if not sec then return end
+        local ok, err = pcall(function() sec[kind](sec, opts) end)
+        if not ok then warn("[hunter] "..kind.." failed:", err) end
+    end
+
+    local ESPTab       = makeTab("esp", "eye")
+    local StamTab      = makeTab("stam", "zap")
+    local AutoBlockTab = makeTab("auto block", "shield")
+    local HDTTab       = makeTab("hdt", "mouse-pointer")
+    local AimTab       = makeTab("aim", "crosshair")
+    local BoxTab       = makeTab("box", "box")
+    local StabTab      = makeTab("stab", "sword")
+    local MiscTab      = makeTab("misc", "settings")
+
+    -- ESP
+    do
+        local S = safeSection(ESPTab, "players & world")
+        safe(S, "Toggle", { Title = "killer",     Value = false, Callback = function(v) CFG.ESPKillers    = v if v then refreshKillers()    else clearKillerESP()    end end })
+        safe(S, "Toggle", { Title = "survivor",   Value = false, Callback = function(v) CFG.ESPSurvivors  = v if v then refreshSurvivors()  else clearSurvivorESP()  end end })
+        safe(S, "Toggle", { Title = "generators", Value = false, Callback = function(v) CFG.ESPGenerators = v if v then refreshGenerators() else clearGeneratorESP() end end })
+        safe(S, "Toggle", { Title = "items",      Value = false, Callback = function(v) CFG.ESPItems      = v if v then refreshItems()      else clearItemESP()      end end })
+    end
+
+    -- STAM
+    do
+        local S = safeSection(StamTab, "sprint")
+        if not Sprinting then
+            safe(S, "Paragraph", { Title = "note", Desc = "no sprinting module found" })
+        else
+            safe(S, "Toggle", { Title = "infinite stamina", Value = false,
+                Callback = function(v) CFG.InfiniteStamina = v if v then startInfiniteStamina() else stopInfiniteStamina() end end })
+            safe(S, "Slider", { Title = "max",          Value = { Min = 1, Max = 1000, Default = Sprinting.MaxStamina or 100 }, Callback = function(v) if Sprinting then Sprinting.MaxStamina = v end end })
+            safe(S, "Slider", { Title = "sprint speed", Value = { Min = 1, Max = 40,   Default = Sprinting.SprintSpeed or 26 }, Callback = function(v) if Sprinting then Sprinting.SprintSpeed = v end end })
+            safe(S, "Slider", { Title = "gain",         Value = { Min = 1, Max = 200,  Default = Sprinting.StaminaGain or 20 }, Callback = function(v) if Sprinting then Sprinting.StaminaGain = v end end })
+            safe(S, "Slider", { Title = "loss",         Value = { Min = 0, Max = 50,   Default = Sprinting.StaminaLoss or 10 }, Callback = function(v) if Sprinting then Sprinting.StaminaLoss = v end end })
+        end
+    end
+
+    -- AUTO BLOCK
+    do
+        local S = safeSection(AutoBlockTab, "auto block")
+        safe(S, "Toggle", { Title = "enabled", Value = false, Callback = function(v) CFG.AutoBlockEnabled = v end })
+        safe(S, "Button", { Title = "toggle auto block", Callback = function()
+            CFG.AutoBlockEnabled = not CFG.AutoBlockEnabled
+            WindUI:Notify({
+                Title = "auto block",
+                Content = CFG.AutoBlockEnabled and "ENABLED" or "DISABLED",
+                Duration = 2,
+            })
+        end })
+        safe(S, "Paragraph", { Title = "info", Desc = "Fires ONLY when an M1 sound or M1 animation is detected, and only if you're inside the killer's forward view cone. Instant — fires the same frame." })
+        safe(S, "Slider", { Title = "range", Value = { Min = 8, Max = 60, Default = CFG.DetectionRange }, Callback = function(v) CFG.DetectionRange = v end })
+        safe(S, "Slider", { Title = "delay", Value = { Min = 0, Max = 0.5, Default = 0 }, Callback = function(v) CFG.BlockDelay = v end })
+        safe(S, "Toggle", { Title = "sound trigger",     Value = true, Callback = function(v) CFG.SoundTrigger = v end })
+        safe(S, "Toggle", { Title = "animation trigger", Value = true, Callback = function(v) CFG.AnimTrigger  = v end })
+        safe(S, "Toggle", { Title = "wall check",        Value = true, Callback = function(v) CFG.WallCheck    = v end })
+        safe(S, "Toggle", { Title = "facing check",      Value = true, Callback = function(v) CFG.FacingCheck  = v end })
+        safe(S, "Slider", { Title = "facing dot", Value = { Min = -1, Max = 1, Default = CFG.FacingDot }, Callback = function(v) CFG.FacingDot = v end })
+    end
+
+    -- HDT
+    do
+        local S = safeSection(HDTTab, "hdt")
+        safe(S, "Toggle", { Title = "enabled", Value = false, Callback = function(v) HDT.Enabled = v end })
+        safe(S, "Toggle", { Title = "auto on block", Value = true, Callback = function(v) HDT.AutoTrigger = v end })
+        safe(S, "Paragraph", { Title = "info", Desc = "HDT fires at most once every 27 seconds. No manual trigger — it auto-fires when a block is triggered." })
+        safe(S, "Slider", { Title = "speed", Value = { Min = 2, Max = 40, Default = HDT.Speed }, Callback = function(v) HDT.Speed = v end })
+        safe(S, "Slider", { Title = "delay", Value = { Min = 0, Max = 2, Default = HDT.Delay }, Callback = function(v) HDT.Delay = v end })
+        safe(S, "Slider", { Title = "stop distance", Value = { Min = 1, Max = 8, Default = HDT.StopDistance }, Callback = function(v) HDT.StopDistance = v end })
+        safe(S, "Slider", { Title = "max drag time", Value = { Min = 0.2, Max = 3, Default = HDT.SafetyTimeout }, Callback = function(v) HDT.SafetyTimeout = v end })
+        safe(S, "Slider", { Title = "cooldown (s)", Value = { Min = 1, Max = 120, Default = HDT.Cooldown }, Callback = function(v) HDT.Cooldown = v end })
+    end
+
+    -- AIM
+    do
+        local S = safeSection(AimTab, "aim")
+        safe(S, "Toggle", { Title = "enabled", Value = false, Callback = function(v) AIM.Enabled = v end })
+        safe(S, "Keybind", { Title = "pulse 3s", Value = "C", Callback = function(v) if v and Enum.KeyCode[v] then AIM.AimFor(3.0) end end })
+        safe(S, "Toggle", { Title = "debug", Value = false, Callback = function(v) AIM.Debug = v end })
+        safe(S, "Toggle", { Title = "aim on stun tap", Value = true, Callback = function(v)
+            AbilityHook.Enabled = v
+            if v then ahScanContainer() ahInstallUiWatcher() end
+        end })
+        safe(S, "Slider", { Title = "ability cooldown", Value = { Min = 0, Max = 60, Default = AbilityHook.Cooldown }, Callback = function(v) AbilityHook.Cooldown = v end })
+        safe(S, "Slider", { Title = "confirm window", Value = { Min = 0.1, Max = 1.0, Default = AbilityHook.PendingWindow }, Callback = function(v) AbilityHook.PendingWindow = v end })
+        safe(S, "Paragraph", { Title = "info", Desc = "aim fires only after the ability's Action animation actually plays." })
+        safe(S, "Slider", { Title = "lock multiplier", Value = { Min = 0.5, Max = 4, Default = AbilityHook.LockMultiplier }, Callback = function(v) AbilityHook.LockMultiplier = v end })
+        safe(S, "Dropdown", { Title = "aim mode", Values = {"Camera", "HRP", "HRP+Camera"}, Value = "Camera", Callback = function(opt) AIM.AimMode = opt end })
+        safe(S, "Slider", { Title = "smooth", Value = { Min = 0.05, Max = 1, Default = AIM.Smooth }, Callback = function(v) AIM.Smooth = v end })
+        safe(S, "Dropdown", { Title = "prediction mode", Values = {"Off", "Ping", "Velocity", "Both"}, Value = "Both", Callback = function(opt) AIM.PredictMode = opt end })
+        safe(S, "Slider", { Title = "velocity lead", Value = { Min = 0, Max = 0.5, Default = AIM.PredictLead }, Callback = function(v) AIM.PredictLead = v end })
+        safe(S, "Slider", { Title = "ping mult", Value = { Min = 0, Max = 2, Default = AIM.PingMult }, Callback = function(v) AIM.PingMult = v end })
+    end
+
+    -- BOX
+    do
+        local S = safeSection(BoxTab, "box")
+        safe(S, "Toggle", { Title = "enabled", Value = false, Callback = function(v)
+            FacingVisual.BoxEnabled = v
+            if not v then
+                for _, data in pairs(FacingVisual.boxVisuals) do
+                    if data.highlight and data.highlight.Parent then pcall(function() data.highlight:Destroy() end) end
+                    if data.part and data.part.Parent then pcall(function() data.part:Destroy() end) end
+                end
+                FacingVisual.boxVisuals = {}
+            end
+        end })
+        safe(S, "Toggle", { Title = "flash on killer m1", Value = true, Callback = function(v) FacingVisual.FlashOnKillerM1 = v end })
+        safe(S, "Slider", { Title = "width",  Value = { Min = 0, Max = 30, Default = FacingVisual.BoxWidth },  Callback = function(v) FacingVisual.BoxWidth = v end })
+        safe(S, "Slider", { Title = "length", Value = { Min = 0, Max = 30, Default = FacingVisual.BoxLength }, Callback = function(v) FacingVisual.BoxLength = v end })
+        safe(S, "Slider", { Title = "height", Value = { Min = 0, Max = 30, Default = FacingVisual.BoxHeight }, Callback = function(v) FacingVisual.BoxHeight = v end })
+        safe(S, "Toggle", { Title = "auto width", Value = false, Callback = function(v) FacingVisual.AutoWidth = v end })
+        safe(S, "Slider", { Title = "transparency", Value = { Min = 0, Max = 0.95, Default = FacingVisual.BoxFill }, Callback = function(v) FacingVisual.BoxFill = v end })
+        safe(S, "ColorPicker", { Title = "pass color",      Color = FacingVisual.PassColor,     Callback = function(c) FacingVisual.PassColor = c end })
+        safe(S, "ColorPicker", { Title = "in range color",  Color = FacingVisual.InRangeColor,  Callback = function(c) FacingVisual.InRangeColor = c end })
+        safe(S, "ColorPicker", { Title = "out range color", Color = FacingVisual.OutRangeColor, Callback = function(c) FacingVisual.OutRangeColor = c end })
+        safe(S, "Slider", { Title = "flash duration", Value = { Min = 0.05, Max = 1.0, Default = FacingVisual.FlashDuration }, Callback = function(v) FacingVisual.FlashDuration = v end })
+        safe(S, "Slider", { Title = "fade", Value = { Min = 0.0, Max = 1.0, Default = FacingVisual.FlashFade }, Callback = function(v) FacingVisual.FlashFade = v end })
+        safe(S, "Toggle", { Title = "flash on enter range", Value = false, Callback = function(v) FacingVisual.FlashOnEnterRange = v end })
+        safe(S, "Toggle", { Title = "flash on facing flip", Value = false, Callback = function(v) FacingVisual.FlashOnFacingFlip = v end })
+        safe(S, "Toggle", { Title = "flash on block fire",  Value = false, Callback = function(v) FacingVisual.FlashOnBlock = v end })
+        safe(S, "Button", { Title = "reset 6/15/6", Callback = function()
+            FacingVisual.BoxWidth = 6 FacingVisual.BoxLength = 15 FacingVisual.BoxHeight = 6 FacingVisual.AutoWidth = false
+        end })
+    end
+
+    -- STAB
+    do
+        local S = safeSection(StabTab, "stab")
+        safe(S, "Toggle", { Title = "enabled", Value = false, Callback = function(v) STAB.Enabled = v end })
+        safe(S, "Keybind", { Title = "manual stab", Value = "H", Callback = function(v)
+            if v and Enum.KeyCode[v] then task.spawn(function() stabActivate(true) end) end
+        end })
+        safe(S, "Slider", { Title = "behind offset", Value = { Min = 0.5, Max = 6, Default = STAB.BehindOffset }, Callback = function(v) STAB.BehindOffset = v end })
+        safe(S, "Slider", { Title = "max range", Value = { Min = 10, Max = 150, Default = STAB.MaxRange }, Callback = function(v) STAB.MaxRange = v end })
+        safe(S, "Slider", { Title = "cooldown", Value = { Min = 0.1, Max = 2, Default = STAB.Cooldown }, Callback = function(v) STAB.Cooldown = v end })
+        safe(S, "Slider", { Title = "tp delay", Value = { Min = 0, Max = 0.2, Default = STAB.TeleportDelay }, Callback = function(v) STAB.TeleportDelay = v end })
+        safe(S, "Slider", { Title = "follow duration", Value = { Min = 0.1, Max = 2, Default = STAB.FollowDuration }, Callback = function(v) STAB.FollowDuration = v end })
+        safe(S, "Button", { Title = "stab now", Callback = function() task.spawn(function() stabActivate(true) end) end })
+    end
+
+    -- MISC
+    do
+        local S = safeSection(MiscTab, "misc")
+        safe(S, "Toggle", { Title = "auto qte", Value = false, Callback = function(v) AZ.AutoQTE = v if v then azHookQTE() end end })
+        safe(S, "Toggle", { Title = "inf qte",  Value = false, Callback = function(v) AZ.InfiniteQTE = v if v then azHookQTE() end end })
+        safe(S, "Toggle", { Title = "auto generator", Value = false, Callback = function(v) AUTOGEN.Enabled = v end })
+        safe(S, "Slider", { Title = "gen range",    Value = { Min = 5, Max = 30, Default = AUTOGEN.MaxDistance }, Callback = function(v) AUTOGEN.MaxDistance = v end })
+        safe(S, "Slider", { Title = "gen interval", Value = { Min = 0.3, Max = 5, Default = AUTOGEN.Cooldown }, Callback = function(v) AUTOGEN.Cooldown = v end })
+        safe(S, "Toggle", { Title = "hitbox expander", Value = false, Callback = function(v) if v then hbeStart() else hbeStop() end end })
+        safe(S, "Dropdown", { Title = "hbe mode", Values = {"Scale", "Velocity"}, Value = "Scale", Callback = function(opt)
+            HBE.Mode = opt or "Scale"
+            if HBE.Enabled then hbeStop() hbeStart() end
+        end })
+        safe(S, "Slider", { Title = "size multiplier", Value = { Min = 1, Max = 5, Default = HBE.SizeMultiplier }, Callback = function(v) HBE.SizeMultiplier = v if HBE.Enabled then hbeApply() end end })
+        safe(S, "Toggle", { Title = "hbe only on attack", Value = false, Callback = function(v)
+            HBE.ApplyOnlyOnAttack = v
+            if HBE.Enabled and lp.Character then hbeDisconnectAll() hbeHookCharacter(lp.Character) end
+        end })
+        safe(S, "Toggle", { Title = "hbe visualize", Value = false, Callback = function(v) HBE.Visualize = v hbeApplyVisual() end })
+        safe(S, "Slider", { Title = "drag cooldown", Value = { Min = 0, Max = 5, Default = HBE.DragCooldown }, Callback = function(v) HBE.DragCooldown = v end })
+        safe(S, "Button", { Title = "1.25x", Callback = function() HBE.SizeMultiplier = 1.25 if HBE.Enabled then hbeApply() end end })
+        safe(S, "Button", { Title = "1.50x", Callback = function() HBE.SizeMultiplier = 1.5  if HBE.Enabled then hbeApply() end end })
+        safe(S, "Button", { Title = "2.00x", Callback = function() HBE.SizeMultiplier = 2.0  if HBE.Enabled then hbeApply() end end })
+        safe(S, "Button", { Title = "fullbright", Callback = function()
+            Lighting.Ambient = Color3.new(1,1,1)
+            Lighting.OutdoorAmbient = Color3.new(1,1,1)
+            Lighting.Brightness = 2; Lighting.ClockTime = 12
+            local atmo = Lighting:FindFirstChildOfClass("Atmosphere")
+            if atmo then atmo:Destroy() end
+        end })
+        safe(S, "Button", { Title = "show chat", Callback = function()
+            pcall(function()
+                local cfg = TextChatService:FindFirstChildOfClass("ChatWindowConfiguration")
+                local inp = TextChatService:FindFirstChildOfClass("ChatInputBarConfiguration")
+                if cfg then cfg.Enabled = true end
+                if inp then inp.Enabled = true end
+            end)
+        end })
+        safe(S, "Button", { Title = "reset character", Callback = function()
+            local char = lp.Character
+            local hum = char and char:FindFirstChildOfClass("Humanoid")
+            if hum then hum.Health = 0 end
+        end })
+        safe(S, "Button", { Title = "anti lag", Callback = function()
+            task.spawn(function()
+                pcall(function()
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/zxcursedsocute/Forsaken-Script/refs/heads/main/anti%20lag%20test"))()
+                end)
+            end)
+        end })
+        safe(S, "Button", { Title = "copy discord", Callback = function()
+            local link = "https://discord.gg/ecCpZY8u5"
+            if setclipboard then
+                pcall(setclipboard, link)
+                WindUI:Notify({
+                    Title = "discord",
+                    Content = "link copied: " .. link,
+                    Duration = 4,
+                })
+            else
+                WindUI:Notify({
+                    Title = "discord",
+                    Content = link,
+                    Duration = 6,
+                })
+            end
+        end })
+        safe(S, "Button", { Title = "theme: Blood (default)", Callback = function() WindUI:SetTheme("Blood") end })
+        safe(S, "Button", { Title = "theme: Dark",           Callback = function() WindUI:SetTheme("Dark") end })
+        safe(S, "Button", { Title = "theme: Crimson",        Callback = function() WindUI:SetTheme("Crimson") end })
+    end
+end)
+
+if not uiOk then
+    warn("[hunter] UI build failed:", uiErr)
+    return
+end
+
+WindUI:Notify({
+    Title = "hunter",
+    Content = "loaded — instant block, HDT 27s cd",
+    Duration = 4,
+})
